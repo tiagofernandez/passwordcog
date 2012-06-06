@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
+		F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
+		F11F5C86157FFD5D0069CD28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */; };
+		F11F5C8C157FFD5D0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */; };
+		F11F5C8E157FFD5D0069CD28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C8D157FFD5D0069CD28 /* main.m */; };
+		F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */; };
+		F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */; };
+		F11F5C98157FFD5D0069CD28 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C96157FFD5D0069CD28 /* iPad.storyboard */; };
+		F11F5C9B157FFD5E0069CD28 /* PasswordcogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */; };
+		F11F5CA3157FFD5E0069CD28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */; };
+		F11F5CA4157FFD5E0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
+		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
+		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
+		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F11F5CA6157FFD5E0069CD28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11F5C74157FFD5D0069CD28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F11F5C7C157FFD5D0069CD28;
+			remoteInfo = Passwordcog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwordcog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F5C81157FFD5D0069CD28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F11F5C83157FFD5D0069CD28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Passwordcog-Info.plist"; sourceTree = "<group>"; };
+		F11F5C8B157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F11F5C8D157FFD5D0069CD28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passwordcog-Prefix.pch"; sourceTree = "<group>"; };
+		F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogAppDelegate.h; sourceTree = "<group>"; };
+		F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogAppDelegate.m; sourceTree = "<group>"; };
+		F11F5C94157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		F11F5C97157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
+		F11F5C99157FFD5D0069CD28 /* PasswordcogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogViewController.h; sourceTree = "<group>"; };
+		F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogViewController.m; sourceTree = "<group>"; };
+		F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordcogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F11F5CAA157FFD5E0069CD28 /* PasswordcogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PasswordcogTests-Info.plist"; sourceTree = "<group>"; };
+		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
+		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F11F5C7A157FFD5D0069CD28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */,
+				F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */,
+				F11F5C86157FFD5D0069CD28 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9D157FFD5E0069CD28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CA3157FFD5E0069CD28 /* SenTestingKit.framework in Frameworks */,
+				F11F5CA4157FFD5E0069CD28 /* UIKit.framework in Frameworks */,
+				F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F11F5C72157FFD5D0069CD28 = {
+			isa = PBXGroup;
+			children = (
+				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
+				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
+				F11F5C80157FFD5D0069CD28 /* Frameworks */,
+				F11F5C7E157FFD5D0069CD28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F11F5C7E157FFD5D0069CD28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */,
+				F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F11F5C80157FFD5D0069CD28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C81157FFD5D0069CD28 /* UIKit.framework */,
+				F11F5C83157FFD5D0069CD28 /* Foundation.framework */,
+				F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */,
+				F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
+				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
+				F11F5C99157FFD5D0069CD28 /* PasswordcogViewController.h */,
+				F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */,
+				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
+				F11F5C96157FFD5D0069CD28 /* iPad.storyboard */,
+				F11F5C88157FFD5D0069CD28 /* Supporting Files */,
+			);
+			path = Passwordcog;
+			sourceTree = "<group>";
+		};
+		F11F5C88157FFD5D0069CD28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
+				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
+				F11F5C8D157FFD5D0069CD28 /* main.m */,
+				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */,
+				F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */,
+				F11F5CA9157FFD5E0069CD28 /* Supporting Files */,
+			);
+			path = PasswordcogTests;
+			sourceTree = "<group>";
+		};
+		F11F5CA9157FFD5E0069CD28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5CAA157FFD5E0069CD28 /* PasswordcogTests-Info.plist */,
+				F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F11F5C7C157FFD5D0069CD28 /* Passwordcog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F11F5CB3157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "Passwordcog" */;
+			buildPhases = (
+				F11F5C79157FFD5D0069CD28 /* Sources */,
+				F11F5C7A157FFD5D0069CD28 /* Frameworks */,
+				F11F5C7B157FFD5D0069CD28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Passwordcog;
+			productName = Passwordcog;
+			productReference = F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F11F5CA0157FFD5E0069CD28 /* PasswordcogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F11F5CB6157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "PasswordcogTests" */;
+			buildPhases = (
+				F11F5C9C157FFD5E0069CD28 /* Sources */,
+				F11F5C9D157FFD5E0069CD28 /* Frameworks */,
+				F11F5C9E157FFD5E0069CD28 /* Resources */,
+				F11F5C9F157FFD5E0069CD28 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F11F5CA7157FFD5E0069CD28 /* PBXTargetDependency */,
+			);
+			name = PasswordcogTests;
+			productName = PasswordcogTests;
+			productReference = F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F11F5C74157FFD5D0069CD28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Passwordcog;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = F11F5C77157FFD5D0069CD28 /* Build configuration list for PBXProject "Passwordcog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F11F5C72157FFD5D0069CD28;
+			productRefGroup = F11F5C7E157FFD5D0069CD28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F11F5C7C157FFD5D0069CD28 /* Passwordcog */,
+				F11F5CA0157FFD5E0069CD28 /* PasswordcogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F11F5C7B157FFD5D0069CD28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5C8C157FFD5D0069CD28 /* InfoPlist.strings in Resources */,
+				F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */,
+				F11F5C98157FFD5D0069CD28 /* iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9E157FFD5E0069CD28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F11F5C9F157FFD5E0069CD28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F11F5C79157FFD5D0069CD28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5C8E157FFD5D0069CD28 /* main.m in Sources */,
+				F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */,
+				F11F5C9B157FFD5E0069CD28 /* PasswordcogViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9C157FFD5E0069CD28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F11F5CA7157FFD5E0069CD28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F11F5C7C157FFD5D0069CD28 /* Passwordcog */;
+			targetProxy = F11F5CA6157FFD5E0069CD28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C8B157FFD5D0069CD28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C94157FFD5D0069CD28 /* en */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F11F5C96157FFD5D0069CD28 /* iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C97157FFD5D0069CD28 /* en */,
+			);
+			name = iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5CAC157FFD5E0069CD28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F11F5CB1157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F11F5CB2157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F11F5CB4157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F11F5CB5157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F11F5CB7157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				INFOPLIST_FILE = "PasswordcogTests/PasswordcogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F11F5CB8157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				INFOPLIST_FILE = "PasswordcogTests/PasswordcogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F11F5C77157FFD5D0069CD28 /* Build configuration list for PBXProject "Passwordcog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB1157FFD5E0069CD28 /* Debug */,
+				F11F5CB2157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F11F5CB3157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "Passwordcog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB4157FFD5E0069CD28 /* Debug */,
+				F11F5CB5157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F11F5CB6157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "PasswordcogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB7157FFD5E0069CD28 /* Debug */,
+				F11F5CB8157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F11F5C74157FFD5D0069CD28 /* Project object */;
+}
