@@ -1,4 +1,5 @@
 #import "AccountViewController.h"
+#import "BlockAlertView.h"
 #import "CategoryViewController.h"
 #import "NotesViewController.h"
 #import "NSString+NSStringUtils.h"
@@ -38,21 +39,39 @@
   [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
-//- (BOOL)canSaveAccount
-//{
-//  return [self.serviceField.text isNotEmpty] &&
-//         [self.usernameField.text isNotEmpty] &&
-//         [self.passwordField.text isNotEmpty];
-//}
+- (NSArray *)missingFields
+{
+  NSMutableArray *missingFields = [NSMutableArray arrayWithCapacity:3];
+  
+  if ([self.serviceField.text isEmpty])  [missingFields addObject:@"service"];
+  if ([self.usernameField.text isEmpty]) [missingFields addObject:@"username"];
+  if ([self.passwordField.text isEmpty]) [missingFields addObject:@"password"];
+  
+  return missingFields;
+}
 
 - (IBAction)saveAccount:(id)sender
 {
-  self.account.service = self.serviceField.text;
-  self.account.username = self.usernameField.text;
-  self.account.password = self.passwordField.text;
+  NSArray *missingFields = [self missingFields];
   
-  [self.delegate accountSaved:self.account];
-  [self dismissViewController];
+  if ([missingFields count] == 0) {
+    
+    self.account.service = self.serviceField.text;
+    self.account.username = self.usernameField.text;
+    self.account.password = self.passwordField.text;
+    
+    [self.delegate accountSaved:self.account];
+    [self dismissViewController];
+  }
+  else {
+    NSString *errorMessage = [NSString stringWithFormat:@"Please enter the field(s):\n%@.",
+                [missingFields componentsJoinedByString:@", "]];
+    
+    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Missing fields"
+                                                   message:errorMessage];
+    [alert addButtonWithTitle:@"OK" block:nil];
+    [alert show];
+  }
 }
 
 - (IBAction)cancelAccount:(id)sender

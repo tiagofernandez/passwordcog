@@ -1,2 +1,2 @@
 platform :ios
-dependency '?', '~> 1.0'
+dependency 'BlockAlertsAnd-ActionSheets', '~> 1.0.0'

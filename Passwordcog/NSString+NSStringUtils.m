@@ -2,9 +2,14 @@
 
 @implementation NSString (NSStringUtils)
 
+- (NSString *)trim
+{
+  return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 - (BOOL)isEmpty
 {
-  return [self length] == 0;
+  return [[self trim] length] == 0;
 }
 
 - (BOOL)isNotEmpty

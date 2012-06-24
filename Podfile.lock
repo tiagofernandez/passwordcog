@@ -1,0 +1,5 @@
+PODS:
+  - BlockAlertsAnd-ActionSheets (1.0.0)
+
+DEPENDENCIES:
+  - BlockAlertsAnd-ActionSheets (~> 1.0.0)
