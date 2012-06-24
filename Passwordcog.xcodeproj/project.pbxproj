@@ -15,12 +15,19 @@
 		F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */; };
 		F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */; };
 		F11F5C98157FFD5D0069CD28 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C96157FFD5D0069CD28 /* iPad.storyboard */; };
-		F11F5C9B157FFD5E0069CD28 /* PasswordcogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */; };
+		F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */; };
 		F11F5CA3157FFD5E0069CD28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */; };
 		F11F5CA4157FFD5E0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
 		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
 		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
+		F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */; };
+		F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17A29DE1583777700FEEAFF /* NotesViewController.m */; };
+		F191E802158E616C002AA09E /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoryViewController.m */; };
+		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
+		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
+		F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF94D1584CF6000CA0FAE /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +53,27 @@
 		F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogAppDelegate.m; sourceTree = "<group>"; };
 		F11F5C94157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		F11F5C97157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
-		F11F5C99157FFD5D0069CD28 /* PasswordcogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogViewController.h; sourceTree = "<group>"; };
-		F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogViewController.m; sourceTree = "<group>"; };
+		F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountListViewController.h; sourceTree = "<group>"; };
+		F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountListViewController.m; sourceTree = "<group>"; };
 		F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordcogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F11F5CAA157FFD5E0069CD28 /* PasswordcogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PasswordcogTests-Info.plist"; sourceTree = "<group>"; };
 		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		F1507E401581574500E2C086 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllerViewController.h; sourceTree = "<group>"; };
+		F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerViewController.m; sourceTree = "<group>"; };
+		F17A29DD1583777700FEEAFF /* NotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
+		F17A29DE1583777700FEEAFF /* NotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
+		F191E800158E616C002AA09E /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		F191E801158E616C002AA09E /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
+		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
+		F1FEF94C1584CF6000CA0FAE /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		F1FEF94D1584CF6000CA0FAE /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */,
 				F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */,
 				F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */,
 				F11F5C86157FFD5D0069CD28 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +104,7 @@
 		F11F5C72157FFD5D0069CD28 = {
 			isa = PBXGroup;
 			children = (
+				F1FEF9411584B14900CA0FAE /* QuartzCore.framework */,
 				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
 				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
 				F11F5C80157FFD5D0069CD28 /* Frameworks */,
@@ -113,12 +135,14 @@
 		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
 			isa = PBXGroup;
 			children = (
-				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
-				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
-				F11F5C99157FFD5D0069CD28 /* PasswordcogViewController.h */,
-				F11F5C9A157FFD5E0069CD28 /* PasswordcogViewController.m */,
+				F1507E3E1581570800E2C086 /* Account */,
+				F17A29DC1583776300FEEAFF /* Account List */,
+				F1FEF94B1584CF3500CA0FAE /* Model */,
+				F15DEF1F15973BBB000DF5FF /* Settings */,
+				F1FEF9431584C52600CA0FAE /* Utils */,
 				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
 				F11F5C96157FFD5D0069CD28 /* iPad.storyboard */,
+				F1507E361581537600E2C086 /* Images */,
 				F11F5C88157FFD5D0069CD28 /* Supporting Files */,
 			);
 			path = Passwordcog;
@@ -127,6 +151,8 @@
 		F11F5C88157FFD5D0069CD28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
+				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
 				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
 				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
 				F11F5C8D157FFD5D0069CD28 /* main.m */,
@@ -152,6 +178,62 @@
 				F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1507E361581537600E2C086 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F1507E3E1581570800E2C086 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F1507E3F1581574500E2C086 /* AccountViewController.h */,
+				F1507E401581574500E2C086 /* AccountViewController.m */,
+				F191E800158E616C002AA09E /* CategoryViewController.h */,
+				F191E801158E616C002AA09E /* CategoryViewController.m */,
+				F17A29DD1583777700FEEAFF /* NotesViewController.h */,
+				F17A29DE1583777700FEEAFF /* NotesViewController.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		F15DEF1F15973BBB000DF5FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */,
+				F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		F17A29DC1583776300FEEAFF /* Account List */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */,
+				F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */,
+			);
+			name = "Account List";
+			sourceTree = "<group>";
+		};
+		F1FEF9431584C52600CA0FAE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */,
+				F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F1FEF94B1584CF3500CA0FAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF94C1584CF6000CA0FAE /* Account.h */,
+				F1FEF94D1584CF6000CA0FAE /* Account.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +346,13 @@
 			files = (
 				F11F5C8E157FFD5D0069CD28 /* main.m in Sources */,
 				F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */,
-				F11F5C9B157FFD5E0069CD28 /* PasswordcogViewController.m in Sources */,
+				F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */,
+				F1507E411581574500E2C086 /* AccountViewController.m in Sources */,
+				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
+				F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */,
+				F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */,
+				F191E802158E616C002AA09E /* CategoryViewController.m in Sources */,
+				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
