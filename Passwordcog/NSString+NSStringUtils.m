@@ -2,9 +2,15 @@
 
 @implementation NSString (NSStringUtils)
 
-- (NSString *)trim
+- (BOOL) containsString:(NSString *) string
 {
-  return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  return [self containsString:string options:0];
+}
+
+- (BOOL)containsString:(NSString *)string options:(NSStringCompareOptions)options
+{
+  NSRange range = [self rangeOfString:string options:options];
+  return range.location != NSNotFound;
 }
 
 - (BOOL)isEmpty
@@ -15,6 +21,20 @@
 - (BOOL)isNotEmpty
 {
   return ![self isEmpty];
+}
+
+- (NSString *)trim
+{
+  return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
++ (NSString *)uuid
+{
+  CFUUIDRef uid = CFUUIDCreate(kCFAllocatorDefault);
+	CFStringRef tmpString = CFUUIDCreateString(kCFAllocatorDefault, uid);
+	CFRelease(uid);
+  
+	return (__bridge_transfer NSString *)tmpString;
 }
 
 @end

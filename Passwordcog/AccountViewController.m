@@ -10,8 +10,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
-@property (strong, nonatomic) Account *account;
-
 @end
 
 
@@ -29,6 +27,29 @@
 {
   if (!_account) _account = [Account new];
   return _account;
+}
+
+
+#pragma mark UI/model sync
+
+- (void)syncToUI
+{
+  self.serviceField.text  = self.account.service;
+  self.usernameField.text = self.account.username;
+  self.passwordField.text = self.account.password;
+  
+  [self categorySelected:self.account.category];
+  [self notesUpdated:self.account.notes];
+}
+
+- (void)syncToModel
+{
+  self.account.service  = self.serviceField.text;
+  self.account.username = self.usernameField.text;
+  self.account.password = self.passwordField.text;
+  
+  self.account.category = [self categoryCell].detailTextLabel.text;
+  self.account.notes    = [self notesCell].detailTextLabel.text;
 }
 
 
@@ -55,11 +76,7 @@
   NSArray *missingFields = [self missingFields];
   
   if ([missingFields count] == 0) {
-    
-    self.account.service = self.serviceField.text;
-    self.account.username = self.usernameField.text;
-    self.account.password = self.passwordField.text;
-    
+    [self syncToModel];
     [self.delegate accountSaved:self.account];
     [self dismissViewController];
   }
@@ -90,8 +107,11 @@
 - (void)categorySelected:(NSString *)category
 {
   self.account.category = category;
+  
   [self categoryCell].detailTextLabel.text = category;
-  [self.tableView reloadData];
+  
+  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]]
+                        withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
@@ -105,7 +125,11 @@
 - (void)notesUpdated:(NSString *)notes
 {
   self.account.notes = notes;
+  
   [self notesCell].detailTextLabel.text = notes;
+  
+  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:1]]
+                        withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
@@ -120,17 +144,9 @@
     [self.passwordField becomeFirstResponder];
   
   else if (textField == self.passwordField)
-    [self performSegueWithIdentifier:@"Category" sender:self];
+    [self.passwordField resignFirstResponder];
   
   return YES;
-}
-
-
-#pragma mark UITableViewDataSource & UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  
 }
 
 
@@ -186,6 +202,18 @@
 
 #pragma mark View lifecycle
 
+- (void)viewDidAppear:(BOOL)animated
+{
+  [self syncToUI];
+  [super viewDidAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+  [self syncToModel];
+  [super viewDidDisappear:animated];
+}
+
 //- (void)setViewBackground
 //{
 //  UIImage *background = [UIImage imageNamed:@"light_gray_noise_background.png"];
@@ -193,18 +221,10 @@
 //  self.view.opaque = NO;
 //}
 
-- (void)initTextFields
-{
-  self.serviceField.delegate = self;
-  self.usernameField.delegate = self;
-  self.passwordField.delegate = self;
-}
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-//  [self setViewBackground];
-  [self initTextFields];
+  //[self setViewBackground];
 }
 
 - (void)viewDidUnload

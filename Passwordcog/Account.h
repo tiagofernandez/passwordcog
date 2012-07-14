@@ -2,6 +2,7 @@
 
 @interface Account : NSObject
 
+@property (strong, nonatomic) NSString *uuid;
 @property (strong, nonatomic) NSString *service;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;

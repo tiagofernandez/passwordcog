@@ -1,1426 +1,593 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>004880ABCFF14D8F84434079</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E61C6EC062DB498987E794EB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21EE978EC73A499FAA6D1043</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-		</dict>
-		<key>2D4FBC352CF44F3AA32CE3C9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E61C6EC062DB498987E794EB</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F11F5C72157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1FEF9411584B14900CA0FAE</string>
-				<string>F11F5C87157FFD5D0069CD28</string>
-				<string>F11F5CA8157FFD5E0069CD28</string>
-				<string>F11F5C80157FFD5D0069CD28</string>
-				<string>F11F5C7E157FFD5D0069CD28</string>
-				<string>2D4FBC352CF44F3AA32CE3C9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C74157FFD5D0069CD28</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>Passwordcog</string>
-				<key>LastUpgradeCheck</key>
-				<string>0430</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>F11F5C77157FFD5D0069CD28</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>F11F5C72157FFD5D0069CD28</string>
-			<key>productRefGroup</key>
-			<string>F11F5C7E157FFD5D0069CD28</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>F11F5C7C157FFD5D0069CD28</string>
-				<string>F11F5CA0157FFD5E0069CD28</string>
-			</array>
-		</dict>
-		<key>F11F5C77157FFD5D0069CD28</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F11F5CB1157FFD5E0069CD28</string>
-				<string>F11F5CB2157FFD5E0069CD28</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F11F5C79157FFD5D0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F11F5C8E157FFD5D0069CD28</string>
-				<string>F11F5C92157FFD5D0069CD28</string>
-				<string>F11F5C9B157FFD5E0069CD28</string>
-				<string>F1507E411581574500E2C086</string>
-				<string>F17A29DF1583777700FEEAFF</string>
-				<string>F1FEF9461584C54500CA0FAE</string>
-				<string>F1FEF94E1584CF6000CA0FAE</string>
-				<string>F191E802158E616C002AA09E</string>
-				<string>F15DEF2315973BF6000DF5FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C7A157FFD5D0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F1FEF9421584B14900CA0FAE</string>
-				<string>F11F5C82157FFD5D0069CD28</string>
-				<string>F11F5C84157FFD5D0069CD28</string>
-				<string>F11F5C86157FFD5D0069CD28</string>
-				<string>FB10FC34A00248FF86707204</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C7B157FFD5D0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F11F5C8C157FFD5D0069CD28</string>
-				<string>F11F5C95157FFD5D0069CD28</string>
-				<string>F11F5C98157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C7C157FFD5D0069CD28</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F11F5CB3157FFD5E0069CD28</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F11F5C79157FFD5D0069CD28</string>
-				<string>F11F5C7A157FFD5D0069CD28</string>
-				<string>F11F5C7B157FFD5D0069CD28</string>
-				<string>21EE978EC73A499FAA6D1043</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Passwordcog</string>
-			<key>productName</key>
-			<string>Passwordcog</string>
-			<key>productReference</key>
-			<string>F11F5C7D157FFD5D0069CD28</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>F11F5C7D157FFD5D0069CD28</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Passwordcog.app</string>
-			<key>path</key>
-			<string>Passwordcog.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F11F5C7E157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C7D157FFD5D0069CD28</string>
-				<string>F11F5CA1157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C80157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C81157FFD5D0069CD28</string>
-				<string>F11F5C83157FFD5D0069CD28</string>
-				<string>F11F5C85157FFD5D0069CD28</string>
-				<string>F11F5CA2157FFD5E0069CD28</string>
-				<string>E61C6EC062DB498987E794EB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C81157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F11F5C82157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C81157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C83157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F11F5C84157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C83157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C85157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F11F5C86157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C85157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C87157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1507E3E1581570800E2C086</string>
-				<string>F17A29DC1583776300FEEAFF</string>
-				<string>F1FEF94B1584CF3500CA0FAE</string>
-				<string>F15DEF1F15973BBB000DF5FF</string>
-				<string>F1FEF9431584C52600CA0FAE</string>
-				<string>F11F5C93157FFD5D0069CD28</string>
-				<string>F11F5C96157FFD5D0069CD28</string>
-				<string>F1507E361581537600E2C086</string>
-				<string>F11F5C88157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Passwordcog</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C88157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C90157FFD5D0069CD28</string>
-				<string>F11F5C91157FFD5D0069CD28</string>
-				<string>F11F5C89157FFD5D0069CD28</string>
-				<string>F11F5C8A157FFD5D0069CD28</string>
-				<string>F11F5C8D157FFD5D0069CD28</string>
-				<string>F11F5C8F157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C89157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>name</key>
-			<string>Passwordcog-Info.plist</string>
-			<key>path</key>
-			<string>Passwordcog-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C8A157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C8B157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C8B157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C8C157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C8A157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C8D157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>main.m</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C8E157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C8D157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C8F157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Passwordcog-Prefix.pch</string>
-			<key>path</key>
-			<string>Passwordcog-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C90157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PasswordcogAppDelegate.h</string>
-			<key>path</key>
-			<string>PasswordcogAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C91157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>PasswordcogAppDelegate.m</string>
-			<key>path</key>
-			<string>PasswordcogAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C92157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C91157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C93157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C94157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>iPhone.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C94157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/iPhone.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C95157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C93157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C96157FFD5D0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C97157FFD5D0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>iPad.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C97157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/iPad.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C98157FFD5D0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C96157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C99157FFD5D0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AccountListViewController.h</string>
-			<key>path</key>
-			<string>AccountListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C9A157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AccountListViewController.m</string>
-			<key>path</key>
-			<string>AccountListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5C9B157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C9A157FFD5E0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5C9C157FFD5E0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F11F5CB0157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C9D157FFD5E0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F11F5CA3157FFD5E0069CD28</string>
-				<string>F11F5CA4157FFD5E0069CD28</string>
-				<string>F11F5CA5157FFD5E0069CD28</string>
-				<string>004880ABCFF14D8F84434079</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C9E157FFD5E0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F11F5CAD157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F11F5C9F157FFD5E0069CD28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>F11F5CA0157FFD5E0069CD28</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F11F5CB6157FFD5E0069CD28</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F11F5C9C157FFD5E0069CD28</string>
-				<string>F11F5C9D157FFD5E0069CD28</string>
-				<string>F11F5C9E157FFD5E0069CD28</string>
-				<string>F11F5C9F157FFD5E0069CD28</string>
-				<string>21EE978EC73A499FAA6D1043</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F11F5CA7157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PasswordcogTests</string>
-			<key>productName</key>
-			<string>PasswordcogTests</string>
-			<key>productReference</key>
-			<string>F11F5CA1157FFD5E0069CD28</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>F11F5CA1157FFD5E0069CD28</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>PasswordcogTests.octest</string>
-			<key>path</key>
-			<string>PasswordcogTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F11F5CA2157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>F11F5CA3157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5CA2157FFD5E0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5CA4157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C81157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5CA5157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5C83157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5CA6157FFD5E0069CD28</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>F11F5C74157FFD5D0069CD28</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F11F5C7C157FFD5D0069CD28</string>
-			<key>remoteInfo</key>
-			<string>Passwordcog</string>
-		</dict>
-		<key>F11F5CA7157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>F11F5C7C157FFD5D0069CD28</string>
-			<key>targetProxy</key>
-			<string>F11F5CA6157FFD5E0069CD28</string>
-		</dict>
-		<key>F11F5CA8157FFD5E0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5CAE157FFD5E0069CD28</string>
-				<string>F11F5CAF157FFD5E0069CD28</string>
-				<string>F11F5CA9157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PasswordcogTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CA9157FFD5E0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5CAA157FFD5E0069CD28</string>
-				<string>F11F5CAB157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CAA157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>name</key>
-			<string>PasswordcogTests-Info.plist</string>
-			<key>path</key>
-			<string>PasswordcogTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CAB157FFD5E0069CD28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5CAC157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CAC157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CAD157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5CAB157FFD5E0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5CAE157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PasswordcogTests.h</string>
-			<key>path</key>
-			<string>PasswordcogTests.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CAF157FFD5E0069CD28</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>PasswordcogTests.m</string>
-			<key>path</key>
-			<string>PasswordcogTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F11F5CB0157FFD5E0069CD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F11F5CAF157FFD5E0069CD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F11F5CB1157FFD5E0069CD28</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F11F5CB2157FFD5E0069CD28</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F11F5CB3157FFD5E0069CD28</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F11F5CB4157FFD5E0069CD28</string>
-				<string>F11F5CB5157FFD5E0069CD28</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F11F5CB4157FFD5E0069CD28</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2D4FBC352CF44F3AA32CE3C9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Passwordcog/Passwordcog-Prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Passwordcog/Passwordcog-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F11F5CB5157FFD5E0069CD28</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2D4FBC352CF44F3AA32CE3C9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Passwordcog/Passwordcog-Prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Passwordcog/Passwordcog-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F11F5CB6157FFD5E0069CD28</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F11F5CB7157FFD5E0069CD28</string>
-				<string>F11F5CB8157FFD5E0069CD28</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F11F5CB7157FFD5E0069CD28</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2D4FBC352CF44F3AA32CE3C9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Passwordcog/Passwordcog-Prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PasswordcogTests/PasswordcogTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F11F5CB8157FFD5E0069CD28</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2D4FBC352CF44F3AA32CE3C9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Passwordcog/Passwordcog-Prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PasswordcogTests/PasswordcogTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F1507E361581537600E2C086</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Images</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1507E3E1581570800E2C086</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1507E3F1581574500E2C086</string>
-				<string>F1507E401581574500E2C086</string>
-				<string>F191E800158E616C002AA09E</string>
-				<string>F191E801158E616C002AA09E</string>
-				<string>F17A29DD1583777700FEEAFF</string>
-				<string>F17A29DE1583777700FEEAFF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Account</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1507E3F1581574500E2C086</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AccountViewController.h</string>
-			<key>path</key>
-			<string>AccountViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1507E401581574500E2C086</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AccountViewController.m</string>
-			<key>path</key>
-			<string>AccountViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1507E411581574500E2C086</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1507E401581574500E2C086</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F15DEF1F15973BBB000DF5FF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F15DEF2115973BF6000DF5FF</string>
-				<string>F15DEF2215973BF6000DF5FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Settings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F15DEF2115973BF6000DF5FF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SettingsViewControllerViewController.h</string>
-			<key>path</key>
-			<string>SettingsViewControllerViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F15DEF2215973BF6000DF5FF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SettingsViewControllerViewController.m</string>
-			<key>path</key>
-			<string>SettingsViewControllerViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F15DEF2315973BF6000DF5FF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F15DEF2215973BF6000DF5FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F17A29DC1583776300FEEAFF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F11F5C99157FFD5D0069CD28</string>
-				<string>F11F5C9A157FFD5E0069CD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Account List</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F17A29DD1583777700FEEAFF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NotesViewController.h</string>
-			<key>path</key>
-			<string>NotesViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F17A29DE1583777700FEEAFF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NotesViewController.m</string>
-			<key>path</key>
-			<string>NotesViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F17A29DF1583777700FEEAFF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F17A29DE1583777700FEEAFF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F191E800158E616C002AA09E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>CategoryViewController.h</string>
-			<key>path</key>
-			<string>CategoryViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F191E801158E616C002AA09E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>CategoryViewController.m</string>
-			<key>path</key>
-			<string>CategoryViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F191E802158E616C002AA09E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F191E801158E616C002AA09E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F1FEF9411584B14900CA0FAE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F1FEF9421584B14900CA0FAE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1FEF9411584B14900CA0FAE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F1FEF9431584C52600CA0FAE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1FEF9441584C54500CA0FAE</string>
-				<string>F1FEF9451584C54500CA0FAE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Utils</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF9441584C54500CA0FAE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSString+NSStringUtils.h</string>
-			<key>path</key>
-			<string>NSString+NSStringUtils.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF9451584C54500CA0FAE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSString+NSStringUtils.m</string>
-			<key>path</key>
-			<string>NSString+NSStringUtils.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF9461584C54500CA0FAE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1FEF9451584C54500CA0FAE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F1FEF94B1584CF3500CA0FAE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1FEF94C1584CF6000CA0FAE</string>
-				<string>F1FEF94D1584CF6000CA0FAE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF94C1584CF6000CA0FAE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Account.h</string>
-			<key>path</key>
-			<string>Account.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF94D1584CF6000CA0FAE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Account.m</string>
-			<key>path</key>
-			<string>Account.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1FEF94E1584CF6000CA0FAE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1FEF94D1584CF6000CA0FAE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FB10FC34A00248FF86707204</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E61C6EC062DB498987E794EB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>F11F5C74157FFD5D0069CD28</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004880ABCFF14D8F84434079 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
+		F11F13B81597682700B16DFB /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = F11F13B71597682700B16DFB /* Categories.plist */; };
+		F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
+		F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
+		F11F5C86157FFD5D0069CD28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */; };
+		F11F5C8C157FFD5D0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */; };
+		F11F5C8E157FFD5D0069CD28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C8D157FFD5D0069CD28 /* main.m */; };
+		F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */; };
+		F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */; };
+		F11F5C98157FFD5D0069CD28 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C96157FFD5D0069CD28 /* iPad.storyboard */; };
+		F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */; };
+		F11F5CA3157FFD5E0069CD28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */; };
+		F11F5CA4157FFD5E0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
+		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
+		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
+		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
+		F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */; };
+		F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17A29DE1583777700FEEAFF /* NotesViewController.m */; };
+		F191E802158E616C002AA09E /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoryViewController.m */; };
+		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
+		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
+		F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF94D1584CF6000CA0FAE /* Account.m */; };
+		FB10FC34A00248FF86707204 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F11F5CA6157FFD5E0069CD28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11F5C74157FFD5D0069CD28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F11F5C7C157FFD5D0069CD28;
+			remoteInfo = Passwordcog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E61C6EC062DB498987E794EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F13B71597682700B16DFB /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
+		F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwordcog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F5C81157FFD5D0069CD28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F11F5C83157FFD5D0069CD28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Passwordcog-Info.plist"; sourceTree = "<group>"; };
+		F11F5C8B157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F11F5C8D157FFD5D0069CD28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passwordcog-Prefix.pch"; sourceTree = "<group>"; };
+		F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogAppDelegate.h; sourceTree = "<group>"; };
+		F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogAppDelegate.m; sourceTree = "<group>"; };
+		F11F5C94157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		F11F5C97157FFD5D0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
+		F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountListViewController.h; sourceTree = "<group>"; };
+		F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountListViewController.m; sourceTree = "<group>"; };
+		F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordcogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F11F5CAA157FFD5E0069CD28 /* PasswordcogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PasswordcogTests-Info.plist"; sourceTree = "<group>"; };
+		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
+		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		F1507E401581574500E2C086 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllerViewController.h; sourceTree = "<group>"; };
+		F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerViewController.m; sourceTree = "<group>"; };
+		F17A29DD1583777700FEEAFF /* NotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
+		F17A29DE1583777700FEEAFF /* NotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
+		F191E800158E616C002AA09E /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		F191E801158E616C002AA09E /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
+		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
+		F1FEF94C1584CF6000CA0FAE /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		F1FEF94D1584CF6000CA0FAE /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F11F5C7A157FFD5D0069CD28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */,
+				F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */,
+				F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */,
+				F11F5C86157FFD5D0069CD28 /* CoreGraphics.framework in Frameworks */,
+				FB10FC34A00248FF86707204 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9D157FFD5E0069CD28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CA3157FFD5E0069CD28 /* SenTestingKit.framework in Frameworks */,
+				F11F5CA4157FFD5E0069CD28 /* UIKit.framework in Frameworks */,
+				F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */,
+				004880ABCFF14D8F84434079 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F11F5C72157FFD5D0069CD28 = {
+			isa = PBXGroup;
+			children = (
+				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
+				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
+				F11F5C80157FFD5D0069CD28 /* Frameworks */,
+				F11F5C7E157FFD5D0069CD28 /* Products */,
+				2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		F11F5C7E157FFD5D0069CD28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */,
+				F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F11F5C80157FFD5D0069CD28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF9411584B14900CA0FAE /* QuartzCore.framework */,
+				F11F5C81157FFD5D0069CD28 /* UIKit.framework */,
+				F11F5C83157FFD5D0069CD28 /* Foundation.framework */,
+				F11F5C85157FFD5D0069CD28 /* CoreGraphics.framework */,
+				F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */,
+				E61C6EC062DB498987E794EB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
+			isa = PBXGroup;
+			children = (
+				F1507E3E1581570800E2C086 /* Account */,
+				F17A29DC1583776300FEEAFF /* Account List */,
+				F1FEF94B1584CF3500CA0FAE /* Model */,
+				F15DEF1F15973BBB000DF5FF /* Settings */,
+				F1FEF9431584C52600CA0FAE /* Utils */,
+				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
+				F11F5C96157FFD5D0069CD28 /* iPad.storyboard */,
+				F1507E361581537600E2C086 /* Images */,
+				F11F5C88157FFD5D0069CD28 /* Supporting Files */,
+			);
+			path = Passwordcog;
+			sourceTree = "<group>";
+		};
+		F11F5C88157FFD5D0069CD28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
+				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
+				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
+				F11F13B71597682700B16DFB /* Categories.plist */,
+				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
+				F11F5C8D157FFD5D0069CD28 /* main.m */,
+				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */,
+				F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */,
+				F11F5CA9157FFD5E0069CD28 /* Supporting Files */,
+			);
+			path = PasswordcogTests;
+			sourceTree = "<group>";
+		};
+		F11F5CA9157FFD5E0069CD28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5CAA157FFD5E0069CD28 /* PasswordcogTests-Info.plist */,
+				F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1507E361581537600E2C086 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F1507E3E1581570800E2C086 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F1507E3F1581574500E2C086 /* AccountViewController.h */,
+				F1507E401581574500E2C086 /* AccountViewController.m */,
+				F191E800158E616C002AA09E /* CategoryViewController.h */,
+				F191E801158E616C002AA09E /* CategoryViewController.m */,
+				F17A29DD1583777700FEEAFF /* NotesViewController.h */,
+				F17A29DE1583777700FEEAFF /* NotesViewController.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		F15DEF1F15973BBB000DF5FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */,
+				F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		F17A29DC1583776300FEEAFF /* Account List */ = {
+			isa = PBXGroup;
+			children = (
+				F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */,
+				F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */,
+			);
+			name = "Account List";
+			sourceTree = "<group>";
+		};
+		F1FEF9431584C52600CA0FAE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */,
+				F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F1FEF94B1584CF3500CA0FAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF94C1584CF6000CA0FAE /* Account.h */,
+				F1FEF94D1584CF6000CA0FAE /* Account.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F11F5C7C157FFD5D0069CD28 /* Passwordcog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F11F5CB3157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "Passwordcog" */;
+			buildPhases = (
+				F11F5C79157FFD5D0069CD28 /* Sources */,
+				F11F5C7A157FFD5D0069CD28 /* Frameworks */,
+				F11F5C7B157FFD5D0069CD28 /* Resources */,
+				21EE978EC73A499FAA6D1043 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Passwordcog;
+			productName = Passwordcog;
+			productReference = F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F11F5CA0157FFD5E0069CD28 /* PasswordcogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F11F5CB6157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "PasswordcogTests" */;
+			buildPhases = (
+				F11F5C9C157FFD5E0069CD28 /* Sources */,
+				F11F5C9D157FFD5E0069CD28 /* Frameworks */,
+				F11F5C9E157FFD5E0069CD28 /* Resources */,
+				F11F5C9F157FFD5E0069CD28 /* ShellScript */,
+				21EE978EC73A499FAA6D1043 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F11F5CA7157FFD5E0069CD28 /* PBXTargetDependency */,
+			);
+			name = PasswordcogTests;
+			productName = PasswordcogTests;
+			productReference = F11F5CA1157FFD5E0069CD28 /* PasswordcogTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F11F5C74157FFD5D0069CD28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Passwordcog;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = F11F5C77157FFD5D0069CD28 /* Build configuration list for PBXProject "Passwordcog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F11F5C72157FFD5D0069CD28;
+			productRefGroup = F11F5C7E157FFD5D0069CD28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F11F5C7C157FFD5D0069CD28 /* Passwordcog */,
+				F11F5CA0157FFD5E0069CD28 /* PasswordcogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F11F5C7B157FFD5D0069CD28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5C8C157FFD5D0069CD28 /* InfoPlist.strings in Resources */,
+				F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */,
+				F11F5C98157FFD5D0069CD28 /* iPad.storyboard in Resources */,
+				F11F13B81597682700B16DFB /* Categories.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9E157FFD5E0069CD28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21EE978EC73A499FAA6D1043 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		F11F5C9F157FFD5E0069CD28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F11F5C79157FFD5D0069CD28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5C8E157FFD5D0069CD28 /* main.m in Sources */,
+				F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */,
+				F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */,
+				F1507E411581574500E2C086 /* AccountViewController.m in Sources */,
+				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
+				F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */,
+				F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */,
+				F191E802158E616C002AA09E /* CategoryViewController.m in Sources */,
+				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F11F5C9C157FFD5E0069CD28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F11F5CA7157FFD5E0069CD28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F11F5C7C157FFD5D0069CD28 /* Passwordcog */;
+			targetProxy = F11F5CA6157FFD5E0069CD28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C8B157FFD5D0069CD28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C94157FFD5D0069CD28 /* en */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F11F5C96157FFD5D0069CD28 /* iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5C97157FFD5D0069CD28 /* en */,
+			);
+			name = iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F11F5CAC157FFD5E0069CD28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F11F5CB1157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F11F5CB2157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F11F5CB4157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F11F5CB5157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F11F5CB7157FFD5E0069CD28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog";
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "PasswordcogTests/PasswordcogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F11F5CB8157FFD5E0069CD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passwordcog.app/Passwordcog";
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "PasswordcogTests/PasswordcogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F11F5C77157FFD5D0069CD28 /* Build configuration list for PBXProject "Passwordcog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB1157FFD5E0069CD28 /* Debug */,
+				F11F5CB2157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F11F5CB3157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "Passwordcog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB4157FFD5E0069CD28 /* Debug */,
+				F11F5CB5157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F11F5CB6157FFD5E0069CD28 /* Build configuration list for PBXNativeTarget "PasswordcogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F5CB7157FFD5E0069CD28 /* Debug */,
+				F11F5CB8157FFD5E0069CD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F11F5C74157FFD5D0069CD28 /* Project object */;
+}
