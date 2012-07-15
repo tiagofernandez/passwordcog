@@ -234,6 +234,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="passwordField" destination="LYc-9d-W8o" id="sMj-u7-ToT"/>
+                        <outlet property="saveButton" destination="Sw7-N1-5Jt" id="P4n-ZD-8Tc"/>
                         <outlet property="serviceField" destination="7Md-8p-Grr" id="752-34-e22"/>
                         <outlet property="usernameField" destination="A7o-bZ-Y1W" id="p1T-3w-SF7"/>
                     </connections>

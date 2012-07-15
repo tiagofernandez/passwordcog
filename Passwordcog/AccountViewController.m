@@ -1,10 +1,11 @@
 #import "AccountViewController.h"
-#import "BlockAlertView.h"
 #import "CategoryViewController.h"
 #import "NotesViewController.h"
 #import "NSString+NSStringUtils.h"
 
 @interface AccountViewController () <UITextFieldDelegate, CategoryViewControllerDelegate, NotesViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @property (strong, nonatomic) IBOutlet UITextField *serviceField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
@@ -17,6 +18,7 @@
 
 @synthesize delegate = _delegate;
 
+@synthesize saveButton = _saveButton;
 @synthesize serviceField = _serviceField;
 @synthesize usernameField = _usernameField;
 @synthesize passwordField = _passwordField;
@@ -62,35 +64,11 @@
   [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
-- (NSArray *)missingFields
-{
-  NSMutableArray *missingFields = [NSMutableArray arrayWithCapacity:3];
-  
-  if ([self.serviceField.text isEmpty])  [missingFields addObject:@"service"];
-  if ([self.usernameField.text isEmpty]) [missingFields addObject:@"username"];
-  if ([self.passwordField.text isEmpty]) [missingFields addObject:@"password"];
-  
-  return missingFields;
-}
-
 - (IBAction)saveAccount:(id)sender
 {
-  NSArray *missingFields = [self missingFields];
-  
-  if ([missingFields count] == 0) {
-    [self syncToModel];
-    [self.delegate accountSaved:self.account];
-    [self dismissViewController];
-  }
-  else {
-    NSString *errorMessage = [NSString stringWithFormat:@"Please enter the field(s):\n%@.",
-                [missingFields componentsJoinedByString:@", "]];
-    
-    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Missing fields"
-                                                   message:errorMessage];
-    [alert addButtonWithTitle:@"OK" block:nil];
-    [alert show];
-  }
+  [self syncToModel];
+  [self.delegate accountSaved:self.account];
+  [self dismissViewController];
 }
 
 - (IBAction)cancelAccount:(id)sender
@@ -147,6 +125,18 @@
   
   else if (textField == self.passwordField)
     [self.passwordField resignFirstResponder];
+  
+  return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+  BOOL canSave = (range.location > 0 || [string isNotEmpty]) &&
+                 (textField == self.serviceField  || [self.serviceField.text isNotEmpty]) &&
+                 (textField == self.usernameField || [self.usernameField.text isNotEmpty]) &&
+                 (textField == self.passwordField || [self.passwordField.text isNotEmpty]);
+  
+  self.saveButton.enabled = canSave;
   
   return YES;
 }
@@ -223,14 +213,21 @@
 //  self.view.opaque = NO;
 //}
 
+- (void)enableOrDisableSaveButton
+{
+  self.saveButton.enabled = (self.account.uuid != nil);
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   //[self setViewBackground];
+  [self enableOrDisableSaveButton];
 }
 
 - (void)viewDidUnload
 {
+  self.saveButton = nil;
   self.serviceField = nil;
   self.usernameField = nil;
   self.passwordField = nil;
