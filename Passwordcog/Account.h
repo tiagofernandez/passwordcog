@@ -9,4 +9,7 @@
 @property (strong, nonatomic) NSString *category;
 @property (strong, nonatomic) NSString *notes;
 
++ (NSDictionary *)allCategories;
++ (NSDictionary *)allCategoryImages;
+
 @end

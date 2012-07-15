@@ -4,7 +4,7 @@
 @interface AccountListViewController ()
 
 @property (strong, nonatomic) NSMutableDictionary *accounts;
-@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSDictionary *categories;
 
 @end
 
@@ -19,17 +19,18 @@
   if (!_accounts) {
     _accounts = [NSMutableDictionary new];
     
-    for (NSString *category in self.categories)
+    for (NSString *categoryIndex in self.categories) {
+      NSString *category = [self.categories objectForKey:categoryIndex];
       [_accounts setObject:[NSMutableArray new] forKey:category];
+    }
   }
   return _accounts;
 }
 
-- (NSArray *)categories
+- (NSDictionary *)categories
 {
   if (!_categories) {
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
-    _categories = [NSArray arrayWithContentsOfFile:plistPath];
+    _categories = [Account allCategories];
   }
   return _categories;
 }
@@ -39,20 +40,10 @@
 
 - (void)accountSaved:(Account *)account
 {
-  if (account.uuid) {
-    for (NSString *category in self.categories) {
-      NSMutableArray *currentAccounts = [self.accounts objectForKey:category];
-      for (Account *currentAccount in currentAccounts) {
-        if ([currentAccount.uuid isEqualToString:account.uuid])
-          [currentAccounts removeObject:account];
-      }
-    }
-  }
-  else {
+  if (!account.uuid) {
     account.uuid = [NSString uuid];
+    [[self.accounts objectForKey:account.category] addObject:account];
   }
-  
-  [[self.accounts objectForKey:account.category] addObject:account];
   [self.tableView reloadData];
 }
 
@@ -66,7 +57,7 @@
 
 - (NSString *)categoryInSection:(NSInteger)section
 {
-  return [self.categories objectAtIndex:section];
+  return [self.categories objectForKey:[NSString stringWithFormat:@"%d", section]];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

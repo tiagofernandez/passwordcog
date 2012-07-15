@@ -25,7 +25,9 @@
 
 - (Account *)account
 {
-  if (!_account) _account = [Account new];
+  if (!_account) {
+    _account = [Account new];
+  }
   return _account;
 }
 

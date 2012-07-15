@@ -11,8 +11,22 @@
 
 - (NSString *)category
 {
-  if (!_category) _category = @"Internet";
+  if (!_category) {
+    _category = [[Account allCategories] objectForKey:@"5"];
+  }
   return _category;
+}
+
++ (NSDictionary *)allCategories
+{
+  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
+  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
+}
+
++ (NSDictionary *)allCategoryImages
+{
+  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"CategoryImages" ofType:@"plist"];
+  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
 }
 
 @end
