@@ -41,13 +41,11 @@
 		F182845E15B1A91D00BBE2DC /* 38-airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182844C15B1A91D00BBE2DC /* 38-airplane@2x.png */; };
 		F182845F15B1A91D00BBE2DC /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = F182844D15B1A91D00BBE2DC /* 53-house.png */; };
 		F182846015B1A91D00BBE2DC /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182844E15B1A91D00BBE2DC /* 53-house@2x.png */; };
-		F182846115B1A91D00BBE2DC /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = F182844F15B1A91D00BBE2DC /* 90-life-buoy.png */; };
-		F182846215B1A91D00BBE2DC /* 90-life-buoy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845015B1A91D00BBE2DC /* 90-life-buoy@2x.png */; };
 		F182846315B1A91D00BBE2DC /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845115B1A91D00BBE2DC /* 123-id-card.png */; };
 		F182846415B1A91D00BBE2DC /* 123-id-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */; };
 		F182846515B1A91D00BBE2DC /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845315B1A91D00BBE2DC /* 190-bank.png */; };
 		F182846615B1A91D00BBE2DC /* 190-bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845415B1A91D00BBE2DC /* 190-bank@2x.png */; };
-		F191E802158E616C002AA09E /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoryViewController.m */; };
+		F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoriesViewController.m */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
 		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
 		F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF94D1584CF6000CA0FAE /* Account.m */; };
@@ -109,14 +107,12 @@
 		F182844C15B1A91D00BBE2DC /* 38-airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-airplane@2x.png"; sourceTree = "<group>"; };
 		F182844D15B1A91D00BBE2DC /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		F182844E15B1A91D00BBE2DC /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
-		F182844F15B1A91D00BBE2DC /* 90-life-buoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-life-buoy.png"; sourceTree = "<group>"; };
-		F182845015B1A91D00BBE2DC /* 90-life-buoy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-life-buoy@2x.png"; sourceTree = "<group>"; };
 		F182845115B1A91D00BBE2DC /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card.png"; sourceTree = "<group>"; };
 		F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card@2x.png"; sourceTree = "<group>"; };
 		F182845315B1A91D00BBE2DC /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank.png"; sourceTree = "<group>"; };
 		F182845415B1A91D00BBE2DC /* 190-bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank@2x.png"; sourceTree = "<group>"; };
-		F191E800158E616C002AA09E /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
-		F191E801158E616C002AA09E /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		F191E800158E616C002AA09E /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		F191E801158E616C002AA09E /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
 		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
@@ -188,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				F1507E3E1581570800E2C086 /* Account */,
-				F17A29DC1583776300FEEAFF /* Account List */,
 				F1FEF94B1584CF3500CA0FAE /* Model */,
 				F15DEF1F15973BBB000DF5FF /* Settings */,
 				F1FEF9431584C52600CA0FAE /* Utils */,
@@ -251,8 +246,6 @@
 				F182844C15B1A91D00BBE2DC /* 38-airplane@2x.png */,
 				F182844D15B1A91D00BBE2DC /* 53-house.png */,
 				F182844E15B1A91D00BBE2DC /* 53-house@2x.png */,
-				F182844F15B1A91D00BBE2DC /* 90-life-buoy.png */,
-				F182845015B1A91D00BBE2DC /* 90-life-buoy@2x.png */,
 				F182845115B1A91D00BBE2DC /* 123-id-card.png */,
 				F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */,
 				F182845315B1A91D00BBE2DC /* 190-bank.png */,
@@ -266,8 +259,10 @@
 			children = (
 				F1507E3F1581574500E2C086 /* AccountViewController.h */,
 				F1507E401581574500E2C086 /* AccountViewController.m */,
-				F191E800158E616C002AA09E /* CategoryViewController.h */,
-				F191E801158E616C002AA09E /* CategoryViewController.m */,
+				F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */,
+				F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */,
+				F191E800158E616C002AA09E /* CategoriesViewController.h */,
+				F191E801158E616C002AA09E /* CategoriesViewController.m */,
 				F17A29DD1583777700FEEAFF /* NotesViewController.h */,
 				F17A29DE1583777700FEEAFF /* NotesViewController.m */,
 			);
@@ -281,15 +276,6 @@
 				F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		F17A29DC1583776300FEEAFF /* Account List */ = {
-			isa = PBXGroup;
-			children = (
-				F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */,
-				F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */,
-			);
-			name = "Account List";
 			sourceTree = "<group>";
 		};
 		F1FEF9431584C52600CA0FAE /* Utils */ = {
@@ -399,8 +385,6 @@
 				F182845E15B1A91D00BBE2DC /* 38-airplane@2x.png in Resources */,
 				F182845F15B1A91D00BBE2DC /* 53-house.png in Resources */,
 				F182846015B1A91D00BBE2DC /* 53-house@2x.png in Resources */,
-				F182846115B1A91D00BBE2DC /* 90-life-buoy.png in Resources */,
-				F182846215B1A91D00BBE2DC /* 90-life-buoy@2x.png in Resources */,
 				F182846315B1A91D00BBE2DC /* 123-id-card.png in Resources */,
 				F182846415B1A91D00BBE2DC /* 123-id-card@2x.png in Resources */,
 				F182846515B1A91D00BBE2DC /* 190-bank.png in Resources */,
@@ -463,7 +447,7 @@
 				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
 				F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */,
 				F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */,
-				F191E802158E616C002AA09E /* CategoryViewController.m in Sources */,
+				F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */,
 				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

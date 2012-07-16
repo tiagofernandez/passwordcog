@@ -9,24 +9,12 @@
 @synthesize category = _category;
 @synthesize notes = _notes;
 
-- (NSString *)category
+- (id)initWithCategory:(NSString *)category
 {
-  if (!_category) {
-    _category = [[Account allCategories] objectForKey:@"5"];
+  if ((self = [super init])) {
+    self.category = category;
   }
-  return _category;
-}
-
-+ (NSDictionary *)allCategories
-{
-  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
-  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
-}
-
-+ (NSDictionary *)allCategoryImages
-{
-  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"CategoryImages" ofType:@"plist"];
-  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
+  return self;
 }
 
 @end

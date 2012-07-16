@@ -4,4 +4,6 @@
 
 @interface AccountListViewController : UITableViewController <AccountViewControllerDelegate>
 
+@property (strong, nonatomic) NSString *category;
+
 @end

@@ -1,9 +1,8 @@
 #import "AccountViewController.h"
-#import "CategoryViewController.h"
 #import "NotesViewController.h"
 #import "NSString+NSStringUtils.h"
 
-@interface AccountViewController () <UITextFieldDelegate, CategoryViewControllerDelegate, NotesViewControllerDelegate>
+@interface AccountViewController () <UITextFieldDelegate, NotesViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
@@ -25,15 +24,6 @@
 
 @synthesize account = _account;
 
-- (Account *)account
-{
-  if (!_account) {
-    _account = [Account new];
-  }
-  return _account;
-}
-
-
 #pragma mark UI/model sync
 
 - (void)syncToUI
@@ -41,8 +31,6 @@
   self.serviceField.text  = self.account.service;
   self.usernameField.text = self.account.username;
   self.passwordField.text = self.account.password;
-  
-  [self categorySelected:self.account.category];
   [self notesUpdated:self.account.notes];
 }
 
@@ -51,8 +39,6 @@
   self.account.service  = self.serviceField.text;
   self.account.username = self.usernameField.text;
   self.account.password = self.passwordField.text;
-  
-  self.account.category = [self categoryCell].detailTextLabel.text;
   self.account.notes    = [self notesCell].detailTextLabel.text;
 }
 
@@ -77,29 +63,11 @@
 }
 
 
-#pragma mark CategoryViewControllerDelegate
-
-- (UITableViewCell *)categoryCell
-{
-  return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-}
-
-- (void)categorySelected:(NSString *)category
-{
-  self.account.category = category;
-  
-  [self categoryCell].detailTextLabel.text = category;
-  
-  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]]
-                        withRowAnimation:UITableViewRowAnimationNone];
-}
-
-
 #pragma mark NotesViewControllerDelegate
 
 - (UITableViewCell *)notesCell
 {
-  return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
+  return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
 }
 
 - (void)notesUpdated:(NSString *)notes
@@ -108,7 +76,7 @@
   
   [self notesCell].detailTextLabel.text = notes;
   
-  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:1]]
+  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]]
                         withRowAnimation:UITableViewRowAnimationNone];
 }
 
@@ -179,13 +147,8 @@
 {
   [self resignTableViewFirstResponder];
   
-  if ([segue.identifier isEqualToString:@"Category"]) {
-    CategoryViewController *categoryVC = (CategoryViewController *) segue.destinationViewController;
-    [categoryVC setDelegate:self];
-    [categoryVC setCategory:self.account.category];
-  }
-  else if ([segue.identifier isEqualToString:@"Notes"]) {
-    NotesViewController *notesVC = (NotesViewController *) segue.destinationViewController;
+  if ([segue.identifier isEqualToString:@"Notes"]) {
+    NotesViewController *notesVC = segue.destinationViewController;
     [notesVC setDelegate:self];
     [notesVC setNotes:self.account.notes];
   }
@@ -194,10 +157,10 @@
 
 #pragma mark View lifecycle
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
   [self syncToUI];
-  [super viewDidAppear:animated];
+  [super viewWillAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -205,13 +168,6 @@
   [self syncToModel];
   [super viewDidDisappear:animated];
 }
-
-//- (void)setViewBackground
-//{
-//  UIImage *background = [UIImage imageNamed:@"light_gray_noise_background.png"];
-//  self.view.backgroundColor = [UIColor colorWithPatternImage:background];
-//  self.view.opaque = NO;
-//}
 
 - (void)enableOrDisableSaveButton
 {
@@ -221,7 +177,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  //[self setViewBackground];
   [self enableOrDisableSaveButton];
 }
 
@@ -233,6 +188,9 @@
   self.passwordField = nil;
   [super viewDidUnload];
 }
+
+
+#pragma mark Rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

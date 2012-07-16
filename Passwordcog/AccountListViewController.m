@@ -3,36 +3,22 @@
 
 @interface AccountListViewController ()
 
-@property (strong, nonatomic) NSMutableDictionary *accounts;
-@property (strong, nonatomic) NSDictionary *categories;
+@property (strong, nonatomic) NSMutableArray *accounts;
 
 @end
 
 
 @implementation AccountListViewController
 
+@synthesize category = _category;
 @synthesize accounts = _accounts;
-@synthesize categories = _categories;
 
-- (NSMutableDictionary *)accounts
+- (NSMutableArray *)accounts
 {
   if (!_accounts) {
-    _accounts = [NSMutableDictionary new];
-    
-    for (NSString *categoryIndex in self.categories) {
-      NSString *category = [self.categories objectForKey:categoryIndex];
-      [_accounts setObject:[NSMutableArray new] forKey:category];
-    }
+    _accounts = [NSMutableArray new];
   }
   return _accounts;
-}
-
-- (NSDictionary *)categories
-{
-  if (!_categories) {
-    _categories = [Account allCategories];
-  }
-  return _categories;
 }
 
 
@@ -42,7 +28,7 @@
 {
   if (!account.uuid) {
     account.uuid = [NSString uuid];
-    [[self.accounts objectForKey:account.category] addObject:account];
+    [self.accounts addObject:account];
   }
   [self.tableView reloadData];
 }
@@ -52,32 +38,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return [self.categories count];
-}
-
-- (NSString *)categoryInSection:(NSInteger)section
-{
-  return [self.categories objectForKey:[NSString stringWithFormat:@"%d", section]];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-  return [self categoryInSection:section];
-}
-
-- (Account *)accountAtIndexPath:(NSIndexPath *)indexPath
-{
-  NSString *category = [self categoryInSection:indexPath.section];
-  NSArray *currentAccounts = [self.accounts objectForKey:category];
-  
-  return ([currentAccounts count] > indexPath.row) ?
-    (Account *) [currentAccounts objectAtIndex:indexPath.row] : nil;
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  NSString *category = [self categoryInSection:section];
-  return [[self.accounts objectForKey:category] count];
+  return [self.accounts count];
+}
+
+- (Account *)accountAtIndexPath:(NSIndexPath *)indexPath
+{
+  return [self.accounts objectAtIndex:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,11 +66,6 @@
   return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return 55;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   [self performSegueWithIdentifier:@"Edit Account" sender:self];
@@ -108,10 +74,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
-    Account *account   = [self accountAtIndexPath:indexPath];
-    NSString *category = [self categoryInSection:indexPath.section];
-    
-    [[self.accounts objectForKey:category] removeObject:account];
+    [self.accounts removeObject:[self accountAtIndexPath:indexPath]];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
   }  
 }
@@ -138,34 +101,25 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-  NSString *previousCategory = [self categoryInSection:sourceIndexPath.section];
-  NSString *newCategory      = [self categoryInSection:destinationIndexPath.section];
-  
   Account *account = [self accountAtIndexPath:sourceIndexPath];
-  [[self.accounts objectForKey:previousCategory] removeObject:account];
-
-  account.category = newCategory;
-  [[self.accounts objectForKey:newCategory] insertObject:account atIndex:destinationIndexPath.row];
+  [self.accounts removeObject:account];
+  [self.accounts insertObject:account atIndex:destinationIndexPath.row];
 }
 
 
 #pragma mark Segue
 
-- (Account *)selectedAccount
-{
-  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-  return [self accountAtIndexPath:indexPath];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  if ([segue.identifier containsString:@"Account"]) {
-    AccountViewController *accountVC = [[segue.destinationViewController viewControllers] objectAtIndex:0];
-    [accountVC setDelegate:self];
-    [accountVC setAccount:[self selectedAccount]];
+  AccountViewController *accountVC = [[segue.destinationViewController viewControllers] objectAtIndex:0];
+  [accountVC setDelegate:self];
+  
+  if ([segue.identifier containsString:@"Create Account"]) {
+    [accountVC setAccount:[[Account alloc] initWithCategory:self.category]];
   }
-  else if ([segue.identifier isEqualToString:@"Settings"]) {
-    // Nothing for now
+  else if ([segue.identifier containsString:@"Edit Account"]) {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [accountVC setAccount:[self accountAtIndexPath:indexPath]];
   }
 }
 
@@ -174,20 +128,19 @@
 
 - (void)setEditButton
 {
-  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+  [self setToolbarItems:[NSArray arrayWithObjects:flexibleSpace, self.editButtonItem, nil]];
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   [self setEditButton];
+  [self setTitle:self.category];
 }
 
-- (void)viewDidUnload
-{
-  // e.g. self.myOutlet = nil;
-  [super viewDidUnload];
-}
+
+#pragma mark Rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

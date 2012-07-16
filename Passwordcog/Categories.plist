@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>0</key>
-    <string>Bank</string>
-    <key>1</key>
-    <string>Email</string>
-    <key>2</key>
-    <string>Health</string>
-    <key>3</key>
-    <string>Home</string>
-    <key>4</key>
-    <string>Insurance</string>
-    <key>5</key>
-    <string>Internet</string>
-    <key>6</key>
-    <string>Membership</string>
-    <key>7</key>
-    <string>Travel</string>
-    <key>8</key>
-    <string>Work</string>
-  </dict>
+<dict>
+	<key>0</key>
+	<string>Bank</string>
+	<key>1</key>
+	<string>Email</string>
+	<key>2</key>
+	<string>Health</string>
+	<key>3</key>
+	<string>Home</string>
+	<key>4</key>
+	<string>Internet</string>
+	<key>5</key>
+	<string>Membership</string>
+	<key>6</key>
+	<string>Travel</string>
+	<key>7</key>
+	<string>Work</string>
+</dict>
 </plist>

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>0</key>
-    <string>190-bank.png</string>
-    <key>1</key>
-    <string>18-envelope.png</string>
-    <key>2</key>
-    <string>29-heart.png</string>
-    <key>3</key>
-    <string>53-house.png</string>
-    <key>4</key>
-    <string>90-life-buoy.png</string>
-    <key>5</key>
-    <string>27-planet.png</string>
-    <key>6</key>
-    <string>123-id-card.png</string>
-    <key>7</key>
-    <string>38-airplane.png</string>
-    <key>8</key>
-    <string>37-suitcase.png</string>
-  </dict>
+<dict>
+	<key>0</key>
+	<string>190-bank.png</string>
+	<key>1</key>
+	<string>18-envelope.png</string>
+	<key>2</key>
+	<string>29-heart.png</string>
+	<key>3</key>
+	<string>53-house.png</string>
+	<key>4</key>
+	<string>27-planet.png</string>
+	<key>5</key>
+	<string>123-id-card.png</string>
+	<key>6</key>
+	<string>38-airplane.png</string>
+	<key>7</key>
+	<string>37-suitcase.png</string>
+</dict>
 </plist>
