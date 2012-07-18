@@ -1,6 +1,22 @@
 #import "CategoriesViewController.h"
 #import "AccountListViewController.h"
 
+#pragma mark Custom UITableViewCell
+
+@interface CategoryImageCell : UITableViewCell
+@end
+
+@implementation CategoryImageCell
+
+- (void)layoutSubviews
+{
+  [super layoutSubviews];
+  self.textLabel.frame = CGRectMake(50, 0, 250, 44);
+}
+
+@end
+
+
 @implementation CategoriesViewController
 
 @synthesize categories = _categories;
@@ -43,7 +59,7 @@
   NSString *categoryIndex = [NSString stringWithFormat:@"%d", indexPath.row];
   
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:TableCell];
-  if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableCell];
+  if (!cell) cell = [[CategoryImageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableCell];
   
   cell.textLabel.text = [self.categories objectForKey:categoryIndex];
   cell.imageView.image = [UIImage imageNamed:[self.categoryImages objectForKey:categoryIndex]];
