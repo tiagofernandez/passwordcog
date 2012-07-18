@@ -46,6 +46,11 @@
   return [self.accounts count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 55;
+}
+
 - (Account *)accountAtIndexPath:(NSIndexPath *)indexPath
 {
   return [self.accounts objectAtIndex:indexPath.row];

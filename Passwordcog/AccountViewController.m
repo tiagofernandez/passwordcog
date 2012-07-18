@@ -4,8 +4,6 @@
 
 @interface AccountViewController () <UITextFieldDelegate, NotesViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-
 @property (strong, nonatomic) IBOutlet UITextField *serviceField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
@@ -17,7 +15,6 @@
 
 @synthesize delegate = _delegate;
 
-@synthesize saveButton = _saveButton;
 @synthesize serviceField = _serviceField;
 @synthesize usernameField = _usernameField;
 @synthesize passwordField = _passwordField;
@@ -104,7 +101,7 @@
                  (textField == self.usernameField || [self.usernameField.text isNotEmpty]) &&
                  (textField == self.passwordField || [self.passwordField.text isNotEmpty]);
   
-  self.saveButton.enabled = canSave;
+  self.navigationItem.rightBarButtonItem.enabled = canSave;
   
   return YES;
 }
@@ -169,20 +166,15 @@
   [super viewDidDisappear:animated];
 }
 
-- (void)enableOrDisableSaveButton
-{
-  self.saveButton.enabled = (self.account.uuid != nil);
-}
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self enableOrDisableSaveButton];
+  self.navigationItem.rightBarButtonItem.enabled = (self.account.uuid != nil);
+  self.navigationItem.title = self.account.service;
 }
 
 - (void)viewDidUnload
 {
-  self.saveButton = nil;
   self.serviceField = nil;
   self.usernameField = nil;
   self.passwordField = nil;
