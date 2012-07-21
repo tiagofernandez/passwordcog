@@ -24,6 +24,9 @@
 		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
 		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
+		F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74715B8959300B6818D /* Model.xcdatamodeld */; };
+		F15BC74D15B8968500B6818D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74C15B8968500B6818D /* Account.m */; };
+		F15BC74F15B8980C00B6818D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15BC74E15B8980C00B6818D /* CoreData.framework */; };
 		F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */; };
 		F162105215B304E1005900B6 /* CategoryImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = F162105115B304E1005900B6 /* CategoryImages.plist */; };
 		F162105515B3058F005900B6 /* 37-suitcase.png in Resources */ = {isa = PBXBuildFile; fileRef = F162105315B3058F005900B6 /* 37-suitcase.png */; };
@@ -48,7 +51,6 @@
 		F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoriesViewController.m */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
 		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
-		F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF94D1584CF6000CA0FAE /* Account.m */; };
 		FB10FC34A00248FF86707204 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,10 @@
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		F1507E401581574500E2C086 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		F15BC74815B8959300B6818D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F15BC74B15B8968500B6818D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		F15BC74C15B8968500B6818D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		F15BC74E15B8980C00B6818D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllerViewController.h; sourceTree = "<group>"; };
 		F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerViewController.m; sourceTree = "<group>"; };
 		F162105115B304E1005900B6 /* CategoryImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoryImages.plist; sourceTree = "<group>"; };
@@ -116,8 +122,6 @@
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
 		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
-		F1FEF94C1584CF6000CA0FAE /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		F1FEF94D1584CF6000CA0FAE /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15BC74F15B8980C00B6818D /* CoreData.framework in Frameworks */,
 				F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */,
 				F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */,
 				F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */,
@@ -150,6 +155,7 @@
 		F11F5C72157FFD5D0069CD28 = {
 			isa = PBXGroup;
 			children = (
+				F15BC74E15B8980C00B6818D /* CoreData.framework */,
 				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
 				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
 				F11F5C80157FFD5D0069CD28 /* Frameworks */,
@@ -290,8 +296,9 @@
 		F1FEF94B1584CF3500CA0FAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F1FEF94C1584CF6000CA0FAE /* Account.h */,
-				F1FEF94D1584CF6000CA0FAE /* Account.m */,
+				F15BC74715B8959300B6818D /* Model.xcdatamodeld */,
+				F15BC74B15B8968500B6818D /* Account.h */,
+				F15BC74C15B8968500B6818D /* Account.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -446,9 +453,10 @@
 				F1507E411581574500E2C086 /* AccountViewController.m in Sources */,
 				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
 				F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */,
-				F1FEF94E1584CF6000CA0FAE /* Account.m in Sources */,
 				F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */,
 				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
+				F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */,
+				F15BC74D15B8968500B6818D /* Account.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +664,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F15BC74715B8959300B6818D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F15BC74815B8959300B6818D /* Model.xcdatamodel */,
+			);
+			currentVersion = F15BC74815B8959300B6818D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F11F5C74157FFD5D0069CD28 /* Project object */;
 }

@@ -1,5 +1,7 @@
 PODS:
   - BlockAlertsAnd-ActionSheets (1.0.0)
+  - MagicalRecord (2.0.3)
 
 DEPENDENCIES:
   - BlockAlertsAnd-ActionSheets (~> 1.0.0)
+  - MagicalRecord (~> 2.0.3)

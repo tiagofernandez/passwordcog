@@ -1,14 +1,17 @@
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Account : NSObject
+@interface Account : NSManagedObject
 
-@property (strong, nonatomic) NSString *uuid;
-@property (strong, nonatomic) NSString *service;
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
-@property (strong, nonatomic) NSString *category;
-@property (strong, nonatomic) NSString *notes;
+@property (nonatomic, retain) NSString * uuid;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * username;
+@property (nonatomic, retain) NSString * password;
+@property (nonatomic, retain) NSString * category;
+@property (nonatomic, retain) NSString * notes;
+@property (nonatomic, retain) NSString * index;
 
-- (id)initWithCategory:(NSString *)category;
++ (NSArray *)allAccountsInCategory:(NSString *)category;
++ (NSString *)totalOfAccountsInCategory:(NSString *)category;
 
 @end

@@ -2,19 +2,27 @@
 
 @implementation Account
 
-@synthesize uuid = _uuid;
-@synthesize service = _service;
-@synthesize username = _username;
-@synthesize password = _password;
-@synthesize category = _category;
-@synthesize notes = _notes;
+@dynamic uuid;
+@dynamic name;
+@dynamic username;
+@dynamic password;
+@dynamic category;
+@dynamic notes;
+@dynamic index;
 
-- (id)initWithCategory:(NSString *)category
++ (NSMutableArray *)allAccountsInCategory:(NSString *)category
 {
-  if ((self = [super init])) {
-    self.category = category;
-  }
-  return self;
+  return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
+                                                       withValue:category
+                                                      andOrderBy:@"index"
+                                                       ascending:YES]];
+}
+
++ (NSString *)totalOfAccountsInCategory:(NSString *)category
+{
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
+  NSInteger count = [Account countOfEntitiesWithPredicate:predicate];
+  return [NSString stringWithFormat:@"%d", count];
 }
 
 @end

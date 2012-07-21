@@ -13,10 +13,17 @@
 @synthesize category = _category;
 @synthesize accounts = _accounts;
 
+- (void)refreshAccounts
+{
+  [_accounts removeAllObjects];
+  [_accounts addObjectsFromArray:[Account allAccountsInCategory:self.category]];
+}
+
 - (NSMutableArray *)accounts
 {
   if (!_accounts) {
     _accounts = [NSMutableArray new];
+    [self refreshAccounts];
   }
   return _accounts;
 }
@@ -26,8 +33,7 @@
 
 - (void)accountSaved:(Account *)account
 {
-  if (!account.uuid) {
-    account.uuid = [NSString uuid];
+  if (![self.accounts containsObject:account]) {
     [self.accounts addObject:account];
   }
   [self.tableView reloadData];
@@ -65,7 +71,7 @@
   
   Account *account = [self accountAtIndexPath:indexPath];
   
-  cell.textLabel.text = account.service;
+  cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
   cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", account.username, account.password];
   
   return cell;
@@ -79,7 +85,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
-    [self.accounts removeObject:[self accountAtIndexPath:indexPath]];
+    
+    Account *account = [self accountAtIndexPath:indexPath];
+    [account deleteEntity];
+    
+    [[NSManagedObjectContext contextForCurrentThread] save];
+    
+    [self.accounts removeObject:account];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
   }  
 }
@@ -104,11 +116,23 @@
   return YES;
 }
 
+- (void)refreshIndices
+{
+  for (int index = 0; index < [self.accounts count]; index++) {
+    Account *account = [self.accounts objectAtIndex:index];
+    account.index = [NSString stringWithFormat:@"%d", index];
+  }
+  [[NSManagedObjectContext contextForCurrentThread] save];
+}
+
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-  Account *account = [self accountAtIndexPath:sourceIndexPath];
-  [self.accounts removeObject:account];
-  [self.accounts insertObject:account atIndex:destinationIndexPath.row];
+  Account *sourceAccount = [self accountAtIndexPath:sourceIndexPath];
+  
+  [self.accounts removeObject:sourceAccount];
+  [self.accounts insertObject:sourceAccount atIndex:destinationIndexPath.row];
+  
+  [self refreshIndices];
 }
 
 
@@ -118,11 +142,9 @@
 {
   AccountViewController *accountVC = [[segue.destinationViewController viewControllers] objectAtIndex:0];
   [accountVC setDelegate:self];
+  [accountVC setCategory:self.category];
   
-  if ([segue.identifier containsString:@"Create Account"]) {
-    [accountVC setAccount:[[Account alloc] initWithCategory:self.category]];
-  }
-  else if ([segue.identifier containsString:@"Edit Account"]) {
+  if ([segue.identifier containsString:@"Edit Account"]) {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [accountVC setAccount:[self accountAtIndexPath:indexPath]];
   }

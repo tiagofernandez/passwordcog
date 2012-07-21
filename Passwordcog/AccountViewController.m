@@ -4,7 +4,9 @@
 
 @interface AccountViewController () <UITextFieldDelegate, NotesViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *serviceField;
+@property (nonatomic) BOOL syncedFromModel;
+
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
@@ -15,28 +17,18 @@
 
 @synthesize delegate = _delegate;
 
-@synthesize serviceField = _serviceField;
+@synthesize syncedFromModel = _syncedFromModel;
+
+@synthesize category = _category;
+@synthesize account = _account;
+
+@synthesize nameField = _nameField;
 @synthesize usernameField = _usernameField;
 @synthesize passwordField = _passwordField;
 
-@synthesize account = _account;
-
-#pragma mark UI/model sync
-
-- (void)syncToUI
+- (void)setAccount:(Account *)account
 {
-  self.serviceField.text  = self.account.service;
-  self.usernameField.text = self.account.username;
-  self.passwordField.text = self.account.password;
-  [self notesUpdated:self.account.notes];
-}
-
-- (void)syncToModel
-{
-  self.account.service  = self.serviceField.text;
-  self.account.username = self.usernameField.text;
-  self.account.password = self.passwordField.text;
-  self.account.notes    = [self notesCell].detailTextLabel.text;
+  _account = account;
 }
 
 
@@ -49,8 +41,18 @@
 
 - (IBAction)saveAccount:(id)sender
 {
-  [self syncToModel];
-  [self.delegate accountSaved:self.account];
+  Account *account = (self.account) ? self.account : [Account createEntity];
+  
+  account.name     = self.nameField.text;
+  account.username = self.usernameField.text;
+  account.password = self.passwordField.text;
+  account.category = self.category;
+  account.notes    = [self notesCell].detailTextLabel.text;
+  account.index    = [Account totalOfAccountsInCategory:self.category];
+  
+  [[NSManagedObjectContext contextForCurrentThread] save];
+  
+  [self.delegate accountSaved:account];
   [self dismissViewController];
 }
 
@@ -69,8 +71,6 @@
 
 - (void)notesUpdated:(NSString *)notes
 {
-  self.account.notes = notes;
-  
   [self notesCell].detailTextLabel.text = notes;
   
   [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]]
@@ -82,7 +82,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-  if (textField == self.serviceField)
+  if (textField == self.nameField)
     [self.usernameField becomeFirstResponder];
   
   else if (textField == self.usernameField)
@@ -97,13 +97,21 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
   BOOL canSave = (range.location > 0 || [string isNotEmpty]) &&
-                 (textField == self.serviceField  || [self.serviceField.text isNotEmpty]) &&
+                 (textField == self.nameField  || [self.nameField.text isNotEmpty]) &&
                  (textField == self.usernameField || [self.usernameField.text isNotEmpty]) &&
                  (textField == self.passwordField || [self.passwordField.text isNotEmpty]);
   
   self.navigationItem.rightBarButtonItem.enabled = canSave;
   
   return YES;
+}
+
+
+#pragma mark UITableViewDataSource
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+  return (section == 0) ? self.category : nil;
 }
 
 
@@ -132,7 +140,7 @@
 {
   UIView *touchView = ((UITouch *) [[event allTouches] anyObject]).view;
   
-  [self textField:self.serviceField resignFirstResponderForView:touchView];
+  [self textField:self.nameField resignFirstResponderForView:touchView];
   [self textField:self.usernameField resignFirstResponderForView:touchView];
   [self textField:self.passwordField resignFirstResponderForView:touchView];
 }
@@ -147,35 +155,53 @@
   if ([segue.identifier isEqualToString:@"Notes"]) {
     NotesViewController *notesVC = segue.destinationViewController;
     [notesVC setDelegate:self];
-    [notesVC setNotes:self.account.notes];
+    [notesVC setNotes:[self notesCell].detailTextLabel.text];
   }
 }
 
 
 #pragma mark View lifecycle
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)syncFromModel
 {
-  [self syncToUI];
-  [super viewWillAppear:animated];
+  if (!self.syncedFromModel) {
+    
+    self.nameField.text     = self.account.name;
+    self.usernameField.text = self.account.username;
+    self.passwordField.text = self.account.password;
+    
+    [self notesCell].detailTextLabel.text = self.account.notes;
+    
+    self.syncedFromModel = YES;
+  }
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)enableOrDisableSaveButton
 {
-  [self syncToModel];
-  [super viewDidDisappear:animated];
+  self.navigationItem.rightBarButtonItem.enabled = (self.account != nil);
+}
+
+- (void)setNavigationBarTitle
+{
+  self.navigationItem.title = self.account.name;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  [self syncFromModel];
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.navigationItem.rightBarButtonItem.enabled = (self.account.uuid != nil);
-  self.navigationItem.title = self.account.service;
+  [self setNavigationBarTitle];
+  [self enableOrDisableSaveButton];
 }
 
 - (void)viewDidUnload
 {
-  self.serviceField = nil;
+  self.nameField = nil;
   self.usernameField = nil;
   self.passwordField = nil;
   [super viewDidUnload];

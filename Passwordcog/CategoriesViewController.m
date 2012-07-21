@@ -11,7 +11,7 @@
 - (void)layoutSubviews
 {
   [super layoutSubviews];
-  self.textLabel.frame = CGRectMake(50, 0, 250, 44);
+  self.textLabel.frame = CGRectMake(50, 0, 150, 44);
 }
 
 @end
@@ -56,12 +56,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *TableCell = @"Category Cell";
-  NSString *categoryIndex = [NSString stringWithFormat:@"%d", indexPath.row];
   
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:TableCell];
   if (!cell) cell = [[CategoryImageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableCell];
   
-  cell.textLabel.text = [self.categories objectForKey:categoryIndex];
+  NSString *categoryIndex = [NSString stringWithFormat:@"%d", indexPath.row];
+  NSString *category = [self.categories objectForKey:categoryIndex];
+  
+  cell.textLabel.text = category;
+  cell.detailTextLabel.text = [Account totalOfAccountsInCategory:category];
+  
   cell.imageView.image = [UIImage imageNamed:[self.categoryImages objectForKey:categoryIndex]];
   
   return cell;
@@ -76,6 +80,15 @@
     AccountListViewController *accountListVC = segue.destinationViewController;
     [accountListVC setCategory:sender.textLabel.text];
   }
+}
+
+
+#pragma mark View lifecycle
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  [self.tableView reloadData];
 }
 
 
