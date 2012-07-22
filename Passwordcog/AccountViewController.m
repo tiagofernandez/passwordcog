@@ -183,7 +183,7 @@
 
 - (void)setNavigationBarTitle
 {
-  self.navigationItem.title = self.account.name;
+  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : @"New Account";
 }
 
 - (void)viewWillAppear:(BOOL)animated
