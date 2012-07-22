@@ -51,6 +51,12 @@
 		F182846515B1A91D00BBE2DC /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845315B1A91D00BBE2DC /* 190-bank.png */; };
 		F182846615B1A91D00BBE2DC /* 190-bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845415B1A91D00BBE2DC /* 190-bank@2x.png */; };
 		F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoriesViewController.m */; };
+		F1CE16F015BC14CE0036E5E5 /* 59-info.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EE15BC14CE0036E5E5 /* 59-info.png */; };
+		F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */; };
+		F1CE16F515BC216A0036E5E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16F315BC216A0036E5E5 /* Default.png */; };
+		F1CE16F615BC216A0036E5E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16F415BC216A0036E5E5 /* Default@2x.png */; };
+		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
+		F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
 		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
 		FB10FC34A00248FF86707204 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
@@ -123,6 +129,12 @@
 		F182845415B1A91D00BBE2DC /* 190-bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank@2x.png"; sourceTree = "<group>"; };
 		F191E800158E616C002AA09E /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		F191E801158E616C002AA09E /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		F1CE16EE15BC14CE0036E5E5 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
+		F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
+		F1CE16F315BC216A0036E5E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F1CE16F415BC216A0036E5E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F1CE16FF15BC3A3C0036E5E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
 		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
@@ -161,9 +173,6 @@
 		F11F5C72157FFD5D0069CD28 = {
 			isa = PBXGroup;
 			children = (
-				F14879C115BBE34F00F100D5 /* Security.framework */,
-				F14879BE15BBE34900F100D5 /* AudioToolbox.framework */,
-				F15BC74E15B8980C00B6818D /* CoreData.framework */,
 				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
 				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
 				F11F5C80157FFD5D0069CD28 /* Frameworks */,
@@ -184,6 +193,9 @@
 		F11F5C80157FFD5D0069CD28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F14879C115BBE34F00F100D5 /* Security.framework */,
+				F14879BE15BBE34900F100D5 /* AudioToolbox.framework */,
+				F15BC74E15B8980C00B6818D /* CoreData.framework */,
 				F1FEF9411584B14900CA0FAE /* QuartzCore.framework */,
 				F11F5C81157FFD5D0069CD28 /* UIKit.framework */,
 				F11F5C83157FFD5D0069CD28 /* Foundation.framework */,
@@ -212,6 +224,10 @@
 		F11F5C88157FFD5D0069CD28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1CE16FF15BC3A3C0036E5E5 /* Icon.png */,
+				F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */,
+				F1CE16F315BC216A0036E5E5 /* Default.png */,
+				F1CE16F415BC216A0036E5E5 /* Default@2x.png */,
 				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
 				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
 				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
@@ -260,6 +276,8 @@
 				F182844C15B1A91D00BBE2DC /* 38-airplane@2x.png */,
 				F182844D15B1A91D00BBE2DC /* 53-house.png */,
 				F182844E15B1A91D00BBE2DC /* 53-house@2x.png */,
+				F1CE16EE15BC14CE0036E5E5 /* 59-info.png */,
+				F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */,
 				F182845115B1A91D00BBE2DC /* 123-id-card.png */,
 				F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */,
 				F182845315B1A91D00BBE2DC /* 190-bank.png */,
@@ -407,6 +425,12 @@
 				F162105215B304E1005900B6 /* CategoryImages.plist in Resources */,
 				F162105515B3058F005900B6 /* 37-suitcase.png in Resources */,
 				F162105615B3058F005900B6 /* 37-suitcase@2x.png in Resources */,
+				F1CE16F015BC14CE0036E5E5 /* 59-info.png in Resources */,
+				F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */,
+				F1CE16F515BC216A0036E5E5 /* Default.png in Resources */,
+				F1CE16F615BC216A0036E5E5 /* Default@2x.png in Resources */,
+				F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */,
+				F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

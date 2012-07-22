@@ -45,7 +45,7 @@
   
   account.name     = self.nameField.text;
   account.username = self.usernameField.text;
-  account.password = self.passwordField.text;
+  account.password = self.passwordField.text; // TODO Encrypt password
   account.category = self.category;
   account.notes    = [self notesCell].detailTextLabel.text;
   account.index    = [Account totalOfAccountsInCategory:self.category];

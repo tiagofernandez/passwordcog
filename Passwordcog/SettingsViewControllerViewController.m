@@ -39,10 +39,22 @@
   [self.navigationController pushViewController:passcodeSettingsVC animated:YES];
 }
 
+- (void)rateCellSelected
+{
+  NSString *appId = @"537028187"; // TODO Replace by Passwordcog's app ID
+  
+  NSString* url = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8", appId];
+  
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (indexPath.section == 0 && indexPath.row == 0) {
     [self passcodeCellSelected];
+  }
+  else if (indexPath.section == 1 && indexPath.row == 0) {
+    [self rateCellSelected];
   }
 }
 
