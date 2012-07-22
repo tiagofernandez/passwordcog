@@ -23,6 +23,8 @@
 		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
 		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+		F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879BE15BBE34900F100D5 /* AudioToolbox.framework */; };
+		F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879C115BBE34F00F100D5 /* Security.framework */; };
 		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
 		F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74715B8959300B6818D /* Model.xcdatamodeld */; };
 		F15BC74D15B8968500B6818D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74C15B8968500B6818D /* Account.m */; };
@@ -88,6 +90,8 @@
 		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+		F14879BE15BBE34900F100D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F14879C115BBE34F00F100D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		F1507E401581574500E2C086 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		F15BC74815B8959300B6818D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */,
+				F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */,
 				F15BC74F15B8980C00B6818D /* CoreData.framework in Frameworks */,
 				F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */,
 				F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */,
@@ -155,6 +161,8 @@
 		F11F5C72157FFD5D0069CD28 = {
 			isa = PBXGroup;
 			children = (
+				F14879C115BBE34F00F100D5 /* Security.framework */,
+				F14879BE15BBE34900F100D5 /* AudioToolbox.framework */,
 				F15BC74E15B8980C00B6818D /* CoreData.framework */,
 				F11F5C87157FFD5D0069CD28 /* Passwordcog */,
 				F11F5CA8157FFD5E0069CD28 /* PasswordcogTests */,
@@ -572,6 +580,7 @@
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -587,6 +596,7 @@
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
