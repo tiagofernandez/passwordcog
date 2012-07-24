@@ -71,8 +71,11 @@
   
   Account *account = [self accountAtIndexPath:indexPath];
   
+  NSString *username = [account.username isNotEmpty] ? account.username : @"N/A";
+  NSString *password = [account.password isNotEmpty] ? account.password : @"N/A";
+  
   cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", account.username, account.password];
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", username, password];
   
   return cell;
 }
