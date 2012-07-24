@@ -18,6 +18,14 @@
                                                        ascending:YES]];
 }
 
++ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)category
+{
+  return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
+                                                       withValue:category
+                                                      andOrderBy:@"name"
+                                                       ascending:YES]];
+}
+
 + (NSString *)totalOfAccountsInCategory:(NSString *)category
 {
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];

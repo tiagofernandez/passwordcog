@@ -3,6 +3,8 @@
 
 @interface AccountListViewController ()
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sortButton;
+
 @property (strong, nonatomic) NSMutableArray *accounts;
 
 @end
@@ -10,22 +12,35 @@
 
 @implementation AccountListViewController
 
+@synthesize sortButton = _sortButton;
+
 @synthesize category = _category;
 @synthesize accounts = _accounts;
 
-- (void)refreshAccounts
+- (void)refreshAccountsWithData:(NSArray *)data
 {
-  [_accounts removeAllObjects];
-  [_accounts addObjectsFromArray:[Account allAccountsInCategory:self.category]];
+  [self.accounts removeAllObjects];
+  [self.accounts addObjectsFromArray:data];
 }
 
 - (NSMutableArray *)accounts
 {
   if (!_accounts) {
     _accounts = [NSMutableArray new];
-    [self refreshAccounts];
+    [self refreshAccountsWithData:[Account allAccountsInCategory:self.category]];
   }
   return _accounts;
+}
+
+
+#pragma mark Actions
+
+- (IBAction)sortAccounts:(UIBarButtonItem *)sender
+{
+  [self refreshAccountsWithData:[Account allAccountsInCategorySorted:self.category]];
+  
+  [self.tableView reloadData];
+  [self refreshIndices];
 }
 
 
@@ -156,17 +171,23 @@
 
 #pragma mark View lifecycle
 
-- (void)setEditButton
+- (void)setToolbarItems
 {
   UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-  [self setToolbarItems:[NSArray arrayWithObjects:flexibleSpace, self.editButtonItem, nil]];
+  [self setToolbarItems:[NSArray arrayWithObjects:self.sortButton, flexibleSpace, self.editButtonItem, nil]];
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self setEditButton];
+  [self setToolbarItems];
   [self setTitle:self.category];
+}
+
+- (void)viewDidUnload
+{
+  self.sortButton = nil;
+  [super viewDidUnload];
 }
 
 

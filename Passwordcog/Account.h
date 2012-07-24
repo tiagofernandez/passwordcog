@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString * index;
 
 + (NSArray *)allAccountsInCategory:(NSString *)category;
++ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)category;
+
 + (NSString *)totalOfAccountsInCategory:(NSString *)category;
 
 @end
