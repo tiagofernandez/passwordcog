@@ -95,8 +95,8 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-  BOOL canSave = (range.location > 0 || [string isNotEmpty]) &&
-                 (textField == self.nameField  || [self.nameField.text isNotEmpty]);
+  BOOL canSave = [self.nameField.text isNotEmpty];
+  if (textField == self.nameField) canSave = range.location > 0 || [string isNotEmpty];
   
   self.navigationItem.rightBarButtonItem.enabled = canSave;
   

@@ -182,13 +182,20 @@
 {
   if ([self.accounts count] == 0)
     [self.tableView addSubview:self.emptyAccountListView];
+  else
+    [self.emptyAccountListView removeFromSuperview];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  [self showEmptyAccountListViewIfApplied];
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   [self setToolbarItems];
-  [self showEmptyAccountListViewIfApplied];
   [self setTitle:self.category];
 }
 
