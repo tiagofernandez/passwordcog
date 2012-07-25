@@ -2,6 +2,7 @@
 
 @interface AccountListViewController ()
 
+@property (strong, nonatomic) IBOutlet UIImageView *emptyAccountListView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sortButton;
 
 @property (strong, nonatomic) NSMutableArray *accounts;
@@ -11,6 +12,7 @@
 
 @implementation AccountListViewController
 
+@synthesize emptyAccountListView = _emptyAccountListView;
 @synthesize sortButton = _sortButton;
 
 @synthesize category = _category;
@@ -176,15 +178,23 @@
   [self setToolbarItems:[NSArray arrayWithObjects:self.sortButton, flexibleSpace, self.editButtonItem, nil]];
 }
 
+- (void)showEmptyAccountListViewIfApplied
+{
+  if ([self.accounts count] == 0)
+    [self.tableView addSubview:self.emptyAccountListView];
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   [self setToolbarItems];
+  [self showEmptyAccountListViewIfApplied];
   [self setTitle:self.category];
 }
 
 - (void)viewDidUnload
 {
+  self.emptyAccountListView = nil;
   self.sortButton = nil;
   [super viewDidUnload];
 }
