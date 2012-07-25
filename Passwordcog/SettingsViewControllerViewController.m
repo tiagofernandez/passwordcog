@@ -16,8 +16,6 @@
 
 #pragma mark Actions
 
-// [[KKPasscodeLock sharedLock] isPasscodeRequired]
-
 - (IBAction)done:(id)sender
 {
   [self.navigationController dismissModalViewControllerAnimated:YES];
@@ -41,9 +39,9 @@
 
 - (void)rateCellSelected
 {
-  NSString *appId = @"537028187"; // TODO Replace by Passwordcog's app ID
+  static NSString *AppId = @"537028187"; // TODO Replace by Passwordcog's app ID
   
-  NSString* url = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8", appId];
+  NSString* url = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8", AppId];
   
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }

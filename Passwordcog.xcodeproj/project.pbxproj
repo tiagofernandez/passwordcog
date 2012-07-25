@@ -231,18 +231,18 @@
 		F11F5C88157FFD5D0069CD28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F1CE16FF15BC3A3C0036E5E5 /* Icon.png */,
-				F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */,
-				F1CE16F315BC216A0036E5E5 /* Default.png */,
-				F1CE16F415BC216A0036E5E5 /* Default@2x.png */,
 				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
 				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
+				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
 				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
 				F11F13B71597682700B16DFB /* Categories.plist */,
 				F162105115B304E1005900B6 /* CategoryImages.plist */,
 				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
+				F1CE16FF15BC3A3C0036E5E5 /* Icon.png */,
+				F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */,
+				F1CE16F315BC216A0036E5E5 /* Default.png */,
+				F1CE16F415BC216A0036E5E5 /* Default@2x.png */,
 				F11F5C8D157FFD5D0069CD28 /* main.m */,
-				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
