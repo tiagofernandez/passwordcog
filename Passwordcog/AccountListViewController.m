@@ -88,10 +88,10 @@
   Account *account = [self accountAtIndexPath:indexPath];
   
   NSString *username = [account.username isNotEmpty] ? account.username : @"N/A";
-  NSString *password = account.password ? [Account decryptPassword:account.password] : @"N/A";
+  NSString *password = account.password ? [Account decryptPassword:account.password] : @"";
   
   cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", username, password];
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", username, [password isNotEmpty] ? password : @"N/A"];
   
   return cell;
 }
