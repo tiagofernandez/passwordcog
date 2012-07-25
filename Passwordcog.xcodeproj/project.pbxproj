@@ -23,6 +23,7 @@
 		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
 		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+		F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */; };
 		F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879BE15BBE34900F100D5 /* AudioToolbox.framework */; };
 		F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879C115BBE34F00F100D5 /* Security.framework */; };
 		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
@@ -58,7 +59,7 @@
 		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
 		F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
-		F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */; };
+		F1FEF9461584C54500CA0FAE /* NSString+NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */; };
 		FB10FC34A00248FF86707204 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+		F133A29115C076D100DDE2AF /* NSData+NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSDataAdditions.h"; sourceTree = "<group>"; };
+		F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSDataAdditions.m"; sourceTree = "<group>"; };
 		F14879BE15BBE34900F100D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F14879C115BBE34F00F100D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
@@ -136,8 +139,8 @@
 		F1CE16FF15BC3A3C0036E5E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringUtils.h"; sourceTree = "<group>"; };
-		F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringUtils.m"; sourceTree = "<group>"; };
+		F1FEF9441584C54500CA0FAE /* NSString+NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringAdditions.h"; sourceTree = "<group>"; };
+		F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +316,10 @@
 		F1FEF9431584C52600CA0FAE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F1FEF9441584C54500CA0FAE /* NSString+NSStringUtils.h */,
-				F1FEF9451584C54500CA0FAE /* NSString+NSStringUtils.m */,
+				F133A29115C076D100DDE2AF /* NSData+NSDataAdditions.h */,
+				F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */,
+				F1FEF9441584C54500CA0FAE /* NSString+NSStringAdditions.h */,
+				F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -484,11 +489,12 @@
 				F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */,
 				F1507E411581574500E2C086 /* AccountViewController.m in Sources */,
 				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
-				F1FEF9461584C54500CA0FAE /* NSString+NSStringUtils.m in Sources */,
+				F1FEF9461584C54500CA0FAE /* NSString+NSStringAdditions.m in Sources */,
 				F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */,
 				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
 				F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */,
 				F15BC74D15B8968500B6818D /* Account.m in Sources */,
+				F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +608,10 @@
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -618,6 +628,10 @@
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -1,6 +1,5 @@
 #import "AccountViewController.h"
 #import "NotesViewController.h"
-#import "NSString+NSStringUtils.h"
 
 @interface AccountViewController () <UITextFieldDelegate, NotesViewControllerDelegate>
 
@@ -45,7 +44,7 @@
   
   account.name     = self.nameField.text;
   account.username = self.usernameField.text;
-  account.password = self.passwordField.text; // TODO Encrypt password
+  account.password = [Account encryptPassword:self.passwordField.text];
   account.category = self.category;
   account.notes    = [self notesCell].detailTextLabel.text;
   account.index    = [Account totalOfAccountsInCategory:self.category];
@@ -166,7 +165,7 @@
     
     self.nameField.text     = self.account.name;
     self.usernameField.text = self.account.username;
-    self.passwordField.text = self.account.password;
+    self.passwordField.text = [Account decryptPassword:self.account.password];
     
     [self notesCell].detailTextLabel.text = self.account.notes;
     
