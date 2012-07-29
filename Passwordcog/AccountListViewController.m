@@ -78,6 +78,15 @@
   return [self.accounts objectAtIndex:indexPath.row];
 }
 
+- (NSString *)detailTextForAccount:(Account *)account
+{
+  NSString *username = [account.username isNotEmpty] ? account.username : @"N/A";
+  NSString *password = account.password ? [Account decryptPassword:account.password] : @"";
+  
+  NSString *detailText = [NSString stringWithFormat:@"%@ - %@", username, [password isNotEmpty] ? password : @"N/A"];
+  return [detailText isEqualToString:@"N/A - N/A"] ? account.notes : detailText;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *TableCell = @"Account Cell";
@@ -87,11 +96,8 @@
   
   Account *account = [self accountAtIndexPath:indexPath];
   
-  NSString *username = [account.username isNotEmpty] ? account.username : @"N/A";
-  NSString *password = account.password ? [Account decryptPassword:account.password] : @"";
-  
   cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", username, [password isNotEmpty] ? password : @"N/A"];
+  cell.detailTextLabel.text = [self detailTextForAccount:account];
   
   return cell;
 }
