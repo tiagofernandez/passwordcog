@@ -133,7 +133,7 @@
   [self eraseApplicationData];
   
   BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Data Erased"
-                                                 message:@"All passwords have been destroyed. Your passcode will be turned off now."];
+                                                 message:@"All passwords have been deleted. Passcode lock will be turned off now."];
   
   [alert addButtonWithTitle:@"OK" block:^{
     [self resetPasscode];
