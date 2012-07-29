@@ -93,6 +93,13 @@
   return YES;
 }
 
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+  self.navigationItem.rightBarButtonItem.enabled = NO;
+  
+  return YES;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
   BOOL canSave = [self.nameField.text isNotEmpty];
