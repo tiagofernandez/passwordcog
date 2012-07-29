@@ -32,10 +32,8 @@ static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce8
 
 + (NSMutableArray *)allAccountsInCategorySorted:(NSString *)category
 {
-  return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
-                                                       withValue:category
-                                                      andOrderBy:@"name"
-                                                       ascending:YES]];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category ==[c] %@", category];
+  return [NSMutableArray arrayWithArray:[Account findAllWithPredicate:predicate]];
 }
 
 + (NSString *)totalOfAccountsInCategory:(NSString *)category
