@@ -111,14 +111,6 @@
 }
 
 
-#pragma mark UITableViewDataSource
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-  return (section == 0) ? self.category : nil;
-}
-
-
 #pragma mark UIScrollViewDelegate
 
 - (void)resignTableViewFirstResponder
@@ -187,7 +179,7 @@
 
 - (void)setNavigationBarTitle
 {
-  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : @"New Account";
+  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : self.category;
 }
 
 - (void)viewWillAppear:(BOOL)animated

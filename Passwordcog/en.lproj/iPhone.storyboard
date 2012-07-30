@@ -82,10 +82,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <gestureRecognizers/>
                         <sections>
-                            <tableViewSection footerTitle="Passwords are stored encrypted." id="Rii-k9-4Vt">
+                            <tableViewSection headerTitle="Details" footerTitle="Passwords are stored encrypted." id="Rii-k9-4Vt">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="136" id="rgk-jY-Yvd">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="138"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="135"/>
@@ -100,7 +100,7 @@
                                                         <outlet property="delegate" destination="QUa-90-r15" id="3cg-LU-hsP"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID, username, login, etc" minimumFontSize="17" clearButtonMode="whileEditing" id="A7o-bZ-Y1W">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or ID" minimumFontSize="17" clearButtonMode="whileEditing" id="A7o-bZ-Y1W">
                                                     <rect key="frame" x="10" y="52" width="280" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -109,7 +109,7 @@
                                                         <outlet property="delegate" destination="QUa-90-r15" id="ouQ-Ws-8Fb"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password, PIN, access code, etc" minimumFontSize="17" clearButtonMode="whileEditing" id="LYc-9d-W8o">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password or PIN code" minimumFontSize="17" clearButtonMode="whileEditing" id="LYc-9d-W8o">
                                                     <rect key="frame" x="10" y="91" width="280" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -127,7 +127,7 @@
                             <tableViewSection id="36h-1V-CxD">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" detailTextLabel="isI-lZ-dqL" rowHeight="45" style="IBUITableViewCellStyleValue1" id="gxB-DB-vq2">
-                                        <rect key="frame" x="0.0" y="189" width="320" height="47"/>
+                                        <rect key="frame" x="0.0" y="225" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="44"/>
@@ -352,14 +352,14 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="iCloud Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="RMl-F0-F5W">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="iCloud Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RMl-F0-F5W">
                                                     <rect key="frame" x="11" y="11" width="173" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="NJL-jv-5OC">
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="NJL-jv-5OC">
                                                     <rect key="frame" x="215" y="8" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
