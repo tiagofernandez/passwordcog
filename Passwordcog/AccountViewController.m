@@ -95,7 +95,7 @@
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
-  self.navigationItem.rightBarButtonItem.enabled = NO;
+  if (textField == self.nameField) self.navigationItem.rightBarButtonItem.enabled = NO;
   
   return YES;
 }
