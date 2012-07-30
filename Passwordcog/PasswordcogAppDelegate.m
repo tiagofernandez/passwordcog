@@ -17,7 +17,7 @@
 // Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [MagicalRecord setupCoreDataStackWithStoreNamed:@"Passwordcog.sqlite"];
+  [MagicalRecord setupCoreDataStackWithiCloudContainer:@"6P59Z8EQFE.com.tapcogs.Passwordcog" localStoreNamed:@"Passwordcog.sqlite"];
   [[KKPasscodeLock sharedLock] setDefaultSettings];
   return YES;
 }

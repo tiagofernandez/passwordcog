@@ -3,15 +3,9 @@
 #import "KKPasscodeSettingsViewController.h"
 
 @interface SettingsViewControllerViewController () <KKPasscodeSettingsViewControllerDelegate>
-
-@property (strong, nonatomic) IBOutlet UISwitch *iCloudSync;
-
 @end
 
-
 @implementation SettingsViewControllerViewController
-
-@synthesize iCloudSync = _iCloudSync;
 
 
 #pragma mark Actions
@@ -19,11 +13,6 @@
 - (IBAction)done:(id)sender
 {
   [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-
-- (IBAction)iCloudSwitchChanged:(id)sender
-{
-  
 }
 
 
@@ -39,7 +28,7 @@
 
 - (void)rateCellSelected
 {
-  static NSString *AppId = @"537028187"; // TODO Replace by Passwordcog's app ID
+  static NSString *AppId = @"549240714";
   
   NSString* url = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8", AppId];
   
@@ -77,7 +66,6 @@
 
 - (void)viewDidUnload
 {
-  self.iCloudSync = nil;
   [super viewDidUnload];
 }
 
