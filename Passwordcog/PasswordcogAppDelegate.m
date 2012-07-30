@@ -14,10 +14,23 @@
 
 @synthesize window = _window;
 
+static NSString *iCloudContainer = @"com.tapcogs.Passwordcog";
+static NSString *LocalStoreName = @"Passwordcog.sqlite";
+
+- (BOOL)iCloudAvailable
+{
+  NSFileManager *fileManager = [NSFileManager defaultManager];
+  NSURL *ubiquityURL = [fileManager URLForUbiquityContainerIdentifier:iCloudContainer];
+  return ubiquityURL ? YES : NO;
+}
+
 // Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [MagicalRecord setupCoreDataStackWithiCloudContainer:@"6P59Z8EQFE.com.tapcogs.Passwordcog" localStoreNamed:@"Passwordcog.sqlite"];
+  [self iCloudAvailable]
+    ? [MagicalRecord setupCoreDataStackWithiCloudContainer:iCloudContainer localStoreNamed:LocalStoreName]
+    : [MagicalRecord setupCoreDataStackWithStoreNamed:LocalStoreName];
+  
   [[KKPasscodeLock sharedLock] setDefaultSettings];
   return YES;
 }
@@ -107,17 +120,17 @@
     UINavigationController *passcodeNavigationVC = [[UINavigationController alloc] initWithRootViewController:passcodeVC];
     UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-      passcodeNavigationVC.modalPresentationStyle = UIModalPresentationFormSheet;
-      passcodeNavigationVC.navigationBar.barStyle = UIBarStyleBlack;
-      passcodeNavigationVC.navigationBar.opaque = NO;
-    }
-    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//      passcodeNavigationVC.modalPresentationStyle = UIModalPresentationFormSheet;
+//      passcodeNavigationVC.navigationBar.barStyle = UIBarStyleBlack;
+//      passcodeNavigationVC.navigationBar.opaque = NO;
+//    }
+//    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
       passcodeNavigationVC.navigationBar.tintColor = rootVC.navigationBar.tintColor;
       passcodeNavigationVC.navigationBar.translucent = rootVC.navigationBar.translucent;
       passcodeNavigationVC.navigationBar.opaque = rootVC.navigationBar.opaque;
       passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;    
-    }
+//    }
     [rootVC presentModalViewController:passcodeNavigationVC animated:YES];
   });
 }
