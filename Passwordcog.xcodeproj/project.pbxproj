@@ -219,7 +219,6 @@
 		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
 			isa = PBXGroup;
 			children = (
-				F190882E15C72EF300D2A2F7 /* Passwordcog.entitlements */,
 				F1507E3E1581570800E2C086 /* Account */,
 				F1FEF94B1584CF3500CA0FAE /* Model */,
 				F15DEF1F15973BBB000DF5FF /* Settings */,
@@ -238,6 +237,7 @@
 				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
 				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
 				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
+				F190882E15C72EF300D2A2F7 /* Passwordcog.entitlements */,
 				F11F13B71597682700B16DFB /* Categories.plist */,
 				F162105115B304E1005900B6 /* CategoryImages.plist */,
 				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
@@ -564,6 +564,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -579,6 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "FD57F7C3-6AA3-4CC5-8E52-33B9428BC5DD";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -590,6 +592,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -599,6 +602,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "FD57F7C3-6AA3-4CC5-8E52-33B9428BC5DD";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
