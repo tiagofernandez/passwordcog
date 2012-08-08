@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>0</key>
-	<string>190-bank.png</string>
-	<key>1</key>
 	<string>18-envelope.png</string>
+	<key>1</key>
+	<string>190-bank.png</string>
 	<key>2</key>
 	<string>29-heart.png</string>
 	<key>3</key>

@@ -17,15 +17,6 @@
 @synthesize notesTextView = _notesTextView;
 
 
-#pragma mark Actions
-
-- (IBAction)doneNoting:(id)sender
-{
-  [self.delegate notesUpdated:self.notesTextView.text];
-  [self.navigationController popViewControllerAnimated:YES];
-}
-
-
 #pragma mark Text view
 
 - (void)initNotesTextView
@@ -52,6 +43,13 @@
 
 
 #pragma mark View lifecycle
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+  [self.delegate notesUpdated:self.notesTextView.text];
+  [self.navigationController popViewControllerAnimated:YES];
+  [super viewWillDisappear:animated];
+}
 
 - (void)viewDidLoad
 {

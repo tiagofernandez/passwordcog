@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>0</key>
-	<string>Bank</string>
-	<key>1</key>
 	<string>Email</string>
+	<key>1</key>
+	<string>Finances</string>
 	<key>2</key>
 	<string>Health</string>
 	<key>3</key>
@@ -13,7 +13,7 @@
 	<key>4</key>
 	<string>Internet</string>
 	<key>5</key>
-	<string>Membership</string>
+	<string>Memberships</string>
 	<key>6</key>
 	<string>Travel</string>
 	<key>7</key>
