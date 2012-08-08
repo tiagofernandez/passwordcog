@@ -82,7 +82,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <gestureRecognizers/>
                         <sections>
-                            <tableViewSection headerTitle="Details" footerTitle="Passwords are stored encrypted." id="Rii-k9-4Vt">
+                            <tableViewSection headerTitle="Details" id="Rii-k9-4Vt">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rgk-jY-Yvd">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -149,7 +149,7 @@
                             <tableViewSection id="36h-1V-CxD">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" detailTextLabel="isI-lZ-dqL" rowHeight="45" style="IBUITableViewCellStyleValue1" id="gxB-DB-vq2">
-                                        <rect key="frame" x="0.0" y="221" width="320" height="47"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="44"/>
@@ -467,8 +467,6 @@
         <class className="AccountViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelAccount:"/>
-                <relationship kind="action" name="saveAccount:"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
