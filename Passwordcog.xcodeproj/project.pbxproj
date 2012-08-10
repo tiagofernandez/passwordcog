@@ -615,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				DSTROOT = /tmp/xcodeproj.dst;
@@ -639,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tiago Fernandez";
 				DSTROOT = /tmp/xcodeproj.dst;
