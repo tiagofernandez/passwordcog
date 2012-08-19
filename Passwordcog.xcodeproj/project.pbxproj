@@ -22,6 +22,8 @@
 		F11F5CA5157FFD5E0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
 		F11F5CAD157FFD5E0069CD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11F5CAB157FFD5E0069CD28 /* InfoPlist.strings */; };
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
+		F12F5F5F15E0FCB300BDF7FB /* passwordcog-key.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */; };
+		F12F5F6015E0FCB300BDF7FB /* passwordcog-key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */; };
 		F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */; };
 		F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879BE15BBE34900F100D5 /* AudioToolbox.framework */; };
 		F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879C115BBE34F00F100D5 /* Security.framework */; };
@@ -29,7 +31,7 @@
 		F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74715B8959300B6818D /* Model.xcdatamodeld */; };
 		F15BC74D15B8968500B6818D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = F15BC74C15B8968500B6818D /* Account.m */; };
 		F15BC74F15B8980C00B6818D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15BC74E15B8980C00B6818D /* CoreData.framework */; };
-		F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */; };
+		F15DEF2315973BF6000DF5FF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15DEF2215973BF6000DF5FF /* SettingsViewController.m */; };
 		F162105215B304E1005900B6 /* CategoryImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = F162105115B304E1005900B6 /* CategoryImages.plist */; };
 		F162105515B3058F005900B6 /* 37-suitcase.png in Resources */ = {isa = PBXBuildFile; fileRef = F162105315B3058F005900B6 /* 37-suitcase.png */; };
 		F162105615B3058F005900B6 /* 37-suitcase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F162105415B3058F005900B6 /* 37-suitcase@2x.png */; };
@@ -53,12 +55,13 @@
 		F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoriesViewController.m */; };
 		F195655615C08DF300685080 /* empty_account_list.png in Resources */ = {isa = PBXBuildFile; fileRef = F195655415C08DF300685080 /* empty_account_list.png */; };
 		F195655715C08DF300685080 /* empty_account_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F195655515C08DF300685080 /* empty_account_list@2x.png */; };
+		F19A83A115DB834E006A73FC /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = F19A839F15DB834E006A73FC /* Icon-iPad.png */; };
+		F19A83A215DB834E006A73FC /* Icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F19A83A015DB834E006A73FC /* Icon-iPad@2x.png */; };
+		F19A83AB15DB8B31006A73FC /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19A83AA15DB8B31006A73FC /* iPad.storyboard */; };
 		F1B88D2715C53A5D00E51259 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B88D2515C53A5D00E51259 /* globe.png */; };
 		F1B88D2815C53A5D00E51259 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B88D2615C53A5D00E51259 /* globe@2x.png */; };
 		F1CE16F015BC14CE0036E5E5 /* 59-info.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EE15BC14CE0036E5E5 /* 59-info.png */; };
 		F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */; };
-		F1CE16F515BC216A0036E5E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16F315BC216A0036E5E5 /* Default.png */; };
-		F1CE16F615BC216A0036E5E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16F415BC216A0036E5E5 /* Default@2x.png */; };
 		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
 		F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
@@ -99,6 +102,8 @@
 		F11F5CAC157FFD5E0069CD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F11F5CAE157FFD5E0069CD28 /* PasswordcogTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordcogTests.h; sourceTree = "<group>"; };
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
+		F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key.png"; sourceTree = "<group>"; };
+		F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key@2x.png"; sourceTree = "<group>"; };
 		F133A29115C076D100DDE2AF /* NSData+NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSDataAdditions.h"; sourceTree = "<group>"; };
 		F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSDataAdditions.m"; sourceTree = "<group>"; };
 		F14879BE15BBE34900F100D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -109,8 +114,8 @@
 		F15BC74B15B8968500B6818D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		F15BC74C15B8968500B6818D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		F15BC74E15B8980C00B6818D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllerViewController.h; sourceTree = "<group>"; };
-		F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerViewController.m; sourceTree = "<group>"; };
+		F15DEF2115973BF6000DF5FF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F15DEF2215973BF6000DF5FF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F162105115B304E1005900B6 /* CategoryImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoryImages.plist; sourceTree = "<group>"; };
 		F162105315B3058F005900B6 /* 37-suitcase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37-suitcase.png"; sourceTree = "<group>"; };
 		F162105415B3058F005900B6 /* 37-suitcase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37-suitcase@2x.png"; sourceTree = "<group>"; };
@@ -137,6 +142,9 @@
 		F191E801158E616C002AA09E /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		F195655415C08DF300685080 /* empty_account_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_account_list.png; sourceTree = "<group>"; };
 		F195655515C08DF300685080 /* empty_account_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty_account_list@2x.png"; sourceTree = "<group>"; };
+		F19A839F15DB834E006A73FC /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = SOURCE_ROOT; };
+		F19A83A015DB834E006A73FC /* Icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad@2x.png"; sourceTree = SOURCE_ROOT; };
+		F19A83AA15DB8B31006A73FC /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		F1B88D2515C53A5D00E51259 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		F1B88D2615C53A5D00E51259 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
 		F1CE16EE15BC14CE0036E5E5 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
@@ -224,6 +232,7 @@
 				F15DEF1F15973BBB000DF5FF /* Settings */,
 				F1FEF9431584C52600CA0FAE /* Utils */,
 				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
+				F19A83AA15DB8B31006A73FC /* iPad.storyboard */,
 				F1507E361581537600E2C086 /* Images */,
 				F11F5C88157FFD5D0069CD28 /* Supporting Files */,
 			);
@@ -243,6 +252,8 @@
 				F11F5C8A157FFD5D0069CD28 /* InfoPlist.strings */,
 				F1CE16FF15BC3A3C0036E5E5 /* Icon.png */,
 				F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */,
+				F19A839F15DB834E006A73FC /* Icon-iPad.png */,
+				F19A83A015DB834E006A73FC /* Icon-iPad@2x.png */,
 				F1CE16F315BC216A0036E5E5 /* Default.png */,
 				F1CE16F415BC216A0036E5E5 /* Default@2x.png */,
 				F11F5C8D157FFD5D0069CD28 /* main.m */,
@@ -276,6 +287,8 @@
 				F195655515C08DF300685080 /* empty_account_list@2x.png */,
 				F1B88D2515C53A5D00E51259 /* globe.png */,
 				F1B88D2615C53A5D00E51259 /* globe@2x.png */,
+				F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */,
+				F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */,
 				F182844315B1A91D00BBE2DC /* 18-envelope.png */,
 				F182844415B1A91D00BBE2DC /* 18-envelope@2x.png */,
 				F182844515B1A91D00BBE2DC /* 19-gear.png */,
@@ -318,8 +331,8 @@
 		F15DEF1F15973BBB000DF5FF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F15DEF2115973BF6000DF5FF /* SettingsViewControllerViewController.h */,
-				F15DEF2215973BF6000DF5FF /* SettingsViewControllerViewController.m */,
+				F15DEF2115973BF6000DF5FF /* SettingsViewController.h */,
+				F15DEF2215973BF6000DF5FF /* SettingsViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -442,14 +455,17 @@
 				F162105615B3058F005900B6 /* 37-suitcase@2x.png in Resources */,
 				F1CE16F015BC14CE0036E5E5 /* 59-info.png in Resources */,
 				F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */,
-				F1CE16F515BC216A0036E5E5 /* Default.png in Resources */,
-				F1CE16F615BC216A0036E5E5 /* Default@2x.png in Resources */,
 				F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */,
 				F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */,
 				F195655615C08DF300685080 /* empty_account_list.png in Resources */,
 				F195655715C08DF300685080 /* empty_account_list@2x.png in Resources */,
 				F1B88D2715C53A5D00E51259 /* globe.png in Resources */,
 				F1B88D2815C53A5D00E51259 /* globe@2x.png in Resources */,
+				F19A83A115DB834E006A73FC /* Icon-iPad.png in Resources */,
+				F19A83A215DB834E006A73FC /* Icon-iPad@2x.png in Resources */,
+				F19A83AB15DB8B31006A73FC /* iPad.storyboard in Resources */,
+				F12F5F5F15E0FCB300BDF7FB /* passwordcog-key.png in Resources */,
+				F12F5F6015E0FCB300BDF7FB /* passwordcog-key@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +521,7 @@
 				F17A29DF1583777700FEEAFF /* NotesViewController.m in Sources */,
 				F1FEF9461584C54500CA0FAE /* NSString+NSStringAdditions.m in Sources */,
 				F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */,
-				F15DEF2315973BF6000DF5FF /* SettingsViewControllerViewController.m in Sources */,
+				F15DEF2315973BF6000DF5FF /* SettingsViewController.m in Sources */,
 				F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */,
 				F15BC74D15B8968500B6818D /* Account.m in Sources */,
 				F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */,
@@ -623,6 +639,7 @@
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
@@ -631,7 +648,7 @@
 				PROVISIONING_PROFILE = "0C81D14E-D78E-4323-96A3-7EF8BD17CE90";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C81D14E-D78E-4323-96A3-7EF8BD17CE90";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -648,6 +665,7 @@
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Passwordcog/Passwordcog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
@@ -656,7 +674,7 @@
 				PROVISIONING_PROFILE = "070F3EE9-332C-4C18-A70E-EABC3B8B496E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "070F3EE9-332C-4C18-A70E-EABC3B8B496E";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

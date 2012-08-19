@@ -3,6 +3,9 @@
 @interface AccountListViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *emptyAccountListView;
+@property (strong, nonatomic) IBOutlet UIImageView *passwordKeyView;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sortButton;
 
 @property (strong, nonatomic) NSMutableArray *accounts;
@@ -13,6 +16,9 @@
 @implementation AccountListViewController
 
 @synthesize emptyAccountListView = _emptyAccountListView;
+@synthesize passwordKeyView = _passwordKeyView;
+
+@synthesize addButton = _addButton;
 @synthesize sortButton = _sortButton;
 
 @synthesize category = _category;
@@ -28,9 +34,25 @@
 {
   if (!_accounts) {
     _accounts = [NSMutableArray new];
+    
     [self refreshAccountsWithData:[Account allAccountsInCategory:self.category]];
   }
   return _accounts;
+}
+
+
+#pragma mark Public interface
+
+- (void)reloadWithCategory:(NSString *)category
+{
+  self.category = category;
+  
+  [self setTitle:self.category];
+  [self refreshAccountsWithData:[Account allAccountsInCategory:self.category]];
+  [self showOrHideSubviews];
+  [self enableOrDisableButtons];
+  
+  [self.tableView reloadData];
 }
 
 
@@ -52,6 +74,7 @@
   if (![self.accounts containsObject:account]) {
     [self.accounts addObject:account];
   }
+  [self showOrHideSubviews];
   [self.tableView reloadData];
 }
 
@@ -184,18 +207,36 @@
   [self setToolbarItems:[NSArray arrayWithObjects:self.sortButton, flexibleSpace, self.editButtonItem, nil]];
 }
 
-- (void)showEmptyAccountListViewIfApplied
+- (void)showOrHideSubviews
 {
-  if ([self.accounts count] == 0)
+  [self.passwordKeyView removeFromSuperview];
+  [self.emptyAccountListView removeFromSuperview];
+  
+  if (!self.category) {
+    self.passwordKeyView.center = self.tableView.center;
+    [self.tableView addSubview:self.passwordKeyView];
+  }
+  else if ([self.accounts count] == 0) {
+    CGFloat xPosition = CGRectGetWidth(self.tableView.frame) - CGRectGetWidth(self.emptyAccountListView.frame);
+    self.emptyAccountListView.center = CGPointMake(ceil(xPosition) + 160, 40.0);
     [self.tableView addSubview:self.emptyAccountListView];
-  else
-    [self.emptyAccountListView removeFromSuperview];
+  }
+}
+
+- (void)enableOrDisableButtons
+{
+  BOOL categorySelected = (self.category != nil);
+  
+  self.addButton.enabled      = categorySelected;
+  self.editButtonItem.enabled = categorySelected;
+  self.sortButton.enabled     = categorySelected;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
-  [self showEmptyAccountListViewIfApplied];
+  [self enableOrDisableButtons];
+  [self showOrHideSubviews];
 }
 
 - (void)viewDidLoad
@@ -208,6 +249,8 @@
 - (void)viewDidUnload
 {
   self.emptyAccountListView = nil;
+  self.passwordKeyView = nil;
+  self.addButton = nil;
   self.sortButton = nil;
   [super viewDidUnload];
 }
@@ -217,10 +260,8 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  else
-    return YES;
+  return [PasswordcogAppDelegate userInterfaceIdiomPad];
 }
+
 
 @end

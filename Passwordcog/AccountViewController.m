@@ -8,6 +8,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
+@property (strong, nonatomic) IBOutlet UITextView *notesField;
 
 @end
 
@@ -24,6 +25,7 @@
 @synthesize nameField = _nameField;
 @synthesize usernameField = _usernameField;
 @synthesize passwordField = _passwordField;
+@synthesize notesField = _notesField;
 
 - (void)setAccount:(Account *)account
 {
@@ -46,7 +48,7 @@
   account.username = self.usernameField.text;
   account.password = [Account encryptPassword:self.passwordField.text];
   account.category = self.category;
-  account.notes    = [self notesCell].detailTextLabel.text;
+  account.notes    = [self notesText];
   account.index    = [Account totalOfAccountsInCategory:self.category];
   
   [[NSManagedObjectContext contextForCurrentThread] save];
@@ -62,6 +64,12 @@
 
 
 #pragma mark NotesViewControllerDelegate
+
+- (NSString *)notesText
+{
+  return [PasswordcogAppDelegate userInterfaceIdiomPad]
+    ? self.notesField.text : [self notesCell].detailTextLabel.text;
+}
 
 - (UITableViewCell *)notesCell
 {
@@ -167,6 +175,7 @@
     self.passwordField.text = [Account decryptPassword:self.account.password];
     
     [self notesCell].detailTextLabel.text = self.account.notes;
+    self.notesField.text = self.account.notes;
     
     self.syncedFromModel = YES;
   }
@@ -200,7 +209,17 @@
   self.nameField = nil;
   self.usernameField = nil;
   self.passwordField = nil;
+  self.notesField = nil;
   [super viewDidUnload];
 }
+
+
+#pragma mark Rotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+  return [PasswordcogAppDelegate userInterfaceIdiomPad];
+}
+
 
 @end

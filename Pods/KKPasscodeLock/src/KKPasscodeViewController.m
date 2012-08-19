@@ -43,6 +43,11 @@
 #pragma mark -
 #pragma mark UIViewController
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+  return YES;
+}
+
 - (void)loadView
 {
 	[super loadView];

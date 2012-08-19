@@ -1,11 +1,12 @@
 #import "PasswordcogAppDelegate.h"
 #import "Account.h"
 #import "BlockAlertView.h"
+#import "CategoriesViewController.h"
 #import "KKKeychain.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
 
-@interface PasswordcogAppDelegate () <KKPasscodeViewControllerDelegate>
+@interface PasswordcogAppDelegate () <KKPasscodeViewControllerDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -16,6 +17,12 @@
 
 static NSString *iCloudContainer = @"com.tapcogs.Passwordcog";
 static NSString *LocalStoreName = @"Passwordcog.sqlite";
+
++ (BOOL)userInterfaceIdiomPad
+{
+  return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+  //return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+}
 
 - (BOOL)iCloudAvailable
 {
@@ -38,9 +45,18 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state. Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-  UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
-  [rootVC dismissModalViewControllerAnimated:NO];
-  [rootVC popToRootViewControllerAnimated:NO];
+  if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
+    UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
+    UINavigationController *rootNavVC = [rootVC.viewControllers objectAtIndex:0];
+    
+    CategoriesViewController *categoriesVC = [rootNavVC.viewControllers lastObject];
+    [categoriesVC navigationViewTapped:nil];
+  }
+  else {
+    UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
+    [rootVC dismissModalViewControllerAnimated:NO];
+    [rootVC popToRootViewControllerAnimated:NO];
+  }
 }
 
 // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -67,6 +83,16 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 }
 
 
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 0) {
+		[self presentPasscodeView];
+	}
+}
+
+
 #pragma mark Passcode lock
 
 - (void)resetPasscode
@@ -74,19 +100,36 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   [KKKeychain setString:@"NO" forKey:@"passcode_on"];
 }
 
+- (void)presentPasscodeView
+{
+  KKPasscodeViewController *passcodeVC = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+  passcodeVC.mode = KKPasscodeModeSet;
+  [self showPasscodeViewController:passcodeVC];
+}
+
 - (void)askToSetPasscode
 {
-  BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Passcode"
-                                                 message:@"Would you like to set a passcode now?"];
-  
-  [alert addButtonWithTitle:@"Yes, please" block:^{
-    KKPasscodeViewController *passcodeVC = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
-    passcodeVC.mode = KKPasscodeModeSet;
-    [self showPasscodeViewController:passcodeVC];
-  }];
-  [alert addButtonWithTitle:@"No, thanks" block:^{}];
-  
-  [alert show];
+  // https://github.com/gpambrozio/BlockAlertsAnd-ActionSheets/issues/1
+  if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    [alert setTitle:@"Passcode"];
+    [alert setMessage:@"Would you like to set a passcode?"];
+    [alert setDelegate:self];
+    [alert addButtonWithTitle:@"Yes, please"];
+    [alert addButtonWithTitle:@"No, thanks"];
+    [alert show];
+  }
+  else {
+    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Passcode"
+                                                   message:@"Would you like to set a passcode?"];
+    
+    [alert addButtonWithTitle:@"Yes, please" block:^{
+      [self presentPasscodeView];
+    }];
+    [alert addButtonWithTitle:@"No, thanks" block:^{}];
+    
+    [alert show];
+  }
 }
 
 - (void)checkWhetherAppIsLaunchingForTheFirstTime
@@ -120,17 +163,17 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
     UINavigationController *passcodeNavigationVC = [[UINavigationController alloc] initWithRootViewController:passcodeVC];
     UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
     
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//      passcodeNavigationVC.modalPresentationStyle = UIModalPresentationFormSheet;
-//      passcodeNavigationVC.navigationBar.barStyle = UIBarStyleBlack;
-//      passcodeNavigationVC.navigationBar.opaque = NO;
-//    }
-//    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+    if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
+      passcodeNavigationVC.modalPresentationStyle = UIModalPresentationFormSheet;
+      passcodeNavigationVC.navigationBar.barStyle = UIBarStyleBlack;
+      passcodeNavigationVC.navigationBar.opaque = NO;
+    }
+    else {
       passcodeNavigationVC.navigationBar.tintColor = rootVC.navigationBar.tintColor;
       passcodeNavigationVC.navigationBar.translucent = rootVC.navigationBar.translucent;
       passcodeNavigationVC.navigationBar.opaque = rootVC.navigationBar.opaque;
       passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;    
-//    }
+    }
     [rootVC presentModalViewController:passcodeNavigationVC animated:YES];
   });
 }

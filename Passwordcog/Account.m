@@ -24,10 +24,12 @@ static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce8
 
 + (NSMutableArray *)allAccountsInCategory:(NSString *)category
 {
-  return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
+  if (category)
+    return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
                                                        withValue:category
                                                       andOrderBy:@"index"
                                                        ascending:YES]];
+  else return nil;
 }
 
 + (NSMutableArray *)allAccountsInCategorySorted:(NSString *)category

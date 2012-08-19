@@ -6,4 +6,6 @@
 
 @property (strong, nonatomic) NSString *category;
 
+- (void)reloadWithCategory:(NSString *)category;
+
 @end

@@ -1,11 +1,12 @@
-#import "SettingsViewControllerViewController.h"
+#import "SettingsViewController.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
+#import "CategoriesViewController.h"
 
-@interface SettingsViewControllerViewController () <KKPasscodeSettingsViewControllerDelegate>
+@interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate>
 @end
 
-@implementation SettingsViewControllerViewController
+@implementation SettingsViewController
 
 
 #pragma mark Actions
@@ -21,6 +22,7 @@
 - (void)passcodeCellSelected
 {
   KKPasscodeSettingsViewController *passcodeSettingsVC = [[KKPasscodeSettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+  passcodeSettingsVC.contentSizeForViewInPopover = self.contentSizeForViewInPopover;
   passcodeSettingsVC.delegate = self;
   
   [self.navigationController pushViewController:passcodeSettingsVC animated:YES];
@@ -37,12 +39,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (indexPath.section == 0 && indexPath.row == 0) {
+  if (indexPath.section == 0 && indexPath.row == 0)
     [self passcodeCellSelected];
-  }
-  else if (indexPath.section == 1 && indexPath.row == 0) {
+  
+  else if (indexPath.section == 1 && indexPath.row == 0)
     [self rateCellSelected];
-  }
+}
+
+
+#pragma mark KKPasscodeSettingsViewControllerDelegate
+
+- (void)passcodeLockWillBePresented
+{
+  [[CategoriesViewController staticSettingsPopoverController] dismissPopoverAnimated:YES];
 }
 
 
