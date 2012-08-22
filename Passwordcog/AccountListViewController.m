@@ -103,11 +103,11 @@
 
 - (NSString *)detailTextForAccount:(Account *)account
 {
-  NSString *username = [account.username isNotEmpty] ? account.username : @"N/A";
-  NSString *password = account.password ? [Account decryptPassword:account.password] : @"";
+  NSString *username = [account.usernameText isNotEmpty] ? account.usernameText : @"N/A";
+  NSString *password = [account.passwordText isNotEmpty] ? account.passwordText : @"N/A";
   
-  NSString *detailText = [NSString stringWithFormat:@"%@ - %@", username, [password isNotEmpty] ? password : @"N/A"];
-  return [detailText isEqualToString:@"N/A - N/A"] ? account.notes : detailText;
+  NSString *detailText = [NSString stringWithFormat:@"%@ - %@", username, password];
+  return [detailText isEqualToString:@"N/A - N/A"] ? account.notesText : detailText;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

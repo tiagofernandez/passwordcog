@@ -44,12 +44,12 @@
 {
   Account *account = (self.account) ? self.account : [Account createEntity];
   
-  account.name     = self.nameField.text;
-  account.username = self.usernameField.text;
-  account.password = [Account encryptPassword:self.passwordField.text];
-  account.category = self.category;
-  account.notes    = [self notesText];
-  account.index    = [Account totalOfAccountsInCategory:self.category];
+  account.name         = self.nameField.text;
+  account.usernameText = self.usernameField.text;
+  account.passwordText = self.passwordField.text;
+  account.category     = self.category;
+  account.notesText    = [self notesText];
+  account.index        = [Account totalOfAccountsInCategory:self.category];
   
   [[NSManagedObjectContext contextForCurrentThread] save];
   
@@ -171,11 +171,11 @@
   if (!self.syncedFromModel) {
     
     self.nameField.text     = self.account.name;
-    self.usernameField.text = self.account.username;
-    self.passwordField.text = [Account decryptPassword:self.account.password];
+    self.usernameField.text = self.account.usernameText;
+    self.passwordField.text = self.account.passwordText;
     
-    [self notesCell].detailTextLabel.text = self.account.notes;
-    self.notesField.text = self.account.notes;
+    [self notesCell].detailTextLabel.text = self.account.notesText;
+    self.notesField.text = self.account.notesText;
     
     self.syncedFromModel = YES;
   }

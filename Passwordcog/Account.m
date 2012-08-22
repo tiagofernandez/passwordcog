@@ -10,17 +10,41 @@
 @dynamic notes;
 @dynamic index;
 
-static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce819f5a98ce19717a5d91dedca317";
 
-+ (NSData *)encryptPassword:(NSString *)plaintext
+#pragma mark - Helpers
+
+- (NSString *)usernameText
 {
-  return [plaintext encryptWithKey:PasswordEncryptionKey];
+  return [Account decrypt:self.username];
 }
 
-+ (NSString *)decryptPassword:(NSData *)ciphertext
+- (void)setUsernameText:(NSString *)username
 {
-  return [ciphertext decryptWithKey:PasswordEncryptionKey];
+  self.username = [Account encrypt:username];
 }
+
+- (NSString *)passwordText
+{
+  return [Account decrypt:self.password];
+}
+
+- (void)setPasswordText:(NSString *)password
+{
+  self.password = [Account encrypt:password];
+}
+
+- (NSString *)notesText
+{
+  return [Account decrypt:self.notes];
+}
+
+- (void)setNotesText:(NSString *)notes
+{
+  self.notes = [Account encrypt:notes];
+}
+
+
+#pragma mark - Querying
 
 + (NSMutableArray *)allAccountsInCategory:(NSString *)category
 {
@@ -49,5 +73,21 @@ static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce8
   NSInteger count = [Account countOfEntitiesWithPredicate:predicate];
   return [NSString stringWithFormat:@"%d", count];
 }
+
+
+#pragma mark - Encryption/decryption
+
+static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce819f5a98ce19717a5d91dedca317";
+
++ (NSData *)encrypt:(NSString *)plaintext
+{
+  return [plaintext encryptWithKey:PasswordEncryptionKey];
+}
+
++ (NSString *)decrypt:(NSData *)ciphertext
+{
+  return [ciphertext decryptWithKey:PasswordEncryptionKey];
+}
+
 
 @end
