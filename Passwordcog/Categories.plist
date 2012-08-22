@@ -3,20 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>0</key>
-	<string>Email</string>
+	<string>Education</string>
 	<key>1</key>
-	<string>Finances</string>
+	<string>Email</string>
 	<key>2</key>
-	<string>Health</string>
+	<string>Entertainment</string>
 	<key>3</key>
-	<string>Home</string>
+	<string>Finance</string>
 	<key>4</key>
-	<string>Internet</string>
+	<string>Home</string>
 	<key>5</key>
-	<string>Memberships</string>
+	<string>Internet</string>
 	<key>6</key>
-	<string>Travel</string>
+	<string>Medical</string>
 	<key>7</key>
+	<string>Membership</string>
+	<key>8</key>
+	<string>Travel</string>
+	<key>9</key>
 	<string>Work</string>
 </dict>
 </plist>
