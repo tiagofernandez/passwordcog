@@ -7,6 +7,4 @@
 
 - (IBAction)navigationViewTapped:(UITapGestureRecognizer *)sender;
 
-+ (UIPopoverController *)staticSettingsPopoverController;
-
 @end

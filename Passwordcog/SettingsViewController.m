@@ -1,12 +1,13 @@
 #import "SettingsViewController.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
-#import "CategoriesViewController.h"
 
 @interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate>
 @end
 
 @implementation SettingsViewController
+
+@synthesize customPopoverController = _customPopoverController;
 
 
 #pragma mark Actions
@@ -51,7 +52,7 @@
 
 - (void)passcodeLockWillBePresented
 {
-  [[CategoriesViewController staticSettingsPopoverController] dismissPopoverAnimated:YES];
+  [self.customPopoverController dismissPopoverAnimated:YES];
 }
 
 

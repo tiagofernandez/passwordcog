@@ -83,8 +83,6 @@
 
 #pragma mark Segue
 
-static UIPopoverController *StaticSettingsPopoverController;
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender
 {
   if ([segue.identifier isEqualToString:@"Account List"]) {
@@ -94,18 +92,14 @@ static UIPopoverController *StaticSettingsPopoverController;
   else if ([segue.identifier isEqualToString:@"Settings"]) {
     
     if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
-      UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
+      UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*) segue;
       self.settingsPopoverController = popoverSegue.popoverController;
       
-      // FIXME Find a way to get a reference to SettingsViewController from the segue
-      StaticSettingsPopoverController = self.settingsPopoverController;
+      UINavigationController *contentNC = (UINavigationController *) self.settingsPopoverController.contentViewController;
+      SettingsViewController *settingsVC = [contentNC.viewControllers lastObject];
+      settingsVC.customPopoverController = popoverSegue.popoverController;
     }
   }
-}
-
-+ (UIPopoverController *)staticSettingsPopoverController
-{
-  return StaticSettingsPopoverController;
 }
 
 
