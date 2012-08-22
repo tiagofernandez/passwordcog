@@ -212,15 +212,18 @@
   [self.passwordKeyView removeFromSuperview];
   [self.emptyAccountListView removeFromSuperview];
   
+  BOOL emptyAccounts = [self.accounts count] == 0;
+  
   if (!self.category) {
     self.passwordKeyView.center = self.tableView.center;
     [self.tableView addSubview:self.passwordKeyView];
   }
-  else if ([self.accounts count] == 0) {
+  else if (emptyAccounts) {
     CGFloat xPosition = CGRectGetWidth(self.tableView.frame) - CGRectGetWidth(self.emptyAccountListView.frame);
     self.emptyAccountListView.center = CGPointMake(ceil(xPosition) + 160, 40.0);
     [self.tableView addSubview:self.emptyAccountListView];
   }
+  self.tableView.bounces = !emptyAccounts;
 }
 
 - (void)enableOrDisableButtons
