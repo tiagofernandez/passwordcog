@@ -19,7 +19,7 @@
 
 @synthesize syncedFromModel = _syncedFromModel;
 
-@synthesize category = _category;
+@synthesize categoryName = _categoryName;
 @synthesize account = _account;
 
 @synthesize nameField = _nameField;
@@ -47,9 +47,9 @@
   account.name         = self.nameField.text;
   account.usernameText = self.usernameField.text;
   account.passwordText = self.passwordField.text;
-  account.category     = self.category;
+  account.categoryText = self.categoryName;
   account.notesText    = [self notesText];
-  account.index        = [Account totalOfAccountsInCategory:self.category];
+  account.index        = [Account totalOfAccountsInCategory:self.categoryName];
   
   [[NSManagedObjectContext contextForCurrentThread] save];
   
@@ -188,7 +188,7 @@
 
 - (void)setNavigationBarTitle
 {
-  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : self.category;
+  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : self.categoryName;
 }
 
 - (void)viewWillAppear:(BOOL)animated

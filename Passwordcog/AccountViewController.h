@@ -11,9 +11,9 @@
 
 @interface AccountViewController : UITableViewController
 
-@property (weak, nonatomic) NSString *category;
-@property (weak, nonatomic) Account *account;
-
 @property (weak, nonatomic) id<AccountViewControllerDelegate> delegate;
+
+@property (weak, nonatomic) NSString *categoryName;
+@property (weak, nonatomic) Account *account;
 
 @end

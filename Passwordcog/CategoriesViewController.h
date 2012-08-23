@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 
-@interface CategoriesViewController : UITableViewController <UISplitViewControllerDelegate>
+#import "AccountListViewController.h"
+
+@interface CategoriesViewController : UITableViewController <UISplitViewControllerDelegate, AccountListViewControllerDelegate>
 
 @property (strong, nonatomic) NSDictionary *categories;
 @property (strong, nonatomic) NSDictionary *categoryImages;

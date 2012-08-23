@@ -35,8 +35,7 @@
 - (NSDictionary *)categories
 {
   if (!_categories) {
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
-    _categories = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    _categories = [Category allCategoryNames];
   }
   return _categories;
 }
@@ -44,8 +43,7 @@
 - (NSDictionary *)categoryImages
 {
   if (!_categoryImages) {
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"CategoryImages" ofType:@"plist"];
-    _categoryImages = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    _categoryImages = [Category allCategoryImages];
   }
   return _categoryImages;
 }
@@ -77,7 +75,17 @@
 - (AccountListViewController *)accountListViewController
 {
   UINavigationController *detailsVC = [self.splitViewController.viewControllers lastObject];
-  return [detailsVC.viewControllers lastObject];
+  AccountListViewController *accountListVC = [detailsVC.viewControllers lastObject];
+  accountListVC.delegate = self;
+  return accountListVC;
+}
+
+
+#pragma mark AccountListViewControllerDelegate
+
+- (void)categoryModified:(NSString *)categoryName
+{
+  [self.tableView reloadData];
 }
 
 
@@ -87,7 +95,7 @@
 {
   if ([segue.identifier isEqualToString:@"Account List"]) {
     AccountListViewController *accountListVC = segue.destinationViewController;
-    [accountListVC setCategory:sender.textLabel.text];
+    accountListVC.categoryName = sender.textLabel.text;
   }
   else if ([segue.identifier isEqualToString:@"Settings"]) {
     
@@ -149,10 +157,10 @@
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:TableCell];
   if (!cell) cell = [[CategoryImageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableCell];
   
-  NSString *category = [self categoryForIndexPath:indexPath];
+  NSString *categoryName = [self categoryForIndexPath:indexPath];
   
-  cell.textLabel.text = category;
-  cell.detailTextLabel.text = [Account totalOfAccountsInCategory:category];
+  cell.textLabel.text = categoryName;
+  cell.detailTextLabel.text = [Account totalOfAccountsInCategory:categoryName];
   
   cell.imageView.image = [UIImage imageNamed:[self categoryImageForIndexPath:indexPath]];
   

@@ -1,6 +1,5 @@
 #import "PasswordcogAppDelegate.h"
 #import "Account.h"
-#import "BlockAlertView.h"
 #import "CategoriesViewController.h"
 #import "KKKeychain.h"
 #import "KKPasscodeLock.h"
@@ -38,7 +37,9 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
     ? [MagicalRecord setupCoreDataStackWithiCloudContainer:iCloudContainer localStoreNamed:LocalStoreName]
     : [MagicalRecord setupCoreDataStackWithStoreNamed:LocalStoreName];
   
+  [Category loadDefaultCategories];
   [[KKPasscodeLock sharedLock] setDefaultSettings];
+  
   return YES;
 }
 							
@@ -72,8 +73,8 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-  [self checkWhetherAppIsLaunchingForTheFirstTime];
-  [self checkWhetherPasscodeIsRequired];
+  [self firstLaunchCheckpoint];
+  [self passcodeCheckpoint];
 }
 
 // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -87,8 +88,8 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	if (buttonIndex == 0) {
-		[self presentPasscodeView];
+	if ([alertView.title isEqualToString:@"Passcode"]) {
+		if (buttonIndex == 0) [self presentPasscodeView];
 	}
 }
 
@@ -109,42 +110,30 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
 - (void)askToSetPasscode
 {
-  // https://github.com/gpambrozio/BlockAlertsAnd-ActionSheets/issues/1
-  if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
-    UIAlertView *alert = [[UIAlertView alloc] init];
-    [alert setTitle:@"Passcode"];
-    [alert setMessage:@"Would you like to set a passcode?"];
-    [alert setDelegate:self];
-    [alert addButtonWithTitle:@"Yes, please"];
-    [alert addButtonWithTitle:@"No, thanks"];
-    [alert show];
-  }
-  else {
-    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Passcode"
-                                                   message:@"Would you like to set a passcode?"];
-    
-    [alert addButtonWithTitle:@"Yes, please" block:^{
-      [self presentPasscodeView];
-    }];
-    [alert addButtonWithTitle:@"No, thanks" block:^{}];
-    
-    [alert show];
-  }
+  UIAlertView *alert = [[UIAlertView alloc] init];
+  [alert setTitle:@"Passcode"];
+  [alert setMessage:@"Would you like to set a passcode?"];
+  [alert setDelegate:self];
+  [alert addButtonWithTitle:@"Yes, please"];
+  [alert addButtonWithTitle:@"No, thanks"];
+  [alert show];
 }
 
-- (void)checkWhetherAppIsLaunchingForTheFirstTime
+- (void)firstLaunchCheckpoint
 {
   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
   
   if (![preferences boolForKey:@"first_launch_over"]) {
+    
     [self resetPasscode];
     [self askToSetPasscode];
+    
     [preferences setBool:YES forKey:@"first_launch_over"];
     [preferences synchronize];
   }
 }
 
-- (void)checkWhetherPasscodeIsRequired
+- (void)passcodeCheckpoint
 {
   if ([[KKPasscodeLock sharedLock] isPasscodeRequired]) {
     
@@ -187,16 +176,16 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 - (void)shouldEraseApplicationData:(KKPasscodeViewController*)viewController
 {
   [self eraseApplicationData];
-  
-  BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Data Erased"
-                                                 message:@"All passwords have been deleted. Passcode lock will be turned off now."];
-  
-  [alert addButtonWithTitle:@"OK" block:^{
-    [self resetPasscode];
-    [viewController dismissModalViewControllerAnimated:YES];
-  }];
 
+  UIAlertView *alert = [[UIAlertView alloc] init];
+  [alert setTitle:@"Data Erased"];
+  [alert setMessage:@"All passwords have been deleted. Passcode will be turned off now."];
+  [alert setDelegate:nil];
+  [alert addButtonWithTitle:@"OK"];
   [alert show];
+  
+  [self resetPasscode];
+  [viewController dismissModalViewControllerAnimated:YES];
 }
 
 @end

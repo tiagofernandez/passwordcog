@@ -15,13 +15,15 @@
 
 @implementation AccountListViewController
 
+@synthesize delegate = _delegate;
+
 @synthesize emptyAccountListView = _emptyAccountListView;
 @synthesize passwordKeyView = _passwordKeyView;
 
 @synthesize addButton = _addButton;
 @synthesize sortButton = _sortButton;
 
-@synthesize category = _category;
+@synthesize categoryName = _categoryName;
 @synthesize accounts = _accounts;
 
 - (void)refreshAccountsWithData:(NSArray *)data
@@ -35,7 +37,7 @@
   if (!_accounts) {
     _accounts = [NSMutableArray new];
     
-    [self refreshAccountsWithData:[Account allAccountsInCategory:self.category]];
+    [self refreshAccountsWithData:[Account allAccountsInCategory:self.categoryName]];
   }
   return _accounts;
 }
@@ -43,12 +45,12 @@
 
 #pragma mark Public interface
 
-- (void)reloadWithCategory:(NSString *)category
+- (void)reloadWithCategory:(NSString *)categoryName
 {
-  self.category = category;
+  self.categoryName = categoryName;
   
-  [self setTitle:self.category];
-  [self refreshAccountsWithData:[Account allAccountsInCategory:self.category]];
+  [self setTitle:self.categoryName];
+  [self refreshAccountsWithData:[Account allAccountsInCategory:self.categoryName]];
   [self showOrHideSubviews];
   [self enableOrDisableButtons];
   
@@ -60,7 +62,7 @@
 
 - (IBAction)sortAccounts:(UIBarButtonItem *)sender
 {
-  [self refreshAccountsWithData:[Account allAccountsInCategorySorted:self.category]];
+  [self refreshAccountsWithData:[Account allAccountsInCategorySorted:self.categoryName]];
   
   [self.tableView reloadData];
   [self refreshIndices];
@@ -76,6 +78,8 @@
   }
   [self showOrHideSubviews];
   [self.tableView reloadData];
+  
+  [self.delegate categoryModified:self.categoryName];
 }
 
 
@@ -103,11 +107,14 @@
 
 - (NSString *)detailTextForAccount:(Account *)account
 {
-  NSString *username = [account.usernameText isNotEmpty] ? account.usernameText : @"N/A";
-  NSString *password = [account.passwordText isNotEmpty] ? account.passwordText : @"N/A";
+  NSString *username = account.usernameText;
+  NSString *password = account.passwordText;
+  
+  username = [username isNotEmpty] ? username : @"N/A";
+  password = [password isNotEmpty] ? password : @"N/A";
   
   NSString *detailText = [NSString stringWithFormat:@"%@ - %@", username, password];
-  return [detailText isEqualToString:@"N/A - N/A"] ? account.notesText : detailText;
+  return [detailText isEqualToString:@"N/A - N/A"] && [account.notesText isNotEmpty]? account.notesText : detailText;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,6 +148,8 @@
     
     [self.accounts removeObject:account];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+    
+    [self.delegate categoryModified:self.categoryName];
   }  
 }
 
@@ -190,7 +199,7 @@
 {
   AccountViewController *accountVC = [[segue.destinationViewController viewControllers] objectAtIndex:0];
   [accountVC setDelegate:self];
-  [accountVC setCategory:self.category];
+  [accountVC setCategoryName:self.categoryName];
   
   if ([segue.identifier containsString:@"Edit Account"]) {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -214,7 +223,7 @@
   
   BOOL emptyAccounts = [self.accounts count] == 0;
   
-  if (!self.category) {
+  if (!self.categoryName) {
     self.passwordKeyView.center = self.tableView.center;
     [self.tableView addSubview:self.passwordKeyView];
   }
@@ -228,7 +237,7 @@
 
 - (void)enableOrDisableButtons
 {
-  BOOL categorySelected = (self.category != nil);
+  BOOL categorySelected = (self.categoryName != nil);
   
   self.addButton.enabled      = categorySelected;
   self.editButtonItem.enabled = categorySelected;
@@ -246,7 +255,7 @@
 {
   [super viewDidLoad];
   [self setToolbarItems];
-  [self setTitle:self.category];
+  [self setTitle:self.categoryName];
 }
 
 - (void)viewDidUnload

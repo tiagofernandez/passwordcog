@@ -1,4 +1,7 @@
-PODS_ROOT = $(SRCROOT)/Pods
-HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/BlockAlertsAnd-ActionSheets" "$(PODS_ROOT)/Headers/KKPasscodeLock" "$(PODS_ROOT)/Headers/MagicalRecord"
+PODS_ROOT = ${SRCROOT}/Pods
+PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -all_load -framework QuartzCore -framework AudioToolbox -framework Security -framework CoreData
+OTHER_LDFLAGS = -ObjC -framework AudioToolbox -framework CoreData -framework QuartzCore -framework Security
+HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/KKPasscodeLock" "${PODS_ROOT}/BuildHeaders/MagicalRecord"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/KKPasscodeLock" "${PODS_ROOT}/Headers/MagicalRecord"

@@ -2,10 +2,21 @@
 
 #import "AccountViewController.h"
 
+@protocol AccountListViewControllerDelegate <NSObject>
+
+@optional
+
+- (void)categoryModified:(NSString *)categoryName;
+
+@end
+
+
 @interface AccountListViewController : UITableViewController <AccountViewControllerDelegate>
 
-@property (strong, nonatomic) NSString *category;
+@property (weak, nonatomic) id<AccountListViewControllerDelegate> delegate;
 
-- (void)reloadWithCategory:(NSString *)category;
+@property (strong, nonatomic) NSString *categoryName;
+
+- (void)reloadWithCategory:(NSString *)categoryName;
 
 @end

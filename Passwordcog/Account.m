@@ -6,12 +6,24 @@
 @dynamic name;
 @dynamic username;
 @dynamic password;
-@dynamic category;
+@dynamic categoryId;
 @dynamic notes;
 @dynamic index;
 
 
 #pragma mark - Helpers
+
+- (NSString *)categoryText
+{
+  Category *category = [Category findFirstByAttribute:@"uuid" withValue:self.categoryId];
+  return category.name;
+}
+
+- (void)setCategoryText:(NSString *)categoryName
+{
+  Category *category = [Category categoryFromName:categoryName];
+  self.categoryId = category.uuid;
+}
 
 - (NSString *)usernameText
 {
@@ -46,19 +58,23 @@
 
 #pragma mark - Querying
 
-+ (NSMutableArray *)allAccountsInCategory:(NSString *)category
++ (NSMutableArray *)allAccountsInCategory:(NSString *)categoryName
 {
-  if (category)
-    return [NSMutableArray arrayWithArray:[Account findByAttribute:@"category"
-                                                       withValue:category
+  if (categoryName) {
+    Category *category = [Category categoryFromName:categoryName];
+    
+    return [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId"
+                                                       withValue:category.uuid
                                                       andOrderBy:@"index"
                                                        ascending:YES]];
+  }
   else return nil;
 }
 
-+ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)category
++ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)categoryName
 {
-  NSArray *accounts = [Account findByAttribute:@"category" withValue:category];
+  Category *category = [Category categoryFromName:categoryName];
+  NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:category.uuid];
 
   NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                          ascending:YES
@@ -67,11 +83,13 @@
   return [NSMutableArray arrayWithArray:[accounts sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]]];
 }
 
-+ (NSString *)totalOfAccountsInCategory:(NSString *)category
++ (NSString *)totalOfAccountsInCategory:(NSString *)categoryName
 {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
-  NSInteger count = [Account countOfEntitiesWithPredicate:predicate];
-  return [NSString stringWithFormat:@"%d", count];
+  Category *category = [Category categoryFromName:categoryName];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", category.uuid];
+  
+  return [NSString stringWithFormat:@"%d", [Account countOfEntitiesWithPredicate:predicate]];
 }
 
 
