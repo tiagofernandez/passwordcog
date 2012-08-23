@@ -17,10 +17,14 @@
 static NSString *iCloudContainer = @"com.tapcogs.Passwordcog";
 static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
++ (BOOL)userInterfaceIdiomPhone
+{
+  return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+}
+
 + (BOOL)userInterfaceIdiomPad
 {
   return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-  //return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 - (BOOL)iCloudAvailable

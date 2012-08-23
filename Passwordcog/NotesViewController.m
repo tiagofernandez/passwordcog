@@ -31,12 +31,11 @@
 {
   CGRect newFrame = self.notesTextView.frame;
   
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-    if (interfaceOrientation == UIInterfaceOrientationPortrait)
-      newFrame = CGRectMake(0, 0, 320, 200);
-    
-    else if (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown)
-      newFrame = CGRectMake(0, 0, 480, 94);
+  if (interfaceOrientation == UIInterfaceOrientationPortrait) {
+    newFrame = CGRectMake(0, 0, 320, 200);
+  }
+  else if (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown) {
+    newFrame = CGRectMake(0, 0, 480, 94);
   }
   self.notesTextView.frame = newFrame;
 }
@@ -65,12 +64,9 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  [self adjustNotesTextViewToInterfaceOrientation:interfaceOrientation];
-  
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  else
-    return YES;
+//  [self adjustNotesTextViewToInterfaceOrientation:interfaceOrientation];
+//  return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+  return NO;
 }
 
 @end
