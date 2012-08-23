@@ -202,7 +202,12 @@
   [accountVC setCategoryName:self.categoryName];
   
   if ([segue.identifier containsString:@"Edit Account"]) {
+
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO animated:NO];
+    
     [accountVC setAccount:[self accountAtIndexPath:indexPath]];
   }
 }
