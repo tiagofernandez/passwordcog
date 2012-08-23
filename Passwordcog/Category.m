@@ -2,7 +2,7 @@
 
 @implementation Category
 
-@dynamic uuid;
+@dynamic uid;
 @dynamic name;
 @dynamic imageName;
 
@@ -19,7 +19,7 @@
   NSDictionary *categories = [NSMutableDictionary dictionaryWithCapacity:[[Category numberOfEntities] intValue]];
   
   for (Category *category in [Category findAll]) {
-    [categories setValue:category.name forKey:category.uuid];
+    [categories setValue:category.name forKey:category.uid];
   }
   return categories;
 }
@@ -29,7 +29,7 @@
   NSDictionary *images = [NSMutableDictionary dictionaryWithCapacity:[[Category numberOfEntities] intValue]];
   
   for (Category *category in [Category findAll]) {
-    [images setValue:category.imageName forKey:category.uuid];
+    [images setValue:category.imageName forKey:category.uid];
   }
   return images;
 }
@@ -50,9 +50,9 @@
     for (int i = 0; i < [categories count]; i++) {
       
       Category *category = [Category createEntity];
-      category.uuid      = [NSString stringWithFormat:@"%d", i];
-      category.name      = [categories objectForKey:category.uuid];
-      category.imageName = [categoryImages objectForKey:category.uuid];
+      category.uid       = [NSString stringWithFormat:@"%d", i];
+      category.name      = [categories objectForKey:category.uid];
+      category.imageName = [categoryImages objectForKey:category.uid];
       
       [[NSManagedObjectContext contextForCurrentThread] save];
     }

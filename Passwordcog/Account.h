@@ -4,7 +4,7 @@
 
 @interface Account : NSManagedObject
 
-@property (nonatomic, retain) NSString *uuid;
+@property (nonatomic, retain) NSString *uid;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSData *username;
 @property (nonatomic, retain) NSData *password;

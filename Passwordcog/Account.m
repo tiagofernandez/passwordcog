@@ -3,7 +3,7 @@
 
 @implementation Account
 
-@dynamic uuid;
+@dynamic uid;
 @dynamic name;
 @dynamic username;
 @dynamic password;
@@ -16,14 +16,14 @@
 
 - (NSString *)categoryText
 {
-  Category *category = [Category findFirstByAttribute:@"uuid" withValue:self.categoryId];
+  Category *category = [Category findFirstByAttribute:@"uid" withValue:self.categoryId];
   return category.name;
 }
 
 - (void)setCategoryText:(NSString *)categoryName
 {
   Category *category = [Category categoryFromName:categoryName];
-  self.categoryId = category.uuid;
+  self.categoryId = category.uid;
 }
 
 - (NSString *)usernameText
@@ -65,7 +65,7 @@
     Category *category = [Category categoryFromName:categoryName];
     
     return [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId"
-                                                       withValue:category.uuid
+                                                       withValue:category.uid
                                                       andOrderBy:@"index"
                                                        ascending:YES]];
   }
@@ -75,7 +75,7 @@
 + (NSMutableArray *)allAccountsInCategorySorted:(NSString *)categoryName
 {
   Category *category = [Category categoryFromName:categoryName];
-  NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:category.uuid];
+  NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:category.uid];
 
   NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                          ascending:YES
@@ -88,7 +88,7 @@
 {
   Category *category = [Category categoryFromName:categoryName];
   
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", category.uuid];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", category.uid];
   
   return [NSString stringWithFormat:@"%d", [Account countOfEntitiesWithPredicate:predicate]];
 }
