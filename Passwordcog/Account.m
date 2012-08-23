@@ -1,4 +1,5 @@
 #import "Account.h"
+#import "MF_Base64Additions.h"
 
 @implementation Account
 
@@ -27,32 +28,32 @@
 
 - (NSString *)usernameText
 {
-  return [Account decrypt:self.username];
+  return [Account decode:self.username];
 }
 
 - (void)setUsernameText:(NSString *)username
 {
-  self.username = [Account encrypt:username];
+  self.username = [Account encode:username];
 }
 
 - (NSString *)passwordText
 {
-  return [Account decrypt:self.password];
+  return [Account decode:self.password];
 }
 
 - (void)setPasswordText:(NSString *)password
 {
-  self.password = [Account encrypt:password];
+  self.password = [Account encode:password];
 }
 
 - (NSString *)notesText
 {
-  return [Account decrypt:self.notes];
+  return [Account decode:self.notes];
 }
 
 - (void)setNotesText:(NSString *)notes
 {
-  self.notes = [Account encrypt:notes];
+  self.notes = [Account encode:notes];
 }
 
 
@@ -93,18 +94,18 @@
 }
 
 
-#pragma mark - Encryption/decryption
+#pragma mark - Encoding/decoding
 
-static NSString *PasswordEncryptionKey = @"fc4546cc213e6a5b972382d05a78979ea8ce819f5a98ce19717a5d91dedca317";
-
-+ (NSData *)encrypt:(NSString *)plaintext
++ (NSData *)encode:(NSString *)plainText
 {
-  return [plaintext encryptWithKey:PasswordEncryptionKey];
+  NSString *base64String = [plainText base64String];
+  return [NSData dataWithBase64String:base64String];
 }
 
-+ (NSString *)decrypt:(NSData *)ciphertext
++ (NSString *)decode:(NSData *)base64Data
 {
-  return [ciphertext decryptWithKey:PasswordEncryptionKey];
+  NSString *base64String = [base64Data base64String];
+  return [NSString stringFromBase64String:base64String];
 }
 
 

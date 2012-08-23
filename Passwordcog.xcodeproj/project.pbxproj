@@ -24,7 +24,6 @@
 		F11F5CB0157FFD5E0069CD28 /* PasswordcogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */; };
 		F12F5F5F15E0FCB300BDF7FB /* passwordcog-key.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */; };
 		F12F5F6015E0FCB300BDF7FB /* passwordcog-key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */; };
-		F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */; };
 		F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879BE15BBE34900F100D5 /* AudioToolbox.framework */; };
 		F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879C115BBE34F00F100D5 /* Security.framework */; };
 		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
@@ -113,8 +112,6 @@
 		F11F5CAF157FFD5E0069CD28 /* PasswordcogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordcogTests.m; sourceTree = "<group>"; };
 		F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key.png"; sourceTree = "<group>"; };
 		F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key@2x.png"; sourceTree = "<group>"; };
-		F133A29115C076D100DDE2AF /* NSData+NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSDataAdditions.h"; sourceTree = "<group>"; };
-		F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSDataAdditions.m"; sourceTree = "<group>"; };
 		F14879BE15BBE34900F100D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F14879C115BBE34F00F100D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
@@ -363,8 +360,6 @@
 		F1FEF9431584C52600CA0FAE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F133A29115C076D100DDE2AF /* NSData+NSDataAdditions.h */,
-				F133A29215C076D100DDE2AF /* NSData+NSDataAdditions.m */,
 				F1FEF9441584C54500CA0FAE /* NSString+NSStringAdditions.h */,
 				F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */,
 			);
@@ -557,7 +552,6 @@
 				F15DEF2315973BF6000DF5FF /* SettingsViewController.m in Sources */,
 				F15BC74915B8959300B6818D /* Model.xcdatamodeld in Sources */,
 				F15BC74D15B8968500B6818D /* Account.m in Sources */,
-				F133A29315C076D100DDE2AF /* NSData+NSDataAdditions.m in Sources */,
 				F1684AF615E5741C00FECE21 /* Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,7 +659,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				DSTROOT = /tmp/xcodeproj.dst;
@@ -691,7 +684,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tiago Fernandez";
 				DSTROOT = /tmp/xcodeproj.dst;

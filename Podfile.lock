@@ -1,7 +1,9 @@
 PODS:
+  - Base64 (1.0.0)
   - KKPasscodeLock (0.1.5)
   - MagicalRecord (2.0.3)
 
 DEPENDENCIES:
+  - Base64 (~> 1.0.0)
   - KKPasscodeLock (~> 0.1.5)
   - MagicalRecord (~> 2.0.3)
