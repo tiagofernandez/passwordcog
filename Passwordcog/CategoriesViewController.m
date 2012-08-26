@@ -67,7 +67,7 @@
     for (int index = 0; index < [self.categories count]; index++) {
       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
       UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-      [cell setSelected:NO animated:YES];
+      [cell setSelected:NO animated:NO];
     }
   }
 }
