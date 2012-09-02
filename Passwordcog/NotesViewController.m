@@ -64,9 +64,9 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-//  [self adjustNotesTextViewToInterfaceOrientation:interfaceOrientation];
-//  return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  return NO;
+  // [self adjustNotesTextViewToInterfaceOrientation:interfaceOrientation];
+  
+  return [PasswordcogAppDelegate userInterfaceIdiomPad] || (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end

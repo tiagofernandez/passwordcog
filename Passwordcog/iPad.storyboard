@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ztt-tK-BVL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ztt-tK-BVL">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -132,6 +132,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Account Cell" textLabel="1CK-O7-ygE" detailTextLabel="KUq-qG-gb3" style="IBUITableViewCellStyleSubtitle" id="GcN-cS-5GK">
                                 <rect key="frame" x="0.0" y="54" width="768" height="45"/>
@@ -476,6 +477,7 @@
                 <relationship kind="action" name="sortAccounts:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="emptyAccountListView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="longPressGesture" candidateClass="UILongPressGestureRecognizer"/>
                 <relationship kind="outlet" name="passwordKeyView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="sortButton" candidateClass="UIBarButtonItem"/>
             </relationships>

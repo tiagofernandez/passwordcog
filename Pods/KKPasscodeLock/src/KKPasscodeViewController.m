@@ -45,7 +45,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+  return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) || (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)loadView

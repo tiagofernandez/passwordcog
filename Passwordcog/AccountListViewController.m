@@ -1,6 +1,15 @@
 #import "AccountListViewController.h"
 
-@interface AccountListViewController ()
+@interface CopyUsernamePasswordGestureRecognizer : UILongPressGestureRecognizer
+@property (strong, nonatomic) Account *targetAccount;
+@end
+
+@implementation CopyUsernamePasswordGestureRecognizer
+@synthesize targetAccount = _targetAccount;
+@end
+
+
+@interface AccountListViewController () <UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *emptyAccountListView;
 @property (strong, nonatomic) IBOutlet UIImageView *passwordKeyView;
@@ -9,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sortButton;
 
 @property (strong, nonatomic) NSMutableArray *accounts;
+
+@property (strong, nonatomic) CopyUsernamePasswordGestureRecognizer *ongoingCopyUsernamePasswordGesture;
 
 @end
 
@@ -25,6 +36,8 @@
 
 @synthesize categoryName = _categoryName;
 @synthesize accounts = _accounts;
+
+@synthesize ongoingCopyUsernamePasswordGesture = _ongoingCopyUsernamePasswordGesture;
 
 - (void)refreshAccountsWithData:(NSArray *)data
 {
@@ -66,6 +79,34 @@
   
   [self.tableView reloadData];
   [self refreshIndices];
+}
+
+
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  Account *account = self.ongoingCopyUsernamePasswordGesture.targetAccount;
+  
+  if (buttonIndex == 0)
+    [[UIPasteboard generalPasteboard] setString:account.usernameText];
+  
+  else if (buttonIndex == 1)
+    [[UIPasteboard generalPasteboard] setString:account.passwordText];
+}
+
+- (void)showCopyUsernameOrPasswordSheet:(CopyUsernamePasswordGestureRecognizer *)gesture
+{
+  if (gesture.state == UIGestureRecognizerStateBegan) {
+    UIActionSheet *copyOptionsSheet = [[UIActionSheet alloc] initWithTitle:@"Clipboard"
+                                                                  delegate:self
+                                                         cancelButtonTitle:@"Cancel"
+                                                    destructiveButtonTitle:nil
+                                                         otherButtonTitles:@"Copy username", @"Copy password", nil];
+    
+    self.ongoingCopyUsernamePasswordGesture = gesture;
+    [copyOptionsSheet showFromToolbar:self.navigationController.toolbar];
+  }
 }
 
 
@@ -128,6 +169,13 @@
   
   cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
   cell.detailTextLabel.text = [self detailTextForAccount:account];
+  
+  CopyUsernamePasswordGestureRecognizer *copyUsernamePasswordGesture =
+    [[CopyUsernamePasswordGestureRecognizer alloc] initWithTarget:self action:@selector(showCopyUsernameOrPasswordSheet:)];
+  
+  copyUsernamePasswordGesture.targetAccount = account;
+  
+  [cell addGestureRecognizer:copyUsernamePasswordGesture];
   
   return cell;
 }
@@ -277,7 +325,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  return [PasswordcogAppDelegate userInterfaceIdiomPad];
+  return [PasswordcogAppDelegate userInterfaceIdiomPad] || (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
