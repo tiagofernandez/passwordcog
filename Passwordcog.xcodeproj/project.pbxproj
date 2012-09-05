@@ -660,8 +660,8 @@
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
@@ -673,8 +673,8 @@
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0C81D14E-D78E-4323-96A3-7EF8BD17CE90";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C81D14E-D78E-4323-96A3-7EF8BD17CE90";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -686,8 +686,8 @@
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tiago Fernandez";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
@@ -699,8 +699,8 @@
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "070F3EE9-332C-4C18-A70E-EABC3B8B496E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "070F3EE9-332C-4C18-A70E-EABC3B8B496E";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
