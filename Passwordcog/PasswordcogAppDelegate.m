@@ -14,7 +14,7 @@
 
 @synthesize window = _window;
 
-static NSString *iCloudContainer = @"com.tapcogs.Passwordcog";
+static NSString *iCloudContainer = @"6P59Z8EQFE.com.tapcogs.Passwordcog";
 static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
 + (BOOL)userInterfaceIdiomPhone
