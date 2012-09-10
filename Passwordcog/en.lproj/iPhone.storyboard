@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="aXP-HL-B1K">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -149,7 +148,7 @@
                             </tableViewSection>
                             <tableViewSection id="36h-1V-CxD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" detailTextLabel="isI-lZ-dqL" rowHeight="45" style="IBUITableViewCellStyleValue1" id="gxB-DB-vq2">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" detailTextLabel="isI-lZ-dqL" rowHeight="45" style="IBUITableViewCellStyleValue1" id="gxB-DB-vq2">
                                         <rect key="frame" x="0.0" y="200" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -461,11 +460,8 @@
         <class className="AccountListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountListViewController.h"/>
             <relationships>
-                <relationship kind="action" name="showCopyUsernameOrPasswordSheet:" candidateClass="UILongPressGestureRecognizer"/>
-                <relationship kind="action" name="sortAccounts:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="emptyAccountListView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="longPressGesture" candidateClass="UILongPressGestureRecognizer"/>
                 <relationship kind="outlet" name="passwordKeyView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="sortButton" candidateClass="UIBarButtonItem"/>
             </relationships>
@@ -473,8 +469,6 @@
         <class className="AccountViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelAccount:"/>
-                <relationship kind="action" name="saveAccount:"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="notesField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
@@ -498,9 +492,6 @@
         </class>
         <class className="SettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
