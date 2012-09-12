@@ -21,6 +21,8 @@
 
 @property (strong, nonatomic) CopyUsernamePasswordGestureRecognizer *ongoingCopyUsernamePasswordGesture;
 
+@property (nonatomic, strong) NSTimer *refreshTimer;
+
 @end
 
 
@@ -67,7 +69,7 @@
   [self showOrHideSubviews];
   [self enableOrDisableButtons];
   
-  [self.tableView reloadData];
+  [self refreshView];
 }
 
 
@@ -77,7 +79,7 @@
 {
   [self refreshAccountsWithData:[Account allAccountsInCategorySorted:self.categoryName]];
   
-  [self.tableView reloadData];
+  [self refreshView];
   [self refreshIndices];
 }
 
@@ -118,7 +120,7 @@
     [self.accounts addObject:account];
   }
   [self showOrHideSubviews];
-  [self.tableView reloadData];
+  [self refreshView];
   
   [self.delegate categoryModified:self.categoryName];
 }
@@ -304,9 +306,29 @@
   [self showOrHideSubviews];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  
+  self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                       target:self
+                                                     selector:@selector(refreshView)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+  [self.refreshTimer invalidate];
+  self.refreshTimer = nil;
+  
+  [super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
   [self setToolbarItems];
   [self setTitle:self.categoryName];
 }
@@ -317,7 +339,13 @@
   self.passwordKeyView = nil;
   self.addButton = nil;
   self.sortButton = nil;
+  
   [super viewDidUnload];
+}
+
+- (void)refreshView
+{
+  [self.tableView reloadData];
 }
 
 

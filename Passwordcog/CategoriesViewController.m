@@ -22,6 +22,8 @@
 
 @property (nonatomic, weak) UIPopoverController *settingsPopoverController;
 
+@property (nonatomic, strong) NSTimer *refreshTimer;
+
 @end
 
 
@@ -85,7 +87,7 @@
 
 - (void)categoryModified:(NSString *)categoryName
 {
-  [self.tableView reloadData];
+  [self refreshView];
 }
 
 
@@ -187,6 +189,30 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
+  [self refreshView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  
+  self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                       target:self
+                                                     selector:@selector(refreshView)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+  [self.refreshTimer invalidate];
+  self.refreshTimer = nil;
+  
+  [super viewWillDisappear:animated];
+}
+
+- (void)refreshView
+{
   [self.tableView reloadData];
 }
 
