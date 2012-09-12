@@ -353,7 +353,10 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  return [PasswordcogAppDelegate userInterfaceIdiomPad] || (interfaceOrientation == UIInterfaceOrientationPortrait);
+  if ([PasswordcogAppDelegate userInterfaceIdiomPad])
+    return YES;
+  else
+    return interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 }
 
 
