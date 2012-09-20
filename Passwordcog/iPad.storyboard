@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ztt-tK-BVL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ztt-tK-BVL">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="tOM-vZ-wZa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfo-n9-1vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="gQw-pZ-r58" sceneMemberID="viewController">
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="mo1-GQ-Rgw">
@@ -23,13 +22,13 @@
                         <segue destination="3Tk-zZ-nfa" kind="relationship" relationship="rootViewController" id="1TB-Mp-mys"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfo-n9-1vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="-718"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Da8-MA-YtJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nio-Va-9zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="ztt-tK-BVL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
@@ -37,6 +36,7 @@
                         <segue destination="m8q-Yc-tao" kind="relationship" relationship="detailViewController" id="MyB-HN-iav"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nio-Va-9zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-264" y="-251"/>
         </scene>
@@ -105,7 +105,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <connections>
-                                <outletCollection property="gestureRecognizers" destination="fhL-Xz-6BN" id="ncB-LM-Xyq"/>
+                                <outletCollection property="gestureRecognizers" destination="fhL-Xz-6BN" appends="YES" id="ncB-LM-Xyq"/>
                             </connections>
                         </view>
                     </navigationItem>
@@ -329,7 +329,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Settings" id="1OP-OR-ufD" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Upl-Zo-VPj">
-                        <rect key="frame" x="0.0" y="44" width="320" height="808"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <sections>
@@ -401,7 +401,6 @@
         <!--Navigation Controller-->
         <scene sceneID="nUJ-jQ-YGr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Z5-sk-3Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="m8q-Yc-tao" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -419,13 +418,13 @@
                         <segue destination="3vD-Ej-NIW" kind="relationship" relationship="rootViewController" id="Prx-5k-B5a"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Z5-sk-3Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hII-Sz-zhb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Js-vl-K2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Gyg-U8-lsZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wYe-HO-PFf"/>
@@ -440,13 +439,13 @@
                         <segue destination="21J-lR-ouX" kind="relationship" relationship="rootViewController" id="6Ap-9y-cHE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Js-vl-K2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2642" y="495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p6U-FS-5mJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QvY-QW-4xF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="uNA-uH-Rhn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YiS-Zt-KLD"/>
@@ -461,6 +460,7 @@
                         <segue destination="1OP-OR-ufD" kind="relationship" relationship="rootViewController" id="ucO-Sh-gVM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvY-QW-4xF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1678" y="-718"/>
         </scene>
@@ -470,40 +470,6 @@
         <image name="empty_account_list.png" width="320" height="70"/>
         <image name="passwordcog-key.png" width="256" height="451"/>
     </resources>
-    <classes>
-        <class className="AccountListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sortAccounts:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="emptyAccountListView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="passwordKeyView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sortButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="AccountViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CategoriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="navigationViewTapped:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="action" name="showSettingsPopover:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="CategoryImageCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryImageCell.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

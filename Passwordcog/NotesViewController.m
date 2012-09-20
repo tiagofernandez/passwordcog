@@ -32,16 +32,22 @@
   CGRect newFrame = self.notesTextView.frame;
   
   if (interfaceOrientation == UIInterfaceOrientationPortrait) {
-    newFrame = CGRectMake(0, 0, 320, 200);
+    newFrame = CGRectMake(0, 0, 320, IS_IPHONE_4_INCHES ? 286 : 200);
   }
   else if (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown) {
-    newFrame = CGRectMake(0, 0, 480, 94);
+    newFrame = CGRectMake(0, 0, IS_IPHONE_4_INCHES ? 656 : 480, 94);
   }
   self.notesTextView.frame = newFrame;
 }
 
 
 #pragma mark View lifecycle
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  [self adjustNotesTextViewToInterfaceOrientation:self.interfaceOrientation];
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -62,10 +68,14 @@
   [super viewDidUnload];
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+  [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+  [self adjustNotesTextViewToInterfaceOrientation:toInterfaceOrientation];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-  [self adjustNotesTextViewToInterfaceOrientation:interfaceOrientation];
-  
   if ([PasswordcogAppDelegate userInterfaceIdiomPad])
     return YES;
   else

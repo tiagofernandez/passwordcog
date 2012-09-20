@@ -60,6 +60,7 @@
 		F182846415B1A91D00BBE2DC /* 123-id-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */; };
 		F182846515B1A91D00BBE2DC /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845315B1A91D00BBE2DC /* 190-bank.png */; };
 		F182846615B1A91D00BBE2DC /* 190-bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F182845415B1A91D00BBE2DC /* 190-bank@2x.png */; };
+		F1840398160B91EF00D6C56D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1840397160B91EF00D6C56D /* Default-568h@2x.png */; };
 		F191E802158E616C002AA09E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F191E801158E616C002AA09E /* CategoriesViewController.m */; };
 		F195655615C08DF300685080 /* empty_account_list.png in Resources */ = {isa = PBXBuildFile; fileRef = F195655415C08DF300685080 /* empty_account_list.png */; };
 		F195655715C08DF300685080 /* empty_account_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F195655515C08DF300685080 /* empty_account_list@2x.png */; };
@@ -153,6 +154,7 @@
 		F182845215B1A91D00BBE2DC /* 123-id-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card@2x.png"; sourceTree = "<group>"; };
 		F182845315B1A91D00BBE2DC /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank.png"; sourceTree = "<group>"; };
 		F182845415B1A91D00BBE2DC /* 190-bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank@2x.png"; sourceTree = "<group>"; };
+		F1840397160B91EF00D6C56D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		F190882E15C72EF300D2A2F7 /* Passwordcog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Passwordcog.entitlements; sourceTree = "<group>"; };
 		F191E800158E616C002AA09E /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		F191E801158E616C002AA09E /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				F19A83A015DB834E006A73FC /* Icon-iPad@2x.png */,
 				F1684AEC15E56B3E00FECE21 /* Default.png */,
 				F1684AED15E56B3E00FECE21 /* Default@2x.png */,
+				F1840397160B91EF00D6C56D /* Default-568h@2x.png */,
 				F1684AE015E56A9B00FECE21 /* Default-Landscape~ipad.png */,
 				F1684AF015E56B8A00FECE21 /* Default-Landscape@2x~ipad.png */,
 				F1684AE215E56A9C00FECE21 /* Default-Portrait~ipad.png */,
@@ -494,6 +497,7 @@
 				F1684AEF15E56B3E00FECE21 /* Default@2x.png in Resources */,
 				F1684AF215E56B8A00FECE21 /* Default-Landscape@2x~ipad.png in Resources */,
 				F1684AF315E56B8A00FECE21 /* Default-Portrait@2x~ipad.png in Resources */,
+				F1840398160B91EF00D6C56D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

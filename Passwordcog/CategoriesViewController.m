@@ -174,6 +174,7 @@
   if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
     AccountListViewController *accountListVC = [self accountListViewController];
     [accountListVC reloadWithCategory:[self categoryForIndexPath:indexPath]];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
 }
 
