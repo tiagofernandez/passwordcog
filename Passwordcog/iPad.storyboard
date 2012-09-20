@@ -202,7 +202,7 @@
         <scene sceneID="Rx4-gL-2bk">
             <objects>
                 <tableViewController id="21J-lR-ouX" customClass="AccountViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="P6o-An-VHP">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="P6o-An-VHP">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -251,7 +251,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="A0v-qK-303">
-                                        <rect key="frame" x="0.0" y="143" width="540" height="45"/>
+                                        <rect key="frame" x="0.0" y="143" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="31" y="0.0" width="478" height="43"/>
@@ -275,7 +275,7 @@
                             <tableViewSection headerTitle="Notes" id="Fgj-we-Xtv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="300" id="taJ-O0-6kp">
-                                        <rect key="frame" x="0.0" y="232" width="540" height="302"/>
+                                        <rect key="frame" x="0.0" y="231" width="540" height="301"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="31" y="1" width="478" height="299"/>
@@ -470,6 +470,40 @@
         <image name="empty_account_list.png" width="320" height="70"/>
         <image name="passwordcog-key.png" width="256" height="451"/>
     </resources>
+    <classes>
+        <class className="AccountListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sortAccounts:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emptyAccountListView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="passwordKeyView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sortButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="AccountViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notesField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="navigationViewTapped:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="showSettingsPopover:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="CategoryImageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryImageCell.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
