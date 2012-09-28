@@ -62,14 +62,31 @@
 + (NSMutableArray *)allAccountsInCategory:(NSString *)categoryName
 {
   if (categoryName) {
-    Category *category = [Category categoryFromName:categoryName];
     
-    return [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId"
-                                                       withValue:category.uid
-                                                      andOrderBy:@"index"
-                                                       ascending:YES]];
+    Category *category = [Category categoryFromName:categoryName];
+    NSArray *accounts  = [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId" withValue:category.uid]];
+    
+    NSArray *sortedAccounts = [accounts sortedArrayUsingComparator:^NSComparisonResult(id first, id second) {
+      
+      NSInteger firstIndex = [[(Account*) first index] intValue];
+      NSInteger secondIndex = [[(Account*) second index] intValue];
+      
+      if (firstIndex < secondIndex) {
+        return (NSComparisonResult) NSOrderedAscending;
+      }
+      else if (firstIndex > secondIndex) {
+        return (NSComparisonResult) NSOrderedDescending;
+      }
+      else {
+        return (NSComparisonResult) NSOrderedSame;
+      }
+    }];
+    
+    return [NSMutableArray arrayWithArray:sortedAccounts];
   }
-  else return nil;
+  else {
+    return nil;
+  }
 }
 
 + (NSMutableArray *)allAccountsInCategorySorted:(NSString *)categoryName
