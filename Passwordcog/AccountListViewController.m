@@ -99,7 +99,7 @@
 
 - (void)showCopyUsernameOrPasswordSheet:(CopyUsernamePasswordGestureRecognizer *)gesture
 {
-  if (gesture.state == UIGestureRecognizerStateBegan) {
+  if (![self.tableView isEditing] && gesture.state == UIGestureRecognizerStateBegan) {
     UIActionSheet *copyOptionsSheet = [[UIActionSheet alloc] initWithTitle:@"Clipboard"
                                                                   delegate:self
                                                          cancelButtonTitle:@"Cancel"
