@@ -1,4 +1,5 @@
 #import "AccountListViewController.h"
+#import "Settings.h"
 
 @interface CopyUsernamePasswordGestureRecognizer : UILongPressGestureRecognizer
 @property (strong, nonatomic) Account *targetAccount;
@@ -169,8 +170,8 @@
   
   Account *account = [self accountAtIndexPath:indexPath];
   
-  cell.textLabel.text = account.name; // [NSString stringWithFormat:@"(%@) %@", account.index, account.name];
-  cell.detailTextLabel.text = [self detailTextForAccount:account];
+  cell.textLabel.text = account.name;
+  cell.detailTextLabel.text = [Settings hidePasswords] ? @"" : [self detailTextForAccount:account];
   
   CopyUsernamePasswordGestureRecognizer *copyUsernamePasswordGesture =
     [[CopyUsernamePasswordGestureRecognizer alloc] initWithTarget:self action:@selector(showCopyUsernameOrPasswordSheet:)];

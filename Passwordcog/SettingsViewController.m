@@ -1,13 +1,18 @@
 #import "SettingsViewController.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
+#import "Settings.h"
 
 @interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UISwitch *hidePasswords;
+
 @end
 
 @implementation SettingsViewController
 
 @synthesize customPopoverController = _customPopoverController;
+@synthesize hidePasswords = _hidePasswords;
 
 
 #pragma mark Actions
@@ -15,6 +20,11 @@
 - (IBAction)done:(id)sender
 {
   [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)hidePasswordsChanged:(UISwitch *)sender
+{
+  [Settings setHidePasswords:[sender isOn]];
 }
 
 
@@ -68,14 +78,21 @@
   [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
+- (void)refreshHidePasswordsCell
+{
+  [self.hidePasswords setOn:[Settings hidePasswords] animated:NO];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
   [self refreshPasscodeCell];
+  [self refreshHidePasswordsCell];
 }
 
 - (void)viewDidUnload
 {
+  self.hidePasswords = nil;
   [super viewDidUnload];
 }
 

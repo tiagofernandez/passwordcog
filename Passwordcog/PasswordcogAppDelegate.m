@@ -4,6 +4,7 @@
 #import "KKKeychain.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
+#import "Settings.h"
 
 @interface PasswordcogAppDelegate () <KKPasscodeViewControllerDelegate, UIAlertViewDelegate>
 
@@ -125,15 +126,10 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
 - (void)firstLaunchCheckpoint
 {
-  NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-  
-  if (![preferences boolForKey:@"first_launch_over"]) {
-    
+  if (![Settings firstLaunchOver]) {
     [self resetPasscode];
     [self askToSetPasscode];
-    
-    [preferences setBool:YES forKey:@"first_launch_over"];
-    [preferences synchronize];
+    [Settings setFirstLaunchOver:YES];
   }
 }
 
