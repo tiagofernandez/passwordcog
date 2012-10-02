@@ -14,6 +14,11 @@
   return [Category findFirstByAttribute:@"name" withValue:name];
 }
 
++ (Category *)categoryFromId:(NSString *)uid
+{
+  return [Category findFirstByAttribute:@"uid" withValue:uid];
+}
+
 + (NSDictionary *)allCategoryNames
 {
   NSDictionary *categories = [NSMutableDictionary dictionaryWithCapacity:[[Category numberOfEntities] intValue]];

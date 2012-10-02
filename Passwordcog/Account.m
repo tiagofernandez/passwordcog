@@ -16,7 +16,7 @@
 
 - (NSString *)categoryText
 {
-  Category *category = [Category findFirstByAttribute:@"uid" withValue:self.categoryId];
+  Category *category = [Category categoryFromId:self.categoryId];
   return category.name;
 }
 
@@ -59,7 +59,7 @@
 
 #pragma mark - Querying
 
-+ (NSMutableArray *)allAccountsInCategory:(NSString *)categoryName
++ (NSArray *)allAccountsInCategory:(NSString *)categoryName
 {
   if (categoryName) {
     
@@ -89,7 +89,7 @@
   }
 }
 
-+ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)categoryName
++ (NSArray *)allAccountsInCategorySorted:(NSString *)categoryName
 {
   Category *category = [Category categoryFromName:categoryName];
   NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:category.uid];
@@ -101,12 +101,17 @@
   return [NSMutableArray arrayWithArray:[accounts sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]]];
 }
 
++ (NSArray *)searchAccountsWithNameLike:(NSString *)accountName
+{
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", accountName];
+  return [Account findAllWithPredicate:predicate];
+}
+
 + (NSString *)totalOfAccountsInCategory:(NSString *)categoryName
 {
   Category *category = [Category categoryFromName:categoryName];
   
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", category.uid];
-  
   return [NSString stringWithFormat:@"%d", [Account countOfEntitiesWithPredicate:predicate]];
 }
 

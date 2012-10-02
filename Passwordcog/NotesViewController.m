@@ -52,7 +52,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
   [self.delegate notesUpdated:self.notesTextView.text];
-  [self.navigationController popViewControllerAnimated:YES];
   [super viewWillDisappear:animated];
 }
 

@@ -313,7 +313,7 @@
   
   self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
                                                        target:self
-                                                     selector:@selector(refreshView)
+                                                     selector:@selector(reloadView)
                                                      userInfo:nil
                                                       repeats:YES];
 }
@@ -342,6 +342,12 @@
   self.sortButton = nil;
   
   [super viewDidUnload];
+}
+
+- (void)reloadView
+{
+  if (![self.tableView isEditing])
+    [self reloadWithCategory:self.categoryName];
 }
 
 - (void)refreshView

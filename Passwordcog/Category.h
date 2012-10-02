@@ -7,6 +7,7 @@
 @property (nonatomic, retain) NSString *imageName;
 
 + (Category *)categoryFromName:(NSString *)name;
++ (Category *)categoryFromId:(NSString *)uid;
 
 + (NSDictionary *)allCategoryNames;
 + (NSDictionary *)allCategoryImages;

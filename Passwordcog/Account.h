@@ -25,7 +25,9 @@
 - (void)setNotesText:(NSString *)notes;
 
 + (NSArray *)allAccountsInCategory:(NSString *)categoryName;
-+ (NSMutableArray *)allAccountsInCategorySorted:(NSString *)categoryName;
++ (NSArray *)allAccountsInCategorySorted:(NSString *)categoryName;
+
++ (NSArray *)searchAccountsWithNameLike:(NSString *)accountName;
 
 + (NSString *)totalOfAccountsInCategory:(NSString *)categoryName;
 

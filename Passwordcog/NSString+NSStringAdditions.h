@@ -10,4 +10,6 @@
 
 - (NSString *)trim;
 
++ (NSString *)uuid;
+
 @end

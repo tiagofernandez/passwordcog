@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) id<AccountViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) NSString *categoryName;
-@property (weak, nonatomic) Account *account;
+@property (strong, nonatomic) NSString *categoryName;
+@property (strong, nonatomic) Account *account;
 
 @end

@@ -74,6 +74,9 @@
 		F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */; };
 		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
 		F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */; };
+		F1FD2F13161A164700D3EE88 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = F1FD2F11161A164700D3EE88 /* 06-magnify.png */; };
+		F1FD2F14161A164700D3EE88 /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */; };
+		F1FD2F19161A1CEB00D3EE88 /* AccountSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FD2F18161A1CEB00D3EE88 /* AccountSearchViewController.m */; };
 		F1FEF9421584B14900CA0FAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FEF9411584B14900CA0FAE /* QuartzCore.framework */; };
 		F1FEF9461584C54500CA0FAE /* NSString+NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */; };
 		FB10FC34A00248FF86707204 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61C6EC062DB498987E794EB /* libPods.a */; };
@@ -92,6 +95,7 @@
 /* Begin PBXFileReference section */
 		2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E61C6EC062DB498987E794EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1099317161B9CA8007A7AE5 /* Passwordcog2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Passwordcog2.entitlements; sourceTree = "<group>"; };
 		F11F13B71597682700B16DFB /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwordcog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11F5C81157FFD5D0069CD28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -172,6 +176,11 @@
 		F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
 		F1CE16FF15BC3A3C0036E5E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		F1FD2F11161A164700D3EE88 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
+		F1FD2F17161A1CEB00D3EE88 /* AccountSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSearchViewController.h; sourceTree = "<group>"; };
+		F1FD2F18161A1CEB00D3EE88 /* AccountSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSearchViewController.m; sourceTree = "<group>"; };
+		F1FE4DD0161A45D8009A4CC8 /* Passwordcog copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Passwordcog copy-Info.plist"; path = "/Users/tiago/Workspace/passwordcog-ios/Passwordcog copy-Info.plist"; sourceTree = "<absolute>"; };
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FEF9441584C54500CA0FAE /* NSString+NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringAdditions.h"; sourceTree = "<group>"; };
 		F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringAdditions.m"; sourceTree = "<group>"; };
@@ -215,6 +224,7 @@
 				F11F5C80157FFD5D0069CD28 /* Frameworks */,
 				F11F5C7E157FFD5D0069CD28 /* Products */,
 				2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */,
+				F1FE4DD0161A45D8009A4CC8 /* Passwordcog copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,8 +256,10 @@
 		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
 			isa = PBXGroup;
 			children = (
+				F1099317161B9CA8007A7AE5 /* Passwordcog2.entitlements */,
 				F1507E3E1581570800E2C086 /* Account */,
 				F1FEF94B1584CF3500CA0FAE /* Model */,
+				F1FD2F16161A1C6300D3EE88 /* Search */,
 				F15DEF1F15973BBB000DF5FF /* Settings */,
 				F1FEF9431584C52600CA0FAE /* Utils */,
 				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
@@ -313,6 +325,8 @@
 				F1B88D2615C53A5D00E51259 /* globe@2x.png */,
 				F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */,
 				F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */,
+				F1FD2F11161A164700D3EE88 /* 06-magnify.png */,
+				F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */,
 				F182844315B1A91D00BBE2DC /* 18-envelope.png */,
 				F182844415B1A91D00BBE2DC /* 18-envelope@2x.png */,
 				F182844515B1A91D00BBE2DC /* 19-gear.png */,
@@ -363,6 +377,15 @@
 				F15DEF2215973BF6000DF5FF /* SettingsViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		F1FD2F16161A1C6300D3EE88 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F1FD2F17161A1CEB00D3EE88 /* AccountSearchViewController.h */,
+				F1FD2F18161A1CEB00D3EE88 /* AccountSearchViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		F1FEF9431584C52600CA0FAE /* Utils */ = {
@@ -503,6 +526,8 @@
 				F1684AF215E56B8A00FECE21 /* Default-Landscape@2x~ipad.png in Resources */,
 				F1684AF315E56B8A00FECE21 /* Default-Portrait@2x~ipad.png in Resources */,
 				F1840398160B91EF00D6C56D /* Default-568h@2x.png in Resources */,
+				F1FD2F13161A164700D3EE88 /* 06-magnify.png in Resources */,
+				F1FD2F14161A164700D3EE88 /* 06-magnify@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +588,7 @@
 				F15BC74D15B8968500B6818D /* Account.m in Sources */,
 				F1684AF615E5741C00FECE21 /* Category.m in Sources */,
 				F19A2B121616F6D7001550AF /* Settings.m in Sources */,
+				F1FD2F19161A1CEB00D3EE88 /* AccountSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

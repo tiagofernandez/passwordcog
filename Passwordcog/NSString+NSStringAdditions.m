@@ -30,4 +30,13 @@
   return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
++ (NSString *)uuid
+{
+  CFUUIDRef uid = CFUUIDCreate(kCFAllocatorDefault);
+	CFStringRef tmpString = CFUUIDCreateString(kCFAllocatorDefault, uid);
+	CFRelease(uid);
+  
+	return (__bridge_transfer NSString *)tmpString;
+}
+
 @end

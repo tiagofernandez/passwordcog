@@ -37,12 +37,17 @@
 
 - (void)dismissViewController
 {
-  [self.navigationController dismissModalViewControllerAnimated:YES];
+  if (self.delegate)
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+  else
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveAccount:(id)sender
 {
   Account *account = (self.account) ? self.account : [Account createEntity];
+  
+  // if (!account.uid) account.uid = [NSString uuid];
   
   account.name         = self.nameField.text;
   account.usernameText = self.usernameField.text;
