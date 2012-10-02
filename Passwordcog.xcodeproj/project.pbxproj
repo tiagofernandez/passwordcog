@@ -95,7 +95,6 @@
 /* Begin PBXFileReference section */
 		2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E61C6EC062DB498987E794EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1099317161B9CA8007A7AE5 /* Passwordcog2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Passwordcog2.entitlements; sourceTree = "<group>"; };
 		F11F13B71597682700B16DFB /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwordcog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11F5C81157FFD5D0069CD28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -180,7 +179,6 @@
 		F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
 		F1FD2F17161A1CEB00D3EE88 /* AccountSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSearchViewController.h; sourceTree = "<group>"; };
 		F1FD2F18161A1CEB00D3EE88 /* AccountSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSearchViewController.m; sourceTree = "<group>"; };
-		F1FE4DD0161A45D8009A4CC8 /* Passwordcog copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Passwordcog copy-Info.plist"; path = "/Users/tiago/Workspace/passwordcog-ios/Passwordcog copy-Info.plist"; sourceTree = "<absolute>"; };
 		F1FEF9411584B14900CA0FAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FEF9441584C54500CA0FAE /* NSString+NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringAdditions.h"; sourceTree = "<group>"; };
 		F1FEF9451584C54500CA0FAE /* NSString+NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSStringAdditions.m"; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				F11F5C80157FFD5D0069CD28 /* Frameworks */,
 				F11F5C7E157FFD5D0069CD28 /* Products */,
 				2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */,
-				F1FE4DD0161A45D8009A4CC8 /* Passwordcog copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,7 +253,6 @@
 		F11F5C87157FFD5D0069CD28 /* Passwordcog */ = {
 			isa = PBXGroup;
 			children = (
-				F1099317161B9CA8007A7AE5 /* Passwordcog2.entitlements */,
 				F1507E3E1581570800E2C086 /* Account */,
 				F1FEF94B1584CF3500CA0FAE /* Model */,
 				F1FD2F16161A1C6300D3EE88 /* Search */,
