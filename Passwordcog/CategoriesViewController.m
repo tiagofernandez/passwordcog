@@ -212,6 +212,20 @@
   [super viewWillDisappear:animated];
 }
 
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  [self.settingsButton setAccessibilityLabel:@"Settings"];
+  [self.searchButton setAccessibilityLabel:@"Search"];
+}
+
+- (void)viewDidUnload
+{
+  self.settingsButton = nil;
+  self.searchButton = nil;
+  [super viewDidUnload];
+}
+
 - (void)refreshView
 {
   [self.tableView reloadData];
@@ -227,6 +241,5 @@
   else
     return interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 }
-
 
 @end
