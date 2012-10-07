@@ -7,6 +7,9 @@
 @interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UISwitch *hidePasswords;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *backupToDropboxActivityView;
+
+@property (strong, nonatomic) DataExport *dataExport;
 
 @end
 
@@ -14,6 +17,17 @@
 
 @synthesize customPopoverController = _customPopoverController;
 @synthesize hidePasswords = _hidePasswords;
+@synthesize backupToDropboxActivityView = _backupToDropboxActivityView;
+
+@synthesize dataExport = _dataExport;
+
+- (DataExport *)dataExport
+{
+  if (!_dataExport) {
+    _dataExport = [[DataExport alloc] init];
+  }
+  return _dataExport;
+}
 
 
 #pragma mark - Actions
@@ -42,9 +56,30 @@
 
 - (void)backupToDropboxCellSelected
 {
+  
   if ([DataExport isDropboxLinked]) {
-    DataExport *dataExport = [[DataExport alloc] init];
-    [dataExport backupToDropbox];
+    [self.backupToDropboxActivityView startAnimating];
+    
+    [self.dataExport backupToDropboxWithSuccessBlock:^{
+      [self.backupToDropboxActivityView stopAnimating];
+      
+      UIAlertView *alert = [[UIAlertView alloc] init];
+      [alert setTitle:@"Backup Successful"];
+      [alert setMessage:@"In your Dropbox, check the Apps/Passwordcog folder for the recently uploaded CSV file. It can be opened with Numbers or Excel."];
+      [alert setDelegate:nil];
+      [alert addButtonWithTitle:@"OK"];
+      [alert show];
+      
+    } andFailureBlock:^{
+      [self.backupToDropboxActivityView stopAnimating];
+      
+      UIAlertView *alert = [[UIAlertView alloc] init];
+      [alert setTitle:@"Backup Failed"];
+      [alert setMessage:@"There was a network error while uploading the backup file to your Dropbox. Please try again later."];
+      [alert setDelegate:nil];
+      [alert addButtonWithTitle:@"OK"];
+      [alert show];
+    }];
   }
   else {
     UIAlertView *alert = [[UIAlertView alloc] init];
@@ -125,6 +160,7 @@
 - (void)viewDidUnload
 {
   self.hidePasswords = nil;
+  self.backupToDropboxActivityView = nil;
   [super viewDidUnload];
 }
 

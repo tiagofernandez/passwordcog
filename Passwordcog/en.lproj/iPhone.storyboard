@@ -400,19 +400,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Data Export" id="WBh-ZP-MjJ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" textLabel="iEN-l9-NMy" style="IBUITableViewCellStyleDefault" id="C2O-TH-VrS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" id="C2O-TH-VrS">
                                         <rect key="frame" x="0.0" y="181" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Backup to Dropbox" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iEN-l9-NMy">
-                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="gSc-1Q-LpO">
+                                                    <rect key="frame" x="260" y="11" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Backup to Dropbox" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qwR-hc-Myg">
+                                                    <rect key="frame" x="10" y="11" width="195" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -458,6 +462,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backupToDropboxActivityView" destination="gSc-1Q-LpO" id="1aQ-dx-gAt"/>
                         <outlet property="hidePasswords" destination="gCl-lc-okF" id="Qoe-lh-1me"/>
                     </connections>
                 </tableViewController>

@@ -9,11 +9,17 @@
 
 @property (nonatomic, strong) DBRestClient *dropboxClient;
 
+@property (nonatomic, strong) id successBlock;
+@property (nonatomic, strong) id failureBlock;
+
 @end
 
 @implementation DataExport
 
 @synthesize dropboxClient = _dropboxClient;
+
+@synthesize successBlock = _successBlock;
+@synthesize failureBlock = _failureBlock;
 
 - (DBRestClient *)dropboxClient
 {
@@ -26,25 +32,38 @@
 
 - (NSString *)generateCsv
 {
-  return [GRMustacheTemplate renderObject:[Account findAll]
+  NSMutableArray *accounts = [NSMutableArray new];
+  
+  for (Category *category in [Category allCategoriesSorted]) {
+    [accounts addObjectsFromArray:[Account allAccountsInCategorySorted:category.name]];
+  }
+  return [GRMustacheTemplate renderObject:accounts
                                       fromResource:@"CSV"
                                             bundle:nil
                                              error:NULL];
 }
 
+- (NSString *)generateFilename
+{
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"yyyyMMddHHmmss"];
+  
+  return [NSString stringWithFormat:@"Passwordcog_%@.csv", [dateFormat stringFromDate:[NSDate new]]];
+}
+
 #pragma mark - Dropbox
 
-- (void)backupToDropbox
+- (void)backupToDropboxWithSuccessBlock:(void (^)())successBlock andFailureBlock:(void (^)())failureBlock
 {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Passwordcog_20121006.csv"];
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[self generateFilename]];
                     
   NSString *csv = [self generateCsv];
   [csv writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
-
-  // NSLog(@"File path: %@", path);
-  // NSLog(@"Content to be uploaded:\n%@", [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]);
-
+  
+  self.successBlock = successBlock;
+  self.failureBlock = failureBlock;
+  
   [self.dropboxClient uploadFile:[path lastPathComponent] toPath:@"/" withParentRev:nil fromPath:path];
 }
 
@@ -82,6 +101,7 @@
               from:(NSString*)srcPath metadata:(DBMetadata*)metadata
 {
   NSLog(@"File uploaded successfully to path: %@", metadata.path);
+  [self.successBlock invoke];
 }
 
 - (void)restClient:(DBRestClient*)client uploadProgress:(CGFloat)progress
@@ -93,6 +113,7 @@
 - (void)restClient:(DBRestClient*)client uploadFileFailedWithError:(NSError*)error
 {
   NSLog(@"File upload failed with error: %@", error);
+  [self.failureBlock invoke];
 }
 
 @end

@@ -9,6 +9,7 @@
 + (Category *)categoryFromName:(NSString *)name;
 + (Category *)categoryFromId:(NSString *)uid;
 
++ (NSArray *)allCategoriesSorted;
 + (NSDictionary *)allCategoryNames;
 + (NSDictionary *)allCategoryImages;
 

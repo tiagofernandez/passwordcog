@@ -19,6 +19,11 @@
   return [Category findFirstByAttribute:@"uid" withValue:uid];
 }
 
++ (NSArray *)allCategoriesSorted
+{
+  return [Category findAllSortedBy:@"name" ascending:YES];
+}
+
 + (NSDictionary *)allCategoryNames
 {
   NSDictionary *categories = [NSMutableDictionary dictionaryWithCapacity:[[Category numberOfEntities] intValue]];

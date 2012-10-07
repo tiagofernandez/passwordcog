@@ -2,7 +2,7 @@
 
 @interface DataExport : NSObject
 
-- (void)backupToDropbox;
+- (void)backupToDropboxWithSuccessBlock:(void (^)())successBlock andFailureBlock:(void (^)())failureBlock;
 
 + (void)setupDropbox;
 + (BOOL)isDropboxLinked;
