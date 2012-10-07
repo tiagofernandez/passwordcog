@@ -57,13 +57,17 @@
   return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath;
+
 #pragma mark - UIViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-  
-  Account *account = [self.searchResults objectAtIndex:indexPath.row];
+  NSIndexPath *selectedIndexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+
+  Account *account = [self.searchResults objectAtIndex:selectedIndexPath.row];
   Category *category = [Category categoryFromId:account.categoryId];
   
   AccountViewController *accountVC = segue.destinationViewController;
