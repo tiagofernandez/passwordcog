@@ -130,5 +130,4 @@
   return [NSString stringFromBase64String:base64String];
 }
 
-
 @end

@@ -1,9 +1,10 @@
 #import "SettingsViewController.h"
+#import "DataExport.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
 #import "Settings.h"
 
-@interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate>
+@interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UISwitch *hidePasswords;
 
@@ -15,7 +16,7 @@
 @synthesize hidePasswords = _hidePasswords;
 
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (IBAction)done:(id)sender
 {
@@ -28,7 +29,7 @@
 }
 
 
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (void)passcodeCellSelected
 {
@@ -37,6 +38,23 @@
   passcodeSettingsVC.delegate = self;
   
   [self.navigationController pushViewController:passcodeSettingsVC animated:YES];
+}
+
+- (void)backupToDropboxCellSelected
+{
+  if ([DataExport isDropboxLinked]) {
+    DataExport *dataExport = [[DataExport alloc] init];
+    [dataExport backupToDropbox];
+  }
+  else {
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    [alert setTitle:@"Account Login"];
+    [alert setMessage:@"Dropbox requires you to authorize Passwordcog to use your account. You will be taken to Dropbox's authorization page."];
+    [alert setDelegate:self];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:@"OK"];
+    [alert show];
+  }
 }
 
 - (void)rateCellSelected
@@ -50,15 +68,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (indexPath.section == 0 && indexPath.row == 0)
-    [self passcodeCellSelected];
+  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
   
-  else if (indexPath.section == 1 && indexPath.row == 0)
+  if (indexPath.section == 0 && indexPath.row == 0) {
+    [self passcodeCellSelected];
+  }
+  else if (indexPath.section == 1 && indexPath.row == 0) {
+    [self backupToDropboxCellSelected];
+    [cell setSelected:NO animated:NO];
+  }
+  else if (indexPath.section == 2 && indexPath.row == 0) {
     [self rateCellSelected];
+  }
+}
+
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  if (buttonIndex == 1) [DataExport linkDropboxFromController:self];
 }
 
 
-#pragma mark KKPasscodeSettingsViewControllerDelegate
+#pragma mark - KKPasscodeSettingsViewControllerDelegate
 
 - (void)passcodeLockWillBePresented
 {
@@ -66,7 +98,7 @@
 }
 
 
-#pragma mark View lifecycle
+#pragma mark - UIViewController
 
 - (void)refreshPasscodeCell
 {

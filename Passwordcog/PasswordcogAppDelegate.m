@@ -1,15 +1,14 @@
 #import "PasswordcogAppDelegate.h"
 #import "Account.h"
 #import "CategoriesViewController.h"
+#import "DataExport.h"
 #import "KKKeychain.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
 #import "Settings.h"
 
 @interface PasswordcogAppDelegate () <KKPasscodeViewControllerDelegate, UIAlertViewDelegate>
-
 @end
-
 
 @implementation PasswordcogAppDelegate
 
@@ -45,9 +44,18 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   [Category loadDefaultCategories];
   [[KKPasscodeLock sharedLock] setDefaultSettings];
   
+  [DataExport setupDropbox];
+  
   return YES;
 }
-							
+
+// Return NO if the application can't open for some reason.
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  [DataExport handleDropboxOpenURL:url];
+  return YES;
+}
+
 // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state. Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -93,9 +101,7 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	if ([alertView.title isEqualToString:@"Passcode"]) {
-		if (buttonIndex == 0) [self presentPasscodeView];
-	}
+  if (buttonIndex == 1) [self presentPasscodeView];
 }
 
 
@@ -119,8 +125,8 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   [alert setTitle:@"Passcode"];
   [alert setMessage:@"Would you like to set a passcode?"];
   [alert setDelegate:self];
-  [alert addButtonWithTitle:@"Yes, please"];
   [alert addButtonWithTitle:@"No, thanks"];
+  [alert addButtonWithTitle:@"Yes, please"];
   [alert show];
 }
 

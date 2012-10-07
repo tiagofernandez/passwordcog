@@ -74,6 +74,8 @@
 		F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */; };
 		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
 		F1CE170215BC3A3C0036E5E5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */; };
+		F1F6F99F161CDB850014E479 /* DataExport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F6F99E161CDB850014E479 /* DataExport.m */; };
+		F1F6F9A1161CE0990014E479 /* CSV.mustache in Resources */ = {isa = PBXBuildFile; fileRef = F1F6F9A0161CE0990014E479 /* CSV.mustache */; };
 		F1FD2F13161A164700D3EE88 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = F1FD2F11161A164700D3EE88 /* 06-magnify.png */; };
 		F1FD2F14161A164700D3EE88 /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */; };
 		F1FD2F19161A1CEB00D3EE88 /* AccountSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FD2F18161A1CEB00D3EE88 /* AccountSearchViewController.m */; };
@@ -122,7 +124,6 @@
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		F1507E401581574500E2C086 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		F15BC74815B8959300B6818D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		F15BC74B15B8968500B6818D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		F15BC74C15B8968500B6818D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		F15BC74E15B8980C00B6818D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F15DEF2115973BF6000DF5FF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -175,6 +176,10 @@
 		F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
 		F1CE16FF15BC3A3C0036E5E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		F1CE170015BC3A3C0036E5E5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		F1F6F99D161CDB850014E479 /* DataExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataExport.h; sourceTree = "<group>"; };
+		F1F6F99E161CDB850014E479 /* DataExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataExport.m; sourceTree = "<group>"; };
+		F1F6F9A0161CE0990014E479 /* CSV.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSV.mustache; sourceTree = "<group>"; };
+		F1F6F9A8161CF0550014E479 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		F1FD2F11161A164700D3EE88 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
 		F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
 		F1FD2F17161A1CEB00D3EE88 /* AccountSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSearchViewController.h; sourceTree = "<group>"; };
@@ -397,10 +402,13 @@
 			isa = PBXGroup;
 			children = (
 				F15BC74715B8959300B6818D /* Model.xcdatamodeld */,
-				F15BC74B15B8968500B6818D /* Account.h */,
+				F1F6F9A8161CF0550014E479 /* Account.h */,
 				F15BC74C15B8968500B6818D /* Account.m */,
 				F1684AF415E5741C00FECE21 /* Category.h */,
 				F1684AF515E5741C00FECE21 /* Category.m */,
+				F1F6F99D161CDB850014E479 /* DataExport.h */,
+				F1F6F99E161CDB850014E479 /* DataExport.m */,
+				F1F6F9A0161CE0990014E479 /* CSV.mustache */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -524,6 +532,7 @@
 				F1840398160B91EF00D6C56D /* Default-568h@2x.png in Resources */,
 				F1FD2F13161A164700D3EE88 /* 06-magnify.png in Resources */,
 				F1FD2F14161A164700D3EE88 /* 06-magnify@2x.png in Resources */,
+				F1F6F9A1161CE0990014E479 /* CSV.mustache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +594,7 @@
 				F1684AF615E5741C00FECE21 /* Category.m in Sources */,
 				F19A2B121616F6D7001550AF /* Settings.m in Sources */,
 				F1FD2F19161A1CEB00D3EE88 /* AccountSearchViewController.m in Sources */,
+				F1F6F99F161CDB850014E479 /* DataExport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
