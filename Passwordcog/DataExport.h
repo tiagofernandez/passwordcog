@@ -2,11 +2,10 @@
 
 @interface DataExport : NSObject
 
+- (void)setupDropbox;
+- (BOOL)isDropboxLinked;
+- (void)linkDropboxFromController:(UIViewController *)controller;
+- (void)handleDropboxOpenURL:(NSURL *)url;
 - (void)backupToDropboxWithSuccessBlock:(void (^)())successBlock andFailureBlock:(void (^)())failureBlock;
-
-+ (void)setupDropbox;
-+ (BOOL)isDropboxLinked;
-+ (void)linkDropboxFromController:(UIViewController *)controller;
-+ (void)handleDropboxOpenURL:(NSURL *)url;
 
 @end

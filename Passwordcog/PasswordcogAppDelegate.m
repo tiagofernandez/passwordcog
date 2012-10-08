@@ -14,8 +14,23 @@
 
 @synthesize window = _window;
 
+@synthesize dataExport = _dataExport;
+
 static NSString *iCloudContainer = @"6P59Z8EQFE.com.tapcogs.Passwordcog";
 static NSString *LocalStoreName = @"Passwordcog.sqlite";
+
+- (DataExport *)dataExport
+{
+  if (!_dataExport) {
+    _dataExport = [[DataExport alloc] init];
+  }
+  return _dataExport;
+}
+
++ (PasswordcogAppDelegate *)sharedAppDelegate
+{
+  return (PasswordcogAppDelegate *) [UIApplication sharedApplication].delegate;
+}
 
 + (BOOL)userInterfaceIdiomPhone
 {
@@ -44,7 +59,7 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   [Category loadDefaultCategories];
   [[KKPasscodeLock sharedLock] setDefaultSettings];
   
-  [DataExport setupDropbox];
+  [self.dataExport setupDropbox];
   
   return YES;
 }
@@ -52,7 +67,7 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 // Return NO if the application can't open for some reason.
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-  [DataExport handleDropboxOpenURL:url];
+  [self.dataExport handleDropboxOpenURL:url];
   return YES;
 }
 

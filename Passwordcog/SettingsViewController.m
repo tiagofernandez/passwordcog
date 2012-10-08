@@ -1,15 +1,13 @@
 #import "SettingsViewController.h"
-#import "DataExport.h"
 #import "KKPasscodeLock.h"
 #import "KKPasscodeSettingsViewController.h"
+#import "PasswordcogAppDelegate.h"
 #import "Settings.h"
 
 @interface SettingsViewController () <KKPasscodeSettingsViewControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UISwitch *hidePasswords;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *backupToDropboxActivityView;
-
-@property (strong, nonatomic) DataExport *dataExport;
 
 @end
 
@@ -18,16 +16,6 @@
 @synthesize customPopoverController = _customPopoverController;
 @synthesize hidePasswords = _hidePasswords;
 @synthesize backupToDropboxActivityView = _backupToDropboxActivityView;
-
-@synthesize dataExport = _dataExport;
-
-- (DataExport *)dataExport
-{
-  if (!_dataExport) {
-    _dataExport = [[DataExport alloc] init];
-  }
-  return _dataExport;
-}
 
 
 #pragma mark - Actions
@@ -56,11 +44,12 @@
 
 - (void)backupToDropboxCellSelected
 {
+  DataExport *dataExport = [[PasswordcogAppDelegate sharedAppDelegate] dataExport];
   
-  if ([DataExport isDropboxLinked]) {
+  if ([dataExport isDropboxLinked]) {
     [self.backupToDropboxActivityView startAnimating];
     
-    [self.dataExport backupToDropboxWithSuccessBlock:^{
+    [dataExport backupToDropboxWithSuccessBlock:^{
       [self.backupToDropboxActivityView stopAnimating];
       
       UIAlertView *alert = [[UIAlertView alloc] init];
@@ -75,8 +64,8 @@
       
       UIAlertView *alert = [[UIAlertView alloc] init];
       [alert setTitle:@"Backup Failed"];
-      [alert setMessage:@"There was a network error while uploading the backup file to your Dropbox. Please try again later."];
-      [alert setDelegate:nil];
+      [alert setMessage:@"There was an authentication error while uploading the backup file to your Dropbox. You need to link your account to Passwordcog again."];
+      [alert setDelegate:self];
       [alert addButtonWithTitle:@"OK"];
       [alert show];
     }];
@@ -121,7 +110,13 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-  if (buttonIndex == 1) [DataExport linkDropboxFromController:self];
+  BOOL accountLoginOK = [alertView.title isEqualToString:@"Account Login"] && buttonIndex == 1;
+  BOOL backupFailed   = [alertView.title isEqualToString:@"Backup Failed"];
+  
+  if (accountLoginOK || backupFailed) {
+    DataExport *dataExport = [[PasswordcogAppDelegate sharedAppDelegate] dataExport];
+    [dataExport linkDropboxFromController:self];
+  }
 }
 
 

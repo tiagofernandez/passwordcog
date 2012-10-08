@@ -5,7 +5,7 @@
 #import "Category.h"
 #import "GRMustache.h"
 
-@interface DataExport () <DBRestClientDelegate>
+@interface DataExport () <DBSessionDelegate, DBRestClientDelegate>
 
 @property (nonatomic, strong) DBRestClient *dropboxClient;
 
@@ -53,39 +53,27 @@
 
 #pragma mark - Dropbox
 
-- (void)backupToDropboxWithSuccessBlock:(void (^)())successBlock andFailureBlock:(void (^)())failureBlock
-{
-  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[self generateFilename]];
-                    
-  NSString *csv = [self generateCsv];
-  [csv writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
-  
-  self.successBlock = successBlock;
-  self.failureBlock = failureBlock;
-  
-  [self.dropboxClient uploadFile:[path lastPathComponent] toPath:@"/" withParentRev:nil fromPath:path];
-}
-
-+ (void)setupDropbox
+- (void)setupDropbox
 {
   DBSession* dbSession = [[DBSession alloc] initWithAppKey:@"xd5s07n4pjthv34"
                                                  appSecret:@"aqp89gff3n64791"
                                                       root:kDBRootAppFolder];
+  dbSession.delegate = self;
+  
   [DBSession setSharedSession:dbSession];
 }
 
-+ (BOOL)isDropboxLinked
+- (BOOL)isDropboxLinked
 {
   return [[DBSession sharedSession] isLinked];
 }
 
-+ (void)linkDropboxFromController:(UIViewController *)controller
+- (void)linkDropboxFromController:(UIViewController *)controller
 {
   [[DBSession sharedSession] linkFromController:controller];
 }
 
-+ (void)handleDropboxOpenURL:(NSURL *)url
+- (void)handleDropboxOpenURL:(NSURL *)url
 {
   if ([[DBSession sharedSession] handleOpenURL:url]) {
     if ([[DBSession sharedSession] isLinked])
@@ -93,6 +81,20 @@
     else
       NSLog(@"Dropbox account failed to be linked.");
   }
+}
+
+- (void)backupToDropboxWithSuccessBlock:(void (^)())successBlock andFailureBlock:(void (^)())failureBlock
+{
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[self generateFilename]];
+  
+  NSString *csv = [self generateCsv];
+  [csv writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
+  
+  self.successBlock = successBlock;
+  self.failureBlock = failureBlock;
+  
+  [self.dropboxClient uploadFile:[path lastPathComponent] toPath:@"/" withParentRev:nil fromPath:path];
 }
 
 #pragma mark - DBRestClientDelegate
@@ -114,6 +116,14 @@
 {
   NSLog(@"File upload failed with error: %@", error);
   [self.failureBlock invoke];
+}
+
+#pragma mark - DBSessionDelegate
+
+- (void)sessionDidReceiveAuthorizationFailure:(DBSession *)session userId:(NSString *)userId
+{
+  NSLog(@"Session invalidated for user ID: %@", userId);
+  [session unlinkUserId:userId];
 }
 
 @end
