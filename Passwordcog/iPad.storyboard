@@ -208,7 +208,7 @@
             <objects>
                 <tableViewController id="21J-lR-ouX" customClass="AccountViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="P6o-An-VHP">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <gestureRecognizers/>
@@ -532,11 +532,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Account name" id="iEI-NP-Lgy">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Account name" id="iEI-NP-Lgy" customClass="CustomSearchBar">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             <connections>
                                 <outlet property="delegate" destination="ba5-v5-nka" id="a1Y-Oz-f5h"/>
                             </connections>
@@ -581,7 +581,7 @@
                         <outlet property="searchDisplayController" destination="R4o-3C-s6H" id="ErT-oL-fpg"/>
                     </connections>
                 </tableViewController>
-                <searchDisplayController id="R4o-3C-s6H">
+                <searchDisplayController id="R4o-3C-s6H" customClass="CustomSearchDisplayController">
                     <connections>
                         <outlet property="delegate" destination="ba5-v5-nka" id="oLj-EW-1v8"/>
                         <outlet property="searchBar" destination="iEI-NP-Lgy" id="MDa-s5-Qti"/>
@@ -628,6 +628,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dPG-iL-dfl"/>
-        <segue reference="6Ap-9y-cHE"/>
+        <segue reference="nLB-6i-Vps"/>
     </inferredMetricsTieBreakers>
 </document>

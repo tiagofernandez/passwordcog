@@ -96,3 +96,33 @@
 }
 
 @end
+
+#pragma mark - UISearchDisplayController
+
+@interface CustomSearchDisplayController : UISearchDisplayController
+@end
+
+@implementation CustomSearchDisplayController
+
+- (void)setActive:(BOOL)visible animated:(BOOL)animated
+{
+  [super setActive:NO animated:animated];
+  [self.searchContentsController.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+@end
+
+#pragma mark - UISearchBar
+
+@interface CustomSearchBar : UISearchBar
+@end
+
+@implementation CustomSearchBar
+
+-(void)layoutSubviews
+{
+  [super layoutSubviews];
+  [self setShowsCancelButton:NO animated:NO];
+}
+
+@end
