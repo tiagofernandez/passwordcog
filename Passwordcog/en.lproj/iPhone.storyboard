@@ -148,7 +148,7 @@
                             </tableViewSection>
                             <tableViewSection id="36h-1V-CxD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" detailTextLabel="isI-lZ-dqL" rowHeight="45" style="IBUITableViewCellStyleValue1" id="gxB-DB-vq2">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Key-yV-kLv" rowHeight="45" style="IBUITableViewCellStyleDefault" id="gxB-DB-vq2">
                                         <rect key="frame" x="0.0" y="199" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -156,17 +156,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Key-yV-kLv">
-                                                    <rect key="frame" x="10" y="12" width="48" height="21"/>
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="isI-lZ-dqL">
-                                                    <rect key="frame" x="226" y="12" width="44" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -175,6 +168,25 @@
                                         <connections>
                                             <segue destination="wXD-4q-SA6" kind="push" identifier="Notes" id="EQq-6e-hEF"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="160" id="DKV-fh-QCF">
+                                        <rect key="frame" x="0.0" y="245" width="320" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Wpd-hh-3DH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="154"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -198,6 +210,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="7Md-8p-Grr" id="pjl-bs-4cR"/>
+                        <outlet property="notesField" destination="Wpd-hh-3DH" id="Rf9-U6-mkV"/>
                         <outlet property="passwordField" destination="SlL-bp-ZqH" id="a8b-Iz-vJ4"/>
                         <outlet property="usernameField" destination="ch2-XK-4Gz" id="UTr-Ts-fIz"/>
                     </connections>
@@ -610,6 +623,59 @@
         <image name="19-gear.png" width="26" height="26"/>
         <image name="empty_account_list.png" width="320" height="70"/>
     </resources>
+    <classes>
+        <class className="AccountListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emptyAccountListView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="passwordKeyView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sortButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="AccountSearchViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountSearchViewController.h"/>
+        </class>
+        <class className="AccountViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notesField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="navigationViewTapped:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="CategoryImageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryImageCell.h"/>
+        </class>
+        <class className="CustomSearchBar" superclassName="UISearchBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSearchBar.h"/>
+        </class>
+        <class className="CustomSearchDisplayController" superclassName="UISearchDisplayController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomSearchDisplayController.h"/>
+        </class>
+        <class className="NotesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="notesTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backupToDropboxActivityView" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="hidePasswords" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -72,18 +72,12 @@
 
 - (NSString *)notesText
 {
-  return [PasswordcogAppDelegate userInterfaceIdiomPad]
-    ? self.notesField.text : [self notesCell].detailTextLabel.text;
-}
-
-- (UITableViewCell *)notesCell
-{
-  return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+  return self.notesField.text;
 }
 
 - (void)notesUpdated:(NSString *)notes
 {
-  [self notesCell].detailTextLabel.text = notes;
+  self.notesField.text = notes;
   
   [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]]
                         withRowAnimation:UITableViewRowAnimationNone];
@@ -164,7 +158,7 @@
   if ([segue.identifier isEqualToString:@"Notes"]) {
     NotesViewController *notesVC = segue.destinationViewController;
     [notesVC setDelegate:self];
-    [notesVC setNotes:[self notesCell].detailTextLabel.text];
+    [notesVC setNotes:self.notesField.text];
   }
 }
 
@@ -178,8 +172,6 @@
     self.nameField.text     = self.account.name;
     self.usernameField.text = self.account.usernameText;
     self.passwordField.text = self.account.passwordText;
-    
-    [self notesCell].detailTextLabel.text = self.account.notesText;
     self.notesField.text = self.account.notesText;
     
     self.syncedFromModel = YES;
