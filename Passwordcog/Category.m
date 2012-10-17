@@ -19,9 +19,21 @@
   return [Category findFirstByAttribute:@"uid" withValue:uid];
 }
 
-+ (NSArray *)allCategoriesSorted
++ (NSSet *)allCategoriesSorted
 {
-  return [Category findAllSortedBy:@"name" ascending:YES];
+  NSMutableSet *categories = [NSMutableSet new];
+  NSDictionary *categoryNames = [Category allCategoryNames];
+  
+  for (NSString *key in categoryNames) {
+    Category *category = [Category categoryFromName:[categoryNames objectForKey:key]];
+    [categories addObject:category];
+  }
+  
+  NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                         ascending:YES
+                                                          selector:@selector(caseInsensitiveCompare:)];
+  
+  return [NSMutableArray arrayWithArray:[categories sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]]];
 }
 
 + (NSDictionary *)allCategoryNames
