@@ -172,7 +172,7 @@
     self.nameField.text     = self.account.name;
     self.usernameField.text = self.account.usernameText;
     self.passwordField.text = self.account.passwordText;
-    self.notesField.text = self.account.notesText;
+    self.notesField.text    = self.account.notesText;
     
     self.syncedFromModel = YES;
   }
@@ -185,7 +185,7 @@
 
 - (void)setNavigationBarTitle
 {
-  self.navigationItem.title = [self.account.name isNotEmpty] ? self.account.name : self.categoryName;
+  self.navigationItem.title = self.categoryName;
 }
 
 - (void)viewWillAppear:(BOOL)animated
