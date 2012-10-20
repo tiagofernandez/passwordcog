@@ -61,23 +61,25 @@
 
 + (void)loadDefaultCategories
 {
-  if ([[Category numberOfEntities] intValue] == 0) {
-    
-    NSString* categoriesPlist = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
-    NSDictionary *categories = [NSDictionary dictionaryWithContentsOfFile:categoriesPlist];
-    
-    NSString* categoryImagesPlist = [[NSBundle mainBundle] pathForResource:@"CategoryImages" ofType:@"plist"];
-    NSDictionary *categoryImages = [NSDictionary dictionaryWithContentsOfFile:categoryImagesPlist];
+  NSString* categoryNamesPlist = [[NSBundle mainBundle] pathForResource:@"Categories" ofType:@"plist"];
+  NSDictionary *categoryNames = [NSDictionary dictionaryWithContentsOfFile:categoryNamesPlist];
+  
+  NSString* categoryImagesPlist = [[NSBundle mainBundle] pathForResource:@"CategoryImages" ofType:@"plist"];
+  NSDictionary *categoryImages = [NSDictionary dictionaryWithContentsOfFile:categoryImagesPlist];
 
-    for (int i = 0; i < [categories count]; i++) {
-      
-      Category *category = [Category createEntity];
-      category.uid       = [NSString stringWithFormat:@"%d", i];
-      category.name      = [categories objectForKey:category.uid];
-      category.imageName = [categoryImages objectForKey:category.uid];
-      
-      [[NSManagedObjectContext contextForCurrentThread] save];
+  for (int i = 0; i < [categoryNames count]; i++) {
+    
+    NSString *categoryId = [NSString stringWithFormat:@"%d", i];
+    Category *category   = [Category categoryFromName:[categoryNames objectForKey:categoryId]];
+    
+    if (!category) {
+      category      = [Category createEntity];
+      category.uid  = categoryId;
+      category.name = [categoryNames objectForKey:categoryId];
     }
+    category.imageName = [categoryImages objectForKey:categoryId];
+    
+    [[NSManagedObjectContext contextForCurrentThread] save];
   }
 }
 
