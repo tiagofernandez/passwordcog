@@ -33,9 +33,12 @@
 - (NSString *)generateCsv
 {
   NSMutableArray *accounts = [NSMutableArray new];
+  NSDictionary *categoryNames = [Category allCategoryNames];
   
-  for (Category *category in [Category allCategoriesSorted]) {
-    [accounts addObjectsFromArray:[Account allAccountsInCategorySorted:category.name]];
+  for (int i = 0; i < [categoryNames count]; i++) {
+    NSString *categoryId = [NSString stringWithFormat:@"%d", i];
+    NSString *categoryName = [categoryNames objectForKey:categoryId];
+    [accounts addObjectsFromArray:[Account allAccountsInCategorySorted:categoryName]];
   }
   return [GRMustacheTemplate renderObject:accounts
                                       fromResource:@"CSV"

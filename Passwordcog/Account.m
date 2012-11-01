@@ -16,14 +16,12 @@
 
 - (NSString *)categoryText
 {
-  Category *category = [Category categoryFromId:self.categoryId];
-  return category.name;
+  return [Category categoryNameFromId:self.categoryId];
 }
 
 - (void)setCategoryText:(NSString *)categoryName
 {
-  Category *category = [Category categoryFromName:categoryName];
-  self.categoryId = category.uid;
+  self.categoryId = [Category categoryIdFromName:categoryName];
 }
 
 - (NSString *)usernameText
@@ -63,8 +61,8 @@
 {
   if (categoryName) {
     
-    Category *category = [Category categoryFromName:categoryName];
-    NSArray *accounts  = [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId" withValue:category.uid]];
+    NSString *categoryId = [Category categoryIdFromName:categoryName];
+    NSArray *accounts  = [NSMutableArray arrayWithArray:[Account findByAttribute:@"categoryId" withValue:categoryId]];
     
     NSArray *sortedAccounts = [accounts sortedArrayUsingComparator:^NSComparisonResult(id first, id second) {
       
@@ -91,8 +89,8 @@
 
 + (NSArray *)allAccountsInCategorySorted:(NSString *)categoryName
 {
-  Category *category = [Category categoryFromName:categoryName];
-  NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:category.uid];
+  NSString *categoryId = [Category categoryIdFromName:categoryName];
+  NSArray *accounts  = [Account findByAttribute:@"categoryId" withValue:categoryId];
 
   NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                          ascending:YES
@@ -109,9 +107,9 @@
 
 + (NSString *)totalOfAccountsInCategory:(NSString *)categoryName
 {
-  Category *category = [Category categoryFromName:categoryName];
+  NSString *categoryId = [Category categoryIdFromName:categoryName];
   
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", category.uid];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"categoryId == %@", categoryId];
   return [NSString stringWithFormat:@"%d", [Account countOfEntitiesWithPredicate:predicate]];
 }
 

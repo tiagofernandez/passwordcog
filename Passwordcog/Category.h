@@ -6,13 +6,11 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *imageName;
 
-+ (Category *)categoryFromName:(NSString *)name;
-+ (Category *)categoryFromId:(NSString *)uid;
++ (NSString *)categoryIdFromName:(NSString *)name;
++ (NSString *)categoryNameFromId:(NSString *)uid;
 
-+ (NSSet *)allCategoriesSorted;
+//+ (NSArray *)allCategoriesSorted;
 + (NSDictionary *)allCategoryNames;
 + (NSDictionary *)allCategoryImages;
-
-+ (void)loadDefaultCategories;
 
 @end

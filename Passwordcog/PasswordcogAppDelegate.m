@@ -16,9 +16,6 @@
 
 @synthesize dataExport = _dataExport;
 
-static NSString *iCloudContainer = @"6P59Z8EQFE.com.tapcogs.Passwordcog";
-static NSString *LocalStoreName = @"Passwordcog.sqlite";
-
 - (DataExport *)dataExport
 {
   if (!_dataExport) {
@@ -42,21 +39,9 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
-- (BOOL)iCloudAvailable
-{
-  NSFileManager *fileManager = [NSFileManager defaultManager];
-  NSURL *ubiquityURL = [fileManager URLForUbiquityContainerIdentifier:iCloudContainer];
-  return ubiquityURL ? YES : NO;
-}
-
 // Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [self iCloudAvailable]
-    ? [MagicalRecord setupCoreDataStackWithiCloudContainer:iCloudContainer localStoreNamed:LocalStoreName]
-    : [MagicalRecord setupCoreDataStackWithStoreNamed:LocalStoreName];
-  
-  [Category loadDefaultCategories];
   [[KKPasscodeLock sharedLock] setDefaultSettings];
   
   [self.dataExport setupDropbox];
@@ -191,7 +176,7 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 - (void)eraseApplicationData
 {
   [Account truncateAll];
-  [[NSManagedObjectContext contextForCurrentThread] save];
+  [Category truncateAll];
 }
 
 - (void)shouldEraseApplicationData:(KKPasscodeViewController*)viewController

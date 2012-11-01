@@ -68,10 +68,10 @@
   NSIndexPath *selectedIndexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
 
   Account *account = [self.searchResults objectAtIndex:selectedIndexPath.row];
-  Category *category = [Category categoryFromId:account.categoryId];
+  NSString *categoryName = [Category categoryNameFromId:account.categoryId];
   
   AccountViewController *accountVC = segue.destinationViewController;
-  [accountVC setCategoryName:category.name];
+  [accountVC setCategoryName:categoryName];
   [accountVC setAccount:account];
 }
 

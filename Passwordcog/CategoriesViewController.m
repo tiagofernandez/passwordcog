@@ -1,8 +1,10 @@
 #import "CategoriesViewController.h"
 #import "AccountListViewController.h"
 #import "SettingsViewController.h"
+#import "SVProgressHUD.h"
 
-#pragma mark Custom UITableViewCell
+
+#pragma mark - CategoryImageCell
 
 @interface CategoryImageCell : UITableViewCell
 @end
@@ -18,14 +20,16 @@
 @end
 
 
+#pragma mark - CategoriesViewController
+
 @interface CategoriesViewController()
 
 @property (nonatomic, weak) UIPopoverController *settingsPopoverController;
-
 @property (nonatomic, strong) NSTimer *refreshTimer;
 
-@end
+@property BOOL databaseInitialized;
 
+@end
 
 @implementation CategoriesViewController
 
@@ -33,6 +37,8 @@
 
 @synthesize categories = _categories;
 @synthesize categoryImages = _categoryImages;
+
+@synthesize databaseInitialized = _databaseInitialized;
 
 - (NSDictionary *)categories
 {
@@ -51,7 +57,7 @@
 }
 
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (IBAction)showSettingsPopover:(UIBarButtonItem *)sender
 {
@@ -91,7 +97,7 @@
 }
 
 
-#pragma mark Segue
+#pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender
 {
@@ -113,7 +119,7 @@
 }
 
 
-#pragma mark UISplitViewControllerDelegate
+#pragma mark - UISplitViewControllerDelegate
 
 - (BOOL)splitViewController:(UISplitViewController *)svc
    shouldHideViewController:(UIViewController *)vc
@@ -123,7 +129,7 @@
 }
 
 
-#pragma mark UITableViewDataSource & UITableViewDelegate
+#pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSString *)categoryIndexForIndexPath:(NSIndexPath *)indexPath
 {
@@ -162,7 +168,7 @@
   NSString *categoryName = [self categoryForIndexPath:indexPath];
   
   cell.textLabel.text = categoryName;
-  cell.detailTextLabel.text = [Account totalOfAccountsInCategory:categoryName];
+  cell.detailTextLabel.text = self.databaseInitialized ? [Account totalOfAccountsInCategory:categoryName] : @"";
   
   cell.imageView.image = [UIImage imageNamed:[self categoryImageForIndexPath:indexPath]];
   
@@ -179,7 +185,7 @@
 }
 
 
-#pragma mark View lifecycle
+#pragma mark - View lifecycle
 
 - (void)awakeFromNib
 {
@@ -196,12 +202,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  
-  self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
-                                                       target:self
-                                                     selector:@selector(refreshView)
-                                                     userInfo:nil
-                                                      repeats:YES];
+  if (!self.databaseInitialized) [self initDatabase];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -232,7 +233,67 @@
 }
 
 
-#pragma mark Rotation
+#pragma mark - Database initialization
+
+static NSString *iCloudContainer = @"6P59Z8EQFE.com.tapcogs.Passwordcog";
+static NSString *LocalStoreName = @"Passwordcog.sqlite";
+
+- (BOOL)iCloudAvailable
+{
+  NSFileManager *fileManager = [NSFileManager defaultManager];
+  NSURL *ubiquityURL = [fileManager URLForUbiquityContainerIdentifier:iCloudContainer];
+  
+  BOOL status = ubiquityURL ? YES : NO;
+  NSLog(@"iCloud available? %@", status ? @"yes" : @"no");
+  
+  return status;
+}
+
+- (void)initDatabase
+{
+  if ([self iCloudAvailable]) {
+    
+    [SVProgressHUD showWithStatus:@"iCloud sync" maskType:SVProgressHUDMaskTypeGradient];
+
+    NSString *contentNameKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleIdentifierKey];
+    
+    [MagicalRecord setupCoreDataStackWithiCloudContainer:iCloudContainer contentNameKey:contentNameKey localStoreNamed:LocalStoreName cloudStorePathComponent:nil completion:^{
+      
+      [SVProgressHUD dismiss];
+      
+      self.databaseInitialized = YES;
+      
+      [self initRefreshTimer];
+      [self deleteAllCategoriesFromDatabase];
+    }];
+  }
+  else {
+    [MagicalRecord setupCoreDataStackWithStoreNamed:LocalStoreName];
+    
+    self.databaseInitialized = YES;
+    
+    [self initRefreshTimer];
+    [self deleteAllCategoriesFromDatabase];
+  }
+}
+
+// TODO Consider bringing categories back to the database with a correct implementation after a few updates.
+- (void)deleteAllCategoriesFromDatabase
+{
+  [Category truncateAll];
+}
+
+- (void)initRefreshTimer
+{
+  self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                       target:self
+                                                     selector:@selector(refreshView)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+
+#pragma mark - Rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
