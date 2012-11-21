@@ -102,7 +102,13 @@
 + (NSArray *)searchAccountsWithNameLike:(NSString *)accountName
 {
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", accountName];
-  return [Account findAllWithPredicate:predicate];
+  NSArray *accounts = [Account findAllWithPredicate:predicate];
+
+  NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                         ascending:YES
+                                                          selector:@selector(caseInsensitiveCompare:)];
+  
+  return [NSMutableArray arrayWithArray:[accounts sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]]];
 }
 
 + (NSString *)totalOfAccountsInCategory:(NSString *)categoryName
