@@ -121,6 +121,7 @@
     [self.accounts addObject:account];
   }
   [self showOrHideSubviews];
+  [self refreshIndices];
   [self refreshView];
   
   [self.delegate categoryModified:self.categoryName];
