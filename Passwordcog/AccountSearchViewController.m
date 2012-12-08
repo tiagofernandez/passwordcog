@@ -7,6 +7,8 @@
 
 @property (strong, nonatomic) NSMutableArray *searchResults;
 
+@property BOOL shouldPresentKeyboard;
+
 @end
 
 @implementation AccountSearchViewController
@@ -21,19 +23,24 @@
   return _searchResults;
 }
 
-#pragma mark - Actions
-
-- (IBAction)done:(UIBarButtonItem *)sender
-{
-  [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
   [self.searchResults removeAllObjects];
   [self.searchResults addObjectsFromArray:[Account searchAccountsWithNameLike:searchText]];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+  [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - UISearchDisplayDelegate
+
+- (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+{
+  controller.searchBar.showsCancelButton = YES;
 }
 
 #pragma mark - UITableViewDataSource
@@ -84,8 +91,25 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  //[self.searchDisplayController.searchBar becomeFirstResponder];
+  
+  if (self.shouldPresentKeyboard) {
+    [self.searchDisplayController.searchBar becomeFirstResponder];
+    self.shouldPresentKeyboard = NO; // so when getting back from a search result, the keyboard is not presented.
+  }
 }
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  self.shouldPresentKeyboard = YES;
+}
+
+- (void)viewDidUnload
+{
+  [super viewDidUnload];
+}
+
+#pragma mark - UIViewControllerRotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -93,36 +117,6 @@
     return YES;
   else
     return interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
-}
-
-@end
-
-#pragma mark - UISearchDisplayController
-
-@interface CustomSearchDisplayController : UISearchDisplayController
-@end
-
-@implementation CustomSearchDisplayController
-
-- (void)setActive:(BOOL)visible animated:(BOOL)animated
-{
-  [super setActive:NO animated:animated];
-  [self.searchContentsController.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-@end
-
-#pragma mark - UISearchBar
-
-@interface CustomSearchBar : UISearchBar
-@end
-
-@implementation CustomSearchBar
-
--(void)layoutSubviews
-{
-  [super layoutSubviews];
-  [self setShowsCancelButton:NO animated:NO];
 }
 
 @end
