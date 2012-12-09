@@ -277,10 +277,12 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
   }
 }
 
-// TODO Consider bringing categories back to the database with a correct implementation after a few updates.
 - (void)deleteAllCategoriesFromDatabase
 {
-  [Category truncateAll];
+  for (Category *category in [Category findAll]) {
+    [category deleteEntity];
+  }
+  [[NSManagedObjectContext contextForCurrentThread] save];
 }
 
 - (void)initRefreshTimer
