@@ -196,7 +196,7 @@
     Account *account = [self accountAtIndexPath:indexPath];
     [account deleteEntity];
     
-    [[NSManagedObjectContext contextForCurrentThread] save];
+    [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
     
     [self.accounts removeObject:account];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
@@ -231,7 +231,7 @@
     Account *account = [self.accounts objectAtIndex:index];
     account.index = [NSString stringWithFormat:@"%d", index];
   }
-  [[NSManagedObjectContext contextForCurrentThread] save];
+  [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath

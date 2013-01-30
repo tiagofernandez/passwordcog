@@ -253,7 +253,7 @@ static NSString *LocalStoreName = @"Passwordcog.sqlite";
 {
   if ([self iCloudAvailable]) {
     
-    [SVProgressHUD showWithStatus:@"iCloud sync" maskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
 
     NSString *contentNameKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleIdentifierKey];
     

@@ -56,7 +56,7 @@
   account.notesText    = [self notesText];
   account.index        = [Account totalOfAccountsInCategory:self.categoryName];
   
-  [[NSManagedObjectContext contextForCurrentThread] save];
+  [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
   
   [self.delegate accountSaved:account];
   [self dismissViewController];
