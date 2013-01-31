@@ -1,7 +1,7 @@
 #import "CategoriesViewController.h"
 #import "AccountListViewController.h"
+#import "PasswordcogDatabase.h"
 #import "SettingsViewController.h"
-#import "SVProgressHUD.h"
 
 
 #pragma mark - CategoryImageCell
@@ -24,10 +24,10 @@
 
 @interface CategoriesViewController()
 
+@property (nonatomic, strong) PasswordcogDatabase *database;
+
 @property (nonatomic, weak) UIPopoverController *settingsPopoverController;
 @property (nonatomic, strong) NSTimer *refreshTimer;
-
-@property BOOL databaseInitialized;
 
 @end
 
@@ -38,7 +38,7 @@
 @synthesize categories = _categories;
 @synthesize categoryImages = _categoryImages;
 
-@synthesize databaseInitialized = _databaseInitialized;
+@synthesize database = _database;
 
 - (NSDictionary *)categories
 {
@@ -168,8 +168,10 @@
   NSString *categoryName = [self categoryForIndexPath:indexPath];
   
   cell.textLabel.text = categoryName;
-  cell.detailTextLabel.text = self.databaseInitialized ? [Account totalOfAccountsInCategory:categoryName] : @"";
   
+  if (self.database) {
+    cell.detailTextLabel.text = [Account totalOfAccountsInCategory:categoryName];
+  }
   cell.imageView.image = [UIImage imageNamed:[self categoryImageForIndexPath:indexPath]];
   
   return cell;
@@ -202,7 +204,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  if (!self.databaseInitialized) [self initDatabase];
+  if (!self.database) [self initDatabase];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -235,63 +237,15 @@
 
 #pragma mark - Database initialization
 
-static NSString *iCloudContainer = @"6P59Z8EQFE.com.tapcogs.Passwordcog";
-static NSString *LocalStoreName = @"Passwordcog.sqlite";
-
-- (BOOL)iCloudAvailable
-{
-  NSFileManager *fileManager = [NSFileManager defaultManager];
-  NSURL *ubiquityURL = [fileManager URLForUbiquityContainerIdentifier:iCloudContainer];
-  
-  BOOL status = ubiquityURL ? YES : NO;
-  NSLog(@"iCloud available? %@", status ? @"yes" : @"no");
-  
-  return status;
-}
-
 - (void)initDatabase
 {
-  if ([self iCloudAvailable]) {
-    
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
-
-    NSString *contentNameKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleIdentifierKey];
-    
-    [MagicalRecord setupCoreDataStackWithiCloudContainer:iCloudContainer contentNameKey:contentNameKey localStoreNamed:LocalStoreName cloudStorePathComponent:nil completion:^{
-      
-      [SVProgressHUD dismiss];
-      
-      self.databaseInitialized = YES;
-      
-      [self initRefreshTimer];
-      [self deleteAllCategoriesFromDatabase];
-    }];
-  }
-  else {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:LocalStoreName];
-    
-    self.databaseInitialized = YES;
-    
-    [self initRefreshTimer];
-    [self deleteAllCategoriesFromDatabase];
-  }
-}
-
-- (void)deleteAllCategoriesFromDatabase
-{
-  for (Category *category in [Category findAll]) {
-    [category deleteEntity];
-  }
-  [[NSManagedObjectContext contextForCurrentThread] save];
-}
-
-- (void)initRefreshTimer
-{
-  self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
-                                                       target:self
-                                                     selector:@selector(refreshView)
-                                                     userInfo:nil
-                                                      repeats:YES];
+  self.database = [[PasswordcogDatabase new] loadWithCompletionBlock:^{
+    self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                         target:self
+                                                       selector:@selector(refreshView)
+                                                       userInfo:nil
+                                                        repeats:YES];
+  }];
 }
 
 

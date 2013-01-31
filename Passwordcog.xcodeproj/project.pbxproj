@@ -71,6 +71,7 @@
 		F1A0ACED1632B21200D2456D /* 70-tv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A0ACEB1632B21200D2456D /* 70-tv@2x.png */; };
 		F1B88D2715C53A5D00E51259 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B88D2515C53A5D00E51259 /* globe.png */; };
 		F1B88D2815C53A5D00E51259 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B88D2615C53A5D00E51259 /* globe@2x.png */; };
+		F1CD0FD616BB0F3100CD9900 /* PasswordcogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CD0FD516BB0F3100CD9900 /* PasswordcogDatabase.m */; };
 		F1CE16F015BC14CE0036E5E5 /* 59-info.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EE15BC14CE0036E5E5 /* 59-info.png */; };
 		F1CE16F115BC14CE0036E5E5 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */; };
 		F1CE170115BC3A3C0036E5E5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1CE16FF15BC3A3C0036E5E5 /* Icon.png */; };
@@ -174,6 +175,8 @@
 		F1A0ACEB1632B21200D2456D /* 70-tv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-tv@2x.png"; sourceTree = "<group>"; };
 		F1B88D2515C53A5D00E51259 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		F1B88D2615C53A5D00E51259 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
+		F1CD0FD416BB0F3100CD9900 /* PasswordcogDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordcogDatabase.h; sourceTree = "<group>"; };
+		F1CD0FD516BB0F3100CD9900 /* PasswordcogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordcogDatabase.m; sourceTree = "<group>"; };
 		F1CE16EE15BC14CE0036E5E5 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
 		F1CE16EF15BC14CE0036E5E5 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
 		F1CE16FF15BC3A3C0036E5E5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
@@ -278,6 +281,8 @@
 			children = (
 				F11F5C90157FFD5D0069CD28 /* PasswordcogAppDelegate.h */,
 				F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */,
+				F1CD0FD416BB0F3100CD9900 /* PasswordcogDatabase.h */,
+				F1CD0FD516BB0F3100CD9900 /* PasswordcogDatabase.m */,
 				F11F5C8F157FFD5D0069CD28 /* Passwordcog-Prefix.pch */,
 				F11F5C89157FFD5D0069CD28 /* Passwordcog-Info.plist */,
 				F190882E15C72EF300D2A2F7 /* Passwordcog.entitlements */,
@@ -599,6 +604,7 @@
 				F19A2B121616F6D7001550AF /* Settings.m in Sources */,
 				F1FD2F19161A1CEB00D3EE88 /* AccountSearchViewController.m in Sources */,
 				F1F6F99F161CDB850014E479 /* DataExport.m in Sources */,
+				F1CD0FD616BB0F3100CD9900 /* PasswordcogDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
