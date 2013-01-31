@@ -64,6 +64,12 @@
 // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+  // Issue #2: Undo back-to-root-screen mechanism
+  // [self goBackToRootView];
+}
+
+- (void)goBackToRootView __attribute__((deprecated))
+{
   if ([PasswordcogAppDelegate userInterfaceIdiomPad]) {
     UINavigationController *rootVC = (UINavigationController *) self.window.rootViewController;
     UINavigationController *rootNavVC = [rootVC.viewControllers objectAtIndex:0];
@@ -169,6 +175,7 @@
       passcodeNavigationVC.navigationBar.opaque = rootVC.navigationBar.opaque;
       passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;    
     }
+    [rootVC dismissModalViewControllerAnimated:NO];
     [rootVC presentModalViewController:passcodeNavigationVC animated:YES];
   });
 }
