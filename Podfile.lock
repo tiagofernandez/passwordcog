@@ -1,15 +1,15 @@
 
-PODS: 
+PODS:
 - Base64 (1.0.0)
 - Dropbox-iOS-SDK (1.3.2)
-- GRMustache (5.0.1): 
+- GRMustache (5.0.1):
   - JRSwizzle (~> 1.0)
 - JRSwizzle (1.0)
 - KKPasscodeLock (0.1.5)
 - MagicalRecord (2.1)
 - SVProgressHUD (0.8)
 
-DEPENDENCIES: 
+DEPENDENCIES:
 - Base64 (~> 1.0.0)
 - Dropbox-iOS-SDK (~> 1.3.2)
 - GRMustache (~> 5.0.1)
@@ -17,7 +17,7 @@ DEPENDENCIES:
 - MagicalRecord (~> 2.1)
 - SVProgressHUD (~> 0.8)
 
-SPEC CHECKSUMS: 
+SPEC CHECKSUMS:
   Base64: 285e4864ccacb72cb921c09fd7a19af3b47f450d
   Dropbox-iOS-SDK: 3e041f67271ba591280b329cc376d8ad1a587c51
   GRMustache: cb16bf01bc7165ded1da3689726f95cb950e86d6
@@ -26,4 +26,4 @@ SPEC CHECKSUMS:
   MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
 
-COCOAPODS: 0.16.1
+COCOAPODS: 0.16.2
