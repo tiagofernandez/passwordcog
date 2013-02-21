@@ -175,8 +175,7 @@
       passcodeNavigationVC.navigationBar.opaque = rootVC.navigationBar.opaque;
       passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;    
     }
-    [rootVC dismissModalViewControllerAnimated:NO];
-    [rootVC presentModalViewController:passcodeNavigationVC animated:YES];
+    [rootVC.visibleViewController presentViewController:passcodeNavigationVC animated:YES completion:^{}];
   });
 }
 
