@@ -225,6 +225,26 @@
   return YES;
 }
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+  Account *sourceAccount = [self accountAtIndexPath:sourceIndexPath];
+  
+  [self.accounts removeObject:sourceAccount];
+  [self.accounts insertObject:sourceAccount atIndex:destinationIndexPath.row];
+  
+  [self refreshIndices];
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+  [super setEditing:editing animated:animated];
+  
+  if (editing == YES)
+    [self disableAllCopyUsernamePasswordGestureRecognizers];
+  else
+    [self enableAllCopyUsernamePasswordGestureRecognizers];
+}
+
 - (void)refreshIndices
 {
   for (int index = 0; index < [self.accounts count]; index++) {
@@ -234,14 +254,31 @@
   [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+
+#pragma mark Gesture recognizer
+
+- (void)disableAllCopyUsernamePasswordGestureRecognizers
 {
-  Account *sourceAccount = [self accountAtIndexPath:sourceIndexPath];
-  
-  [self.accounts removeObject:sourceAccount];
-  [self.accounts insertObject:sourceAccount atIndex:destinationIndexPath.row];
-  
-  [self refreshIndices];
+  [self iterateCopyUsernamePasswordGestureRecognizersWithBlock:^(UIGestureRecognizer *gestureRecognizer) {
+    gestureRecognizer.enabled = NO;
+  }];
+}
+
+- (void)enableAllCopyUsernamePasswordGestureRecognizers
+{
+  [self iterateCopyUsernamePasswordGestureRecognizersWithBlock:^(UIGestureRecognizer *gestureRecognizer) {
+    gestureRecognizer.enabled = YES;
+  }];
+}
+
+- (void)iterateCopyUsernamePasswordGestureRecognizersWithBlock:(void (^)(UIGestureRecognizer *recognizer))block
+{
+  for (NSInteger j = 0; j < [self.tableView numberOfSections]; ++j) {
+    for (NSInteger i = 0; i < [self.tableView numberOfRowsInSection:j]; ++i) {
+      UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]];
+      for (UIGestureRecognizer *gestureRecognizer in cell.gestureRecognizers) block(gestureRecognizer);
+    }
+  }
 }
 
 
