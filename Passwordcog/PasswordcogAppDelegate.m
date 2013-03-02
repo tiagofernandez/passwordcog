@@ -168,14 +168,17 @@
       passcodeNavigationVC.modalPresentationStyle = UIModalPresentationFormSheet;
       passcodeNavigationVC.navigationBar.barStyle = UIBarStyleBlack;
       passcodeNavigationVC.navigationBar.opaque = NO;
+      
+      [rootVC presentViewController:passcodeNavigationVC animated:YES completion:^{}];
     }
     else {
       passcodeNavigationVC.navigationBar.tintColor = rootVC.navigationBar.tintColor;
       passcodeNavigationVC.navigationBar.translucent = rootVC.navigationBar.translucent;
       passcodeNavigationVC.navigationBar.opaque = rootVC.navigationBar.opaque;
-      passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;    
+      passcodeNavigationVC.navigationBar.barStyle = rootVC.navigationBar.barStyle;
+      
+      [rootVC.visibleViewController presentViewController:passcodeNavigationVC animated:YES completion:^{}];
     }
-    [rootVC.visibleViewController presentViewController:passcodeNavigationVC animated:YES completion:^{}];
   });
 }
 

@@ -663,7 +663,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -679,7 +679,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "2C21FBDA-7300-459D-97D1-68A02E35DED9";
+				PROVISIONING_PROFILE = "27C50C07-C84E-4F54-8C8F-75481047E832";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -694,7 +694,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -704,7 +704,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2C21FBDA-7300-459D-97D1-68A02E35DED9";
+				PROVISIONING_PROFILE = "27C50C07-C84E-4F54-8C8F-75481047E832";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -715,8 +715,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
+				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcogdev.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
@@ -728,7 +728,7 @@
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2C21FBDA-7300-459D-97D1-68A02E35DED9";
+				PROVISIONING_PROFILE = "27C50C07-C84E-4F54-8C8F-75481047E832";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -739,8 +739,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcog.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tiago Fernandez";
+				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcogdev.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tiago Fernandez (J8W6659W9E)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Passwordcog/Passwordcog-Prefix.pch";
@@ -752,7 +752,7 @@
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2C21FBDA-7300-459D-97D1-68A02E35DED9";
+				PROVISIONING_PROFILE = "27C50C07-C84E-4F54-8C8F-75481047E832";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
