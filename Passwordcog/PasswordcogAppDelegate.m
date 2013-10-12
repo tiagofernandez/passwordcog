@@ -200,7 +200,7 @@
   [alert show];
   
   [self resetPasscode];
-  [viewController dismissModalViewControllerAnimated:YES];
+  [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

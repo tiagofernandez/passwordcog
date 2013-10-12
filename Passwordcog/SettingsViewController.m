@@ -22,7 +22,7 @@
 
 - (IBAction)done:(id)sender
 {
-  [self.navigationController dismissModalViewControllerAnimated:YES];
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)hidePasswordsChanged:(UISwitch *)sender
@@ -36,7 +36,7 @@
 - (void)passcodeCellSelected
 {
   KKPasscodeSettingsViewController *passcodeSettingsVC = [[KKPasscodeSettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
-  passcodeSettingsVC.contentSizeForViewInPopover = self.contentSizeForViewInPopover;
+  passcodeSettingsVC.preferredContentSize = self.preferredContentSize;
   passcodeSettingsVC.delegate = self;
   
   [self.navigationController pushViewController:passcodeSettingsVC animated:YES];

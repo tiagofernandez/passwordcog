@@ -33,7 +33,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
-  [self.navigationController dismissModalViewControllerAnimated:YES];
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UISearchDisplayDelegate

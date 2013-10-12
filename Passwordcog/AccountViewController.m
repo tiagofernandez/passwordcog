@@ -38,7 +38,7 @@
 - (void)dismissViewController
 {
   if (self.delegate)
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   else
     [self.navigationController popViewControllerAnimated:YES];
 }
