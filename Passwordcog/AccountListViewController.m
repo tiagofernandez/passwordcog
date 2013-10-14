@@ -13,7 +13,6 @@
 @interface AccountListViewController () <UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *emptyAccountListView;
-@property (strong, nonatomic) IBOutlet UIImageView *passwordKeyView;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sortButton;
@@ -32,7 +31,6 @@
 @synthesize delegate = _delegate;
 
 @synthesize emptyAccountListView = _emptyAccountListView;
-@synthesize passwordKeyView = _passwordKeyView;
 
 @synthesize addButton = _addButton;
 @synthesize sortButton = _sortButton;
@@ -306,22 +304,19 @@
 
 - (void)setToolbarItems
 {
+  self.editButtonItem.tintColor = [UIColor darkGrayColor];
+  
   UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
   [self setToolbarItems:[NSArray arrayWithObjects:self.sortButton, flexibleSpace, self.editButtonItem, nil]];
 }
 
 - (void)showOrHideSubviews
 {
-  [self.passwordKeyView removeFromSuperview];
   [self.emptyAccountListView removeFromSuperview];
   
   BOOL emptyAccounts = [self.accounts count] == 0;
   
-  if (!self.categoryName) {
-    self.passwordKeyView.center = self.tableView.center;
-    [self.tableView addSubview:self.passwordKeyView];
-  }
-  else if (emptyAccounts) {
+  if (self.categoryName && emptyAccounts) {
     CGFloat xPosition = CGRectGetWidth(self.tableView.frame) - CGRectGetWidth(self.emptyAccountListView.frame);
     self.emptyAccountListView.center = CGPointMake(ceil(xPosition) + 160, 40.0);
     [self.tableView addSubview:self.emptyAccountListView];
@@ -375,7 +370,6 @@
 - (void)viewDidUnload
 {
   self.emptyAccountListView = nil;
-  self.passwordKeyView = nil;
   self.addButton = nil;
   self.sortButton = nil;
   

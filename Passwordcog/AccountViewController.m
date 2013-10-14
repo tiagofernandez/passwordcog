@@ -95,7 +95,7 @@
     [self.passwordField becomeFirstResponder];
   
   else if (textField == self.passwordField)
-    [self.passwordField resignFirstResponder];
+    [self.notesField becomeFirstResponder];
   
   return YES;
 }

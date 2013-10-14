@@ -7,8 +7,6 @@
 
 @property (strong, nonatomic) NSMutableArray *searchResults;
 
-@property BOOL shouldPresentKeyboard;
-
 @end
 
 @implementation AccountSearchViewController
@@ -91,17 +89,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  
-  if (self.shouldPresentKeyboard) {
-    [self.searchDisplayController.searchBar becomeFirstResponder];
-    self.shouldPresentKeyboard = NO; // so when getting back from a search result, the keyboard is not presented.
-  }
-}
-
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  self.shouldPresentKeyboard = YES;
+  [self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
 - (void)viewDidUnload

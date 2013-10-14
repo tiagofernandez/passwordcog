@@ -40,6 +40,7 @@
   passcodeSettingsVC.delegate = self;
   
   [self.navigationController pushViewController:passcodeSettingsVC animated:YES];
+  passcodeSettingsVC.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)backupToDropboxCellSelected

@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	self.navigationItem.title = @"Passcode Lock";
+	self.navigationItem.title = @"Passcode";
   self.tableView.backgroundColor = [UIColor whiteColor];
   self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 		

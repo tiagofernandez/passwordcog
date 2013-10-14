@@ -16,8 +16,6 @@
 		F11F5C92157FFD5D0069CD28 /* PasswordcogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C91157FFD5D0069CD28 /* PasswordcogAppDelegate.m */; };
 		F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */; };
 		F11F5C9B157FFD5E0069CD28 /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */; };
-		F12F5F5F15E0FCB300BDF7FB /* passwordcog-key.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */; };
-		F12F5F6015E0FCB300BDF7FB /* passwordcog-key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */; };
 		F14879BF15BBE34900F100D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879BE15BBE34900F100D5 /* AudioToolbox.framework */; };
 		F14879C215BBE34F00F100D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14879C115BBE34F00F100D5 /* Security.framework */; };
 		F1507E411581574500E2C086 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1507E401581574500E2C086 /* AccountViewController.m */; };
@@ -101,8 +99,6 @@
 		F11F5C99157FFD5D0069CD28 /* AccountListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountListViewController.h; sourceTree = "<group>"; };
 		F11F5C9A157FFD5E0069CD28 /* AccountListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountListViewController.m; sourceTree = "<group>"; };
 		F11F5CA2157FFD5E0069CD28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key.png"; sourceTree = "<group>"; };
-		F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passwordcog-key@2x.png"; sourceTree = "<group>"; };
 		F14879BE15BBE34900F100D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F14879C115BBE34F00F100D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1507E3F1581574500E2C086 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
@@ -288,8 +284,6 @@
 				F195655515C08DF300685080 /* empty_account_list@2x.png */,
 				F1B88D2515C53A5D00E51259 /* globe.png */,
 				F1B88D2615C53A5D00E51259 /* globe@2x.png */,
-				F12F5F5D15E0FCB300BDF7FB /* passwordcog-key.png */,
-				F12F5F5E15E0FCB300BDF7FB /* passwordcog-key@2x.png */,
 				F1FD2F11161A164700D3EE88 /* 06-magnify.png */,
 				F1FD2F12161A164700D3EE88 /* 06-magnify@2x.png */,
 				F182844315B1A91D00BBE2DC /* 18-envelope.png */,
@@ -464,8 +458,6 @@
 				F1B88D2715C53A5D00E51259 /* globe.png in Resources */,
 				F1B88D2815C53A5D00E51259 /* globe@2x.png in Resources */,
 				F19A83AB15DB8B31006A73FC /* iPad.storyboard in Resources */,
-				F12F5F5F15E0FCB300BDF7FB /* passwordcog-key.png in Resources */,
-				F12F5F6015E0FCB300BDF7FB /* passwordcog-key@2x.png in Resources */,
 				F1684AC915E54E2D00FECE21 /* 79-medical-bag.png in Resources */,
 				F1684ACA15E54E2D00FECE21 /* 79-medical-bag@2x.png in Resources */,
 				F1684ACD15E54E2D00FECE21 /* 140-gradhat.png in Resources */,
