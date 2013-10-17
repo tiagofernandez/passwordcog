@@ -32,10 +32,10 @@
   CGRect newFrame = self.notesTextView.frame;
   
   if (interfaceOrientation == UIInterfaceOrientationPortrait) {
-    newFrame = CGRectMake(0, 0, 320, IS_IPHONE_4_INCHES ? 286 : 200);
+    newFrame = CGRectMake(0, 0, 320, IS_IPHONE_4_INCHES ? 307 : 221);
   }
   else if (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown) {
-    newFrame = CGRectMake(0, 0, IS_IPHONE_4_INCHES ? 568 : 480, 100);
+    newFrame = CGRectMake(0, 0, IS_IPHONE_4_INCHES ? 568 : 480, 125);
   }
   self.notesTextView.frame = newFrame;
 }
