@@ -108,6 +108,8 @@ typedef NSUInteger KKPasscodeMode;
   BOOL _eraseData;
 }
 
+@property(nonatomic,assign) BOOL isSmallLandscape;
+
 @property (nonatomic, assign) id <KKPasscodeViewControllerDelegate> delegate; 
 @property (nonatomic, assign) KKPasscodeMode mode;
 
