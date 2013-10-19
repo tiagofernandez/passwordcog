@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F100AE4918128427007F3D7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F100AE4818128427007F3D7E /* Images.xcassets */; };
 		F11F13B81597682700B16DFB /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = F11F13B71597682700B16DFB /* Categories.plist */; };
 		F11F5C82157FFD5D0069CD28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C81157FFD5D0069CD28 /* UIKit.framework */; };
 		F11F5C84157FFD5D0069CD28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F5C83157FFD5D0069CD28 /* Foundation.framework */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E61C6EC062DB498987E794EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F100AE4818128427007F3D7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F11F13B71597682700B16DFB /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		F11F5C7D157FFD5D0069CD28 /* Passwordcog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwordcog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11F5C81157FFD5D0069CD28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -239,6 +241,7 @@
 				F11F5C93157FFD5D0069CD28 /* iPhone.storyboard */,
 				F19A83AA15DB8B31006A73FC /* iPad.storyboard */,
 				F1507E361581537600E2C086 /* Images */,
+				F100AE4818128427007F3D7E /* Images.xcassets */,
 				F11F5C88157FFD5D0069CD28 /* Supporting Files */,
 			);
 			path = Passwordcog;
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11F5C8C157FFD5D0069CD28 /* InfoPlist.strings in Resources */,
+				F100AE4918128427007F3D7E /* Images.xcassets in Resources */,
 				F11F5C95157FFD5D0069CD28 /* iPhone.storyboard in Resources */,
 				F1C7C20D18060B2C00EBCDD4 /* App-76.png in Resources */,
 				F1C7C20E18060B2C00EBCDD4 /* App-120.png in Resources */,
@@ -615,6 +619,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcogdev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -640,6 +646,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D4FBC352CF44F3AA32CE3C9 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Passwordcog/Passwordcogdev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
