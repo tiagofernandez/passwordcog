@@ -178,16 +178,12 @@
 		}
 		
 		UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    nav.navigationBar.tintColor = [UIColor darkGrayColor];
+    nav.navigationBar.barStyle = UIBarStyleBlack;
+    nav.navigationBar.opaque = NO;
 		 
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			nav.modalPresentationStyle = UIModalPresentationFormSheet;
-			nav.navigationBar.barStyle = UIBarStyleBlack;
-			nav.navigationBar.opaque = NO;
-		} else {
-			nav.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
-			nav.navigationBar.translucent = self.navigationController.navigationBar.translucent;
-			nav.navigationBar.opaque = self.navigationController.navigationBar.opaque;
-			nav.navigationBar.barStyle = self.navigationController.navigationBar.barStyle;		
 		}
 		
     if ([self.delegate respondsToSelector:@selector(passcodeLockWillBePresented)]) {
@@ -202,17 +198,12 @@
 		vc.mode = KKPasscodeModeChange;							
 		
 		UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
-		
+    nav.navigationBar.tintColor = [UIColor darkGrayColor];
+    nav.navigationBar.barStyle = UIBarStyleBlack;
+    nav.navigationBar.opaque = NO;
 		
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			nav.modalPresentationStyle = UIModalPresentationFormSheet;
-			nav.navigationBar.barStyle = UIBarStyleBlack;
-			nav.navigationBar.opaque = NO;
-		} else {
-			nav.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
-			nav.navigationBar.translucent = self.navigationController.navigationBar.translucent;
-			nav.navigationBar.opaque = self.navigationController.navigationBar.opaque;
-			nav.navigationBar.barStyle = self.navigationController.navigationBar.barStyle;		
 		}
 		
     if ([self.delegate respondsToSelector:@selector(passcodeLockWillBePresented)]) {
