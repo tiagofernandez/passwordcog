@@ -194,7 +194,8 @@
     Account *account = [self accountAtIndexPath:indexPath];
     [account deleteEntity];
     
-    [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+    [localContext saveToPersistentStoreAndWait];
     
     [self.accounts removeObject:account];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
@@ -249,7 +250,8 @@
     Account *account = [self.accounts objectAtIndex:index];
     account.index = [NSString stringWithFormat:@"%d", index];
   }
-  [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
+  NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+  [localContext saveToPersistentStoreAndWait];
 }
 
 

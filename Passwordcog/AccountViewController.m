@@ -45,7 +45,7 @@
 
 - (IBAction)saveAccount:(id)sender
 {
-  Account *account = (self.account) ? self.account : [Account createEntity];
+  Account *account = (self.account) ? self.account : [Account MR_createEntity];
   
   // if (!account.uid) account.uid = [NSString uuid];
   
@@ -56,7 +56,8 @@
   account.notesText    = [self notesText];
   account.index        = [Account totalOfAccountsInCategory:self.categoryName];
   
-  [[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
+  NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+  [localContext saveToPersistentStoreAndWait];
   
   [self.delegate accountSaved:account];
   [self dismissViewController];
