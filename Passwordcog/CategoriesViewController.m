@@ -14,7 +14,7 @@
 - (void)layoutSubviews
 {
   [super layoutSubviews];
-  self.textLabel.frame = CGRectMake(50, 0, 150, 44);
+  self.textLabel.frame = CGRectMake(60, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 10 : 2, 150, 44);
 }
 
 @end
