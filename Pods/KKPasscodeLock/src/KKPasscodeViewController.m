@@ -142,7 +142,7 @@
 			[_tableViews addObject:_enterPasscodeTableView];
 			[_textFields addObject:_enterPasscodeTextField];
 			[_boxes addObject:[self boxes]];
-			UIView *boxesView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 0, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
+			UIView *boxesView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 50, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
 			boxesView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 			for (int i = 0; i < [[_boxes lastObject] count]; i++) {
 				[boxesView addSubview:[[_boxes lastObject] objectAtIndex:i]];
@@ -155,7 +155,7 @@
 		[_tableViews addObject:_setPasscodeTableView];
 		[_textFields addObject:_setPasscodeTextField];
 		[_boxes addObject:[self boxes]];
-		UIView *boxesView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 0, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
+		UIView *boxesView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 50, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
 		boxesView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 		for (int i = 0; i < [[_boxes lastObject] count]; i++) {
 			[boxesView addSubview:[[_boxes lastObject] objectAtIndex:i]];
@@ -166,7 +166,7 @@
 		[_tableViews addObject:_confirmPasscodeTableView];
 		[_textFields addObject:_confirmPasscodeTextField];
 		[_boxes addObject:[self boxes]];
-		UIView *boxesConfirmView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 0, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
+		UIView *boxesConfirmView = [[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * 0.5 - 71.0 * kPasscodeBoxesCount * 0.5, 50, 71.0 * kPasscodeBoxesCount, kPasscodeBoxHeight)] autorelease];
 		boxesConfirmView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 		for (int i = 0; i < [[_boxes lastObject] count]; i++) {
 			[boxesConfirmView addSubview:[[_boxes lastObject] objectAtIndex:i]];
@@ -261,7 +261,7 @@
 		_failedAttemptsLabel.text = [NSString stringWithFormat:@"%i Failed Attempts", _failedAttemptsCount];
 	}
 	CGSize size = [_failedAttemptsLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:14.0]];
-	_failedAttemptsLabel.frame = _failedAttemptsView.frame = CGRectMake((self.view.bounds.size.width - (size.width + 40.0)) / 2, 150, size.width + 40.0, size.height + 10.0);
+	_failedAttemptsLabel.frame = _failedAttemptsView.frame = CGRectMake((self.view.bounds.size.width - (size.width + 40.0)) / 2, 100, size.width + 40.0, size.height + 10.0);
 	
 	CAGradientLayer *gradient = [CAGradientLayer layer];
 	gradient.frame = _failedAttemptsView.bounds;				
@@ -463,7 +463,7 @@
         _passcodeConfirmationWarningLabel.frame = CGRectMake(10.0, 132.0, self.view.bounds.size.width - 10.0, 60.0);
       } else {
         _passcodeConfirmationWarningLabel.text = @"";
-        _passcodeConfirmationWarningLabel.frame = CGRectMake(10.0, 146.0, self.view.bounds.size.width - 10.0, 30.0);
+        _passcodeConfirmationWarningLabel.frame = CGRectMake(10.0, 132.0, self.view.bounds.size.width - 10.0, 60.0);
         [self moveToNextTableView];
       }
     } else if ([textField isEqual:_confirmPasscodeTextField]) {
@@ -518,7 +518,7 @@
 {
   [self.view addSubview:textField];
 	UIView *headerView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 70.0)] autorelease];
-	UILabel *headerLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0.0, 100.0, self.view.bounds.size.width, 30.0)] autorelease];
+	UILabel *headerLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0.0, 50.0, self.view.bounds.size.width, 30.0)] autorelease];
 	headerLabel.textColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.4 alpha:1.0];
 	headerLabel.backgroundColor = [UIColor clearColor];
 	headerLabel.textAlignment = UITextAlignmentCenter;
@@ -608,7 +608,7 @@
 	
 	for (int i = 0; i < kPasscodeBoxesCount; i++) {
 		UIImageView *square = [[UIImageView alloc] initWithImage:[self boxEmpty]];
-		square.frame = CGRectMake(squareX, 200.0, kPasscodeBoxWidth, kPasscodeBoxHeight);
+		square.frame = CGRectMake(squareX, 150.0, kPasscodeBoxWidth, kPasscodeBoxHeight);
 		[squareViews addObject:square];
 		[square release];
 		squareX += 71.0;
